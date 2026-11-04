@@ -188,15 +188,7 @@
      "biomérieux",
      "rubis"
     ],
-    "imp": 1,
-    "logos": [
-     {
-      "n": "Stif"
-     },
-     {
-      "n": "bioMérieux"
-     }
-    ]
+    "imp": 1
    },
    {
     "id": "2026-11-04-publicis-saint-gobain",
@@ -216,14 +208,11 @@
      "m&a"
     ],
     "imp": 1,
-    "logos": [
-     {
-      "n": "Publicis"
-     },
-     {
-      "n": "Saint-Gobain"
-     }
-    ]
+    "img": {
+     "u": "Drugstore Publicis vu depuis l'avenue Marceau 2.jpg",
+     "credit": "Le Drugstore Publicis, siège du groupe sur les Champs-Élysées. Photo : Wikimedia Commons",
+     "alt": "Siège de Publicis"
+    }
    },
    {
     "id": "2026-11-04-cac40-seance",
@@ -362,11 +351,11 @@
      "n": "+27 %",
      "l": "résultat opérationnel ajusté au T3"
     },
-    "logos": [
-     {
-      "n": "Novo Nordisk"
-     }
-    ]
+    "img": {
+     "u": "Novo Nordisk headquarters building Denmark.jpg",
+     "credit": "Le siège de Novo Nordisk à Bagsværd (Danemark). Photo : News Øresund – Johan Wessman / Wikimedia Commons",
+     "alt": "Siège de Novo Nordisk"
+    }
    },
    {
     "id": "2026-11-04-jd-ceconomy-nexperia",
@@ -388,14 +377,11 @@
      "chine"
     ],
     "imp": 1,
-    "logos": [
-     {
-      "n": "JD.com"
-     },
-     {
-      "n": "Ceconomy"
-     }
-    ]
+    "img": {
+     "u": "Media Markt Sontplein, Groningen (2017).jpg",
+     "credit": "Un magasin MediaMarkt, enseigne de Ceconomy. Photo : Donald Trung / Wikimedia Commons (CC BY-SA 4.0)",
+     "alt": "Magasin MediaMarkt"
+    }
    },
    {
     "id": "2026-11-04-bourses-europe",
@@ -763,11 +749,11 @@
      "pétrole"
     ],
     "imp": 1,
-    "logos": [
-     {
-      "n": "Dangote"
-     }
-    ]
+    "img": {
+     "u": "Worlds largest crude destillation column Dangote.jpg",
+     "credit": "La colonne de distillation de la raffinerie Dangote, à Lekki. Photo : FrankvEck / Wikimedia Commons (CC BY-SA 4.0)",
+     "alt": "Raffinerie Dangote"
+    }
    },
    {
     "id": "2026-11-04-iran-ormuz-petrole",
@@ -947,9 +933,6 @@
     },
     "logos": [
      {
-      "n": "CVR Energy"
-     },
-     {
       "u": "Marathon Petroleum logo 2022.svg",
       "n": "Marathon Petroleum"
      }
@@ -976,14 +959,11 @@
      "m&a"
     ],
     "imp": 1,
-    "logos": [
-     {
-      "n": "XRG · ADNOC"
-     },
-     {
-      "n": "North West Shelf"
-     }
-    ]
+    "img": {
+     "u": "Abu dhabi ADNOC Tower.jpg",
+     "credit": "Le siège d'ADNOC, maison mère de XRG, à Abou Dhabi. Photo : Wikimedia Commons",
+     "alt": "Siège d'ADNOC"
+    }
    },
    {
     "id": "2026-11-04-keybanc-apc",
@@ -1002,14 +982,11 @@
      "private equity"
     ],
     "imp": 1,
-    "logos": [
-     {
-      "n": "KeyBanc"
-     },
-     {
-      "n": "Atlantic-Pacific Capital"
-     }
-    ]
+    "img": {
+     "u": "Key Tower 2022.png",
+     "credit": "La Key Tower, siège de KeyCorp à Cleveland. Photo : Cards84664 / Wikimedia Commons (CC BY-SA 4.0)",
+     "alt": "Key Tower"
+    }
    },
    {
     "id": "2026-11-04-igneo-edif-iv",
@@ -1031,12 +1008,7 @@
     "v": {
      "n": "6 Md€",
      "l": "hard cap annoncé"
-    },
-    "logos": [
-     {
-      "n": "Igneo Infrastructure Partners"
-     }
-    ]
+    }
    },
    {
     "id": "2026-11-04-seaya-formation-bio",
@@ -1055,15 +1027,7 @@
      "fei",
      "formation bio"
     ],
-    "imp": 1,
-    "logos": [
-     {
-      "n": "Seaya"
-     },
-     {
-      "n": "Formation Bio"
-     }
-    ]
+    "imp": 1
    },
    {
     "id": "2026-11-04-apollo-t3",
@@ -1109,7 +1073,8 @@
     "imp": 1,
     "logos": [
      {
-      "n": "LGT Capital Partners"
+      "u": "LGT Logo.svg",
+      "n": "LGT"
      }
     ]
    },

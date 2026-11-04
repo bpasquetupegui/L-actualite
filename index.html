@@ -373,7 +373,7 @@ function cover(item,small,noimg){
   const p=PAL[item.r]||PAL["Europe"];
   const fl=(item.p||[]).filter(flag).slice(0,2).map(c=>`<img alt="" src="${flag(c)}">`).join("");
   const v=item.v||{};
-  if(!noimg&&item.logos&&item.logos.length){
+  if(!noimg&&item.logos&&item.logos.length&&item.logos.every(l=>l.u)){
     const lg=item.logos.map(l=>l.u?`<div class="lg"><img alt="${esc(l.n||"")}" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(l.u)}?width=600" onerror="this.parentNode.innerHTML='<b>${esc((l.n||"").replace(/'/g,""))}</b>'"></div>`:`<div class="lg"><b>${esc(l.n||"")}</b></div>`).join(`<span class="x">×</span>`);
     return `<div class="logos${small?" sm":""}"><div class="tag">${esc(item.s||item.r)}</div><div class="lgrow">${lg}</div>${v.n?`<div class="lgv"><b>${esc(v.n)}</b> ${esc(v.l||"")}</div>`:""}</div>`;
   }
@@ -390,7 +390,7 @@ function cover(item,small,noimg){
 function assignPhotos(ed){
   if(!PHOTOS.length)return;
   const used=new Set((ed.items||[]).filter(i=>i.img&&i.img.u).map(i=>i.img.u));
-  const items=[...(ed.items||[])].filter(i=>!(i.logos&&i.logos.length)).sort((a,b)=>(b.imp||1)-(a.imp||1));
+  const items=[...(ed.items||[])].filter(i=>!(i.logos&&i.logos.length&&i.logos.every(l=>l.u))).sort((a,b)=>(b.imp||1)-(a.imp||1));
   for(const it of items){
     if((it.img&&it.img.u)||AUTO[it.id])continue;
     const keys=new Set([...(it.k||[]),...(it.p||[])].map(x=>String(x).toLowerCase()));
