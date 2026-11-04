@@ -6,7 +6,8 @@
    "c": "Macro",
    "p": "eu",
    "imp": 2,
-   "h": "11 h"
+   "h": "11 h",
+   "x": "Première estimation de l'inflation de la zone euro publiée par Eurostat, avant le chiffre définitif environ deux semaines plus tard. Elle donne l'indice des prix harmonisé (IPCH) et l'inflation « sous-jacente » (hors énergie et alimentation). C'est le chiffre que regarde en premier la BCE, dont l'objectif est une inflation de 2 % à moyen terme : un chiffre plus élevé qu'attendu rend une hausse de taux plus probable, et inversement."
   },
   {
    "d": "2026-11-04",
@@ -14,7 +15,8 @@
    "c": "Banque centrale",
    "p": "br",
    "imp": 2,
-   "h": "22 h 30"
+   "h": "22 h 30",
+   "x": "Le Copom (Comité de politique monétaire) de la Banque centrale du Brésil fixe le taux Selic, le taux directeur du pays, huit fois par an. Le Brésil a l'un des taux réels les plus élevés au monde, ce qui attire les capitaux étrangers et soutient le real. La décision est très politique : le gouvernement Lula pousse pour des baisses afin de soutenir la croissance et le crédit, tandis que la banque centrale, indépendante, surveille l'inflation et le déficit public."
   },
   {
    "d": "2026-11-05",
@@ -22,7 +24,8 @@
    "c": "Banque centrale",
    "p": "gb",
    "imp": 3,
-   "h": "13 h"
+   "h": "13 h",
+   "x": "Le Comité de politique monétaire (MPC) de la Banque d'Angleterre réunit neuf membres (le gouverneur, ses adjoints et des experts externes) qui votent le « Bank Rate », le taux directeur britannique, avec un objectif d'inflation de 2 %. Le détail des votes est publié : un vote serré (par exemple 5 contre 4) signale que le prochain mouvement est proche. Les réunions de février, mai/avril, août/juillet et novembre sont accompagnées du Rapport de politique monétaire, avec les nouvelles prévisions."
   },
   {
    "d": "2026-11-05",
@@ -30,7 +33,8 @@
    "c": "Politique",
    "p": "fr",
    "imp": 2,
-   "h": ""
+   "h": "",
+   "x": "Journée de mobilisation appelée par plusieurs syndicats, dans le privé comme dans la fonction publique, sur fond de débat budgétaire (salaires, pouvoir d'achat, services publics). Les perturbations touchent surtout les transports (SNCF, RATP), les écoles et les administrations. L'ampleur de la mobilisation est un test pour le gouvernement, en pleine discussion du budget 2027 à l'Assemblée."
   },
   {
    "d": "2026-11-06",
@@ -38,7 +42,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "Le rapport mensuel sur l'emploi (« non-farm payrolls ») du Bureau of Labor Statistics donne le nombre d'emplois créés hors agriculture, le taux de chômage et la hausse des salaires horaires. C'est la statistique la plus suivie au monde par les marchés : elle oriente directement les anticipations sur la Fed, donc le dollar, les taux américains et les Bourses. Il est publié en général le premier vendredi du mois, à 14 h 30 heure de Paris."
   },
   {
    "d": "2026-11-06",
@@ -46,7 +51,8 @@
    "c": "Politique",
    "p": "tz",
    "imp": 2,
-   "h": ""
+   "h": "",
+   "x": "Tundu Lissu, chef du principal parti d'opposition tanzanien, le Chadema, est jugé pour trahison, un crime passible de la peine de mort, après avoir appelé à des réformes électorales avant la présidentielle. Ses soutiens et les ONG de défense des droits humains dénoncent un procès politique sous la présidence de Samia Suluhu Hassan. Le verdict est un test pour l'état de droit en Tanzanie et pour les relations du pays avec ses partenaires occidentaux."
   },
   {
    "d": "2026-11-09",
@@ -54,7 +60,8 @@
    "c": "Sommet",
    "p": "tr",
    "imp": 2,
-   "h": ""
+   "h": "",
+   "x": "La COP est la conférence annuelle des quelque 200 parties à la Convention-cadre des Nations unies sur les changements climatiques (CCNUCC) : chefs d'État, ministres, négociateurs, ONG et entreprises. La COP31 se tient à Antalya, en Turquie, pendant deux semaines. Les enjeux : les nouveaux engagements de réduction des émissions des pays, la sortie progressive des énergies fossiles et le financement climatique promis aux pays en développement."
   },
   {
    "d": "2026-11-10",
@@ -62,7 +69,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "L'indice des prix à la consommation (CPI) américain, publié chaque mois par le Bureau of Labor Statistics, mesure l'inflation aux États-Unis. Les marchés regardent surtout l'inflation « core », hors énergie et alimentation, plus représentative de la tendance. Un chiffre au-dessus des attentes éloigne les baisses de taux de la Fed et fait monter le dollar et les taux longs ; un chiffre plus bas a l'effet inverse."
   },
   {
    "d": "2026-11-10",
@@ -70,7 +78,8 @@
    "c": "Diplomatie",
    "p": "ua",
    "imp": 2,
-   "h": ""
+   "h": "",
+   "x": "Les discussions entre les États-Unis, la Russie et l'Ukraine visent un cessez-le-feu, voire un accord de paix, dans la guerre déclenchée par l'invasion russe de février 2022. Les points de blocage portent sur les territoires occupés, les garanties de sécurité pour l'Ukraine et la levée des sanctions contre Moscou. Toute avancée a un effet direct sur les prix de l'énergie et les marchés européens."
   },
   {
    "d": "2026-11-17",
@@ -78,7 +87,8 @@
    "c": "Politique",
    "p": "fr",
    "imp": 3,
-   "h": ""
+   "h": "",
+   "x": "La Constitution (article 47) laisse 70 jours au Parlement pour adopter le budget, dont 40 jours pour la première lecture à l'Assemblée nationale. Sans majorité claire, le gouvernement peut recourir au 49.3 pour faire adopter le texte sans vote, au risque d'une motion de censure. L'enjeu : réduire un déficit public parmi les plus élevés de la zone euro, sous la surveillance de Bruxelles, des agences de notation et des marchés (écart de taux OAT-Bund)."
   },
   {
    "d": "2026-11-17",
@@ -86,7 +96,8 @@
    "c": "Résultats",
    "p": "us",
    "imp": 3,
-   "h": "23 h"
+   "h": "23 h",
+   "x": "Nvidia, numéro un mondial des puces (GPU) pour l'intelligence artificielle, publie ses résultats trimestriels après la clôture de Wall Street. C'est devenu le baromètre de tout le secteur de l'IA : ses ventes aux data centers et ses prévisions disent si les investissements des géants de la tech continuent d'accélérer. Vu son poids dans les indices, sa publication peut faire bouger le Nasdaq et le S&P 500 de plusieurs points."
   },
   {
    "d": "2026-11-18",
@@ -94,7 +105,8 @@
    "c": "Sommet",
    "p": "cn",
    "imp": 3,
-   "h": ""
+   "h": "",
+   "x": "L'APEC (Coopération économique Asie-Pacifique) réunit 21 économies riveraines du Pacifique, dont les États-Unis, la Chine, le Japon, la Corée du Sud, l'Australie, le Canada et la Russie, qui pèsent environ 60 % du PIB mondial. Le sommet annuel des dirigeants se tient cette année en Chine, à Shenzhen. Il sert surtout de cadre à des rencontres bilatérales, à commencer par un éventuel face-à-face Trump-Xi sur les droits de douane et les semi-conducteurs."
   },
   {
    "d": "2026-12-09",
@@ -102,7 +114,8 @@
    "c": "Banque centrale",
    "p": "us",
    "imp": 3,
-   "h": "20 h"
+   "h": "20 h",
+   "x": "Le FOMC, le comité de politique monétaire de la Fed, fixe la fourchette des « fed funds », le taux directeur américain, qui sert de référence au monde entier. Il compte 12 votants : les 7 gouverneurs de la Fed, le président de la Fed de New York et 4 présidents de Fed régionales par rotation. Le communiqué tombe à 20 h (heure de Paris), suivi de la conférence de presse du président ; en mars, juin, septembre et décembre, la Fed publie aussi ses projections (le « dot plot »)."
   },
   {
    "d": "2026-12-10",
@@ -110,7 +123,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "L'indice des prix à la consommation (CPI) américain, publié chaque mois par le Bureau of Labor Statistics, mesure l'inflation aux États-Unis. Les marchés regardent surtout l'inflation « core », hors énergie et alimentation, plus représentative de la tendance. Un chiffre au-dessus des attentes éloigne les baisses de taux de la Fed et fait monter le dollar et les taux longs ; un chiffre plus bas a l'effet inverse."
   },
   {
    "d": "2026-12-14",
@@ -118,7 +132,8 @@
    "c": "Sommet",
    "p": "us",
    "imp": 3,
-   "h": ""
+   "h": "",
+   "x": "Le G20 réunit 19 grands pays (dont les États-Unis, la Chine, l'Inde, le Japon, l'Allemagne, la France, le Brésil, l'Arabie saoudite), l'Union européenne et l'Union africaine : environ 85 % du PIB mondial et deux tiers de la population. Les États-Unis exercent la présidence en 2026 et accueillent le sommet des chefs d'État à Miami. Au programme : commerce, dette des pays pauvres, énergie, régulation financière, sur fond de tensions commerciales."
   },
   {
    "d": "2026-12-17",
@@ -126,7 +141,8 @@
    "c": "Banque centrale",
    "p": "eu",
    "imp": 3,
-   "h": "14 h 15"
+   "h": "14 h 15",
+   "x": "Le Conseil des gouverneurs de la BCE, composé des six membres du directoire et des gouverneurs des banques centrales nationales de la zone euro, fixe les trois taux directeurs, dont le taux de dépôt, la référence principale. Le communiqué tombe à 14 h 15, suivi de la conférence de presse de la présidente à 14 h 45. En mars, juin, septembre et décembre, de nouvelles projections de croissance et d'inflation sont publiées : ce sont les réunions où les changements de cap sont les plus probables."
   },
   {
    "d": "2026-12-17",
@@ -134,7 +150,8 @@
    "c": "Banque centrale",
    "p": "gb",
    "imp": 3,
-   "h": "13 h"
+   "h": "13 h",
+   "x": "Le Comité de politique monétaire (MPC) de la Banque d'Angleterre réunit neuf membres (le gouverneur, ses adjoints et des experts externes) qui votent le « Bank Rate », le taux directeur britannique, avec un objectif d'inflation de 2 %. Le détail des votes est publié : un vote serré (par exemple 5 contre 4) signale que le prochain mouvement est proche. Les réunions de février, mai/avril, août/juillet et novembre sont accompagnées du Rapport de politique monétaire, avec les nouvelles prévisions."
   },
   {
    "d": "2026-12-18",
@@ -142,7 +159,8 @@
    "c": "Banque centrale",
    "p": "jp",
    "imp": 3,
-   "h": ""
+   "h": "",
+   "x": "Le Policy Board de la Banque du Japon (neuf membres) fixe le taux directeur japonais. Après des années de taux négatifs, la BoJ relève progressivement ses taux, ce qui pèse sur le « carry trade » (emprunter en yen pour investir ailleurs) : une hausse surprise peut faire bondir le yen et secouer les marchés mondiaux. Les réunions de janvier, avril, juillet et octobre sont accompagnées du rapport trimestriel sur les perspectives. La décision tombe dans la nuit ou tôt le matin, heure de Paris."
   },
   {
    "d": "2027-01-08",
@@ -150,7 +168,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "Le rapport mensuel sur l'emploi (« non-farm payrolls ») du Bureau of Labor Statistics donne le nombre d'emplois créés hors agriculture, le taux de chômage et la hausse des salaires horaires. C'est la statistique la plus suivie au monde par les marchés : elle oriente directement les anticipations sur la Fed, donc le dollar, les taux américains et les Bourses. Il est publié en général le premier vendredi du mois, à 14 h 30 heure de Paris."
   },
   {
    "d": "2027-01-13",
@@ -158,7 +177,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "L'indice des prix à la consommation (CPI) américain, publié chaque mois par le Bureau of Labor Statistics, mesure l'inflation aux États-Unis. Les marchés regardent surtout l'inflation « core », hors énergie et alimentation, plus représentative de la tendance. Un chiffre au-dessus des attentes éloigne les baisses de taux de la Fed et fait monter le dollar et les taux longs ; un chiffre plus bas a l'effet inverse."
   },
   {
    "d": "2027-01-22",
@@ -166,7 +186,8 @@
    "c": "Banque centrale",
    "p": "jp",
    "imp": 3,
-   "h": ""
+   "h": "",
+   "x": "Le Policy Board de la Banque du Japon (neuf membres) fixe le taux directeur japonais. Après des années de taux négatifs, la BoJ relève progressivement ses taux, ce qui pèse sur le « carry trade » (emprunter en yen pour investir ailleurs) : une hausse surprise peut faire bondir le yen et secouer les marchés mondiaux. Les réunions de janvier, avril, juillet et octobre sont accompagnées du rapport trimestriel sur les perspectives. La décision tombe dans la nuit ou tôt le matin, heure de Paris."
   },
   {
    "d": "2027-01-27",
@@ -174,7 +195,8 @@
    "c": "Banque centrale",
    "p": "us",
    "imp": 3,
-   "h": "20 h"
+   "h": "20 h",
+   "x": "Le FOMC, le comité de politique monétaire de la Fed, fixe la fourchette des « fed funds », le taux directeur américain, qui sert de référence au monde entier. Il compte 12 votants : les 7 gouverneurs de la Fed, le président de la Fed de New York et 4 présidents de Fed régionales par rotation. Le communiqué tombe à 20 h (heure de Paris), suivi de la conférence de presse du président ; en mars, juin, septembre et décembre, la Fed publie aussi ses projections (le « dot plot »)."
   },
   {
    "d": "2027-02-04",
@@ -182,7 +204,8 @@
    "c": "Banque centrale",
    "p": "eu",
    "imp": 3,
-   "h": "14 h 15"
+   "h": "14 h 15",
+   "x": "Le Conseil des gouverneurs de la BCE, composé des six membres du directoire et des gouverneurs des banques centrales nationales de la zone euro, fixe les trois taux directeurs, dont le taux de dépôt, la référence principale. Le communiqué tombe à 14 h 15, suivi de la conférence de presse de la présidente à 14 h 45. En mars, juin, septembre et décembre, de nouvelles projections de croissance et d'inflation sont publiées : ce sont les réunions où les changements de cap sont les plus probables."
   },
   {
    "d": "2027-02-04",
@@ -190,7 +213,8 @@
    "c": "Banque centrale",
    "p": "gb",
    "imp": 3,
-   "h": "13 h"
+   "h": "13 h",
+   "x": "Le Comité de politique monétaire (MPC) de la Banque d'Angleterre réunit neuf membres (le gouverneur, ses adjoints et des experts externes) qui votent le « Bank Rate », le taux directeur britannique, avec un objectif d'inflation de 2 %. Le détail des votes est publié : un vote serré (par exemple 5 contre 4) signale que le prochain mouvement est proche. Les réunions de février, mai/avril, août/juillet et novembre sont accompagnées du Rapport de politique monétaire, avec les nouvelles prévisions."
   },
   {
    "d": "2027-02-05",
@@ -198,7 +222,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "Le rapport mensuel sur l'emploi (« non-farm payrolls ») du Bureau of Labor Statistics donne le nombre d'emplois créés hors agriculture, le taux de chômage et la hausse des salaires horaires. C'est la statistique la plus suivie au monde par les marchés : elle oriente directement les anticipations sur la Fed, donc le dollar, les taux américains et les Bourses. Il est publié en général le premier vendredi du mois, à 14 h 30 heure de Paris."
   },
   {
    "d": "2027-02-11",
@@ -206,7 +231,8 @@
    "c": "Macro",
    "p": "us",
    "imp": 3,
-   "h": "14 h 30"
+   "h": "14 h 30",
+   "x": "L'indice des prix à la consommation (CPI) américain, publié chaque mois par le Bureau of Labor Statistics, mesure l'inflation aux États-Unis. Les marchés regardent surtout l'inflation « core », hors énergie et alimentation, plus représentative de la tendance. Un chiffre au-dessus des attentes éloigne les baisses de taux de la Fed et fait monter le dollar et les taux longs ; un chiffre plus bas a l'effet inverse."
   }
  ]
 }

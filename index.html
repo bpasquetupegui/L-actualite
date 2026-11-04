@@ -92,6 +92,13 @@ nav.rub button.on{color:var(--accent)}
 .cd:hover{background:var(--soft)}
 .evgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.evgrid .month{grid-column:1/-1}
 @media (max-width:860px){.cal3,.evgrid{grid-template-columns:1fr}}
+.evmore{border:0;background:none;padding:4px 0 0;font:600 12px var(--sans);color:var(--cc,var(--accent));cursor:pointer}
+.evmore i{font-style:normal;display:inline-block;transition:transform .2s}
+.ev2.open .evmore i{transform:rotate(180deg)}
+.evx{display:none;font-size:14.5px;line-height:1.5;color:var(--ink2);margin-top:6px;padding:10px 12px;background:var(--hover);border-radius:4px}
+.ev2.open .evx{display:block}
+.ev2.hasx .evt{cursor:default}
+.evgrid,.evlist{align-items:start}
 /* ticker */
 .tkh{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:16px 0 6px}
 .ticker{display:flex;gap:0;overflow-x:auto;font-family:var(--sans);font-size:12.5px;border-bottom:1px solid var(--rule);scrollbar-width:none}
@@ -524,7 +531,8 @@ function related(it){
 const CATC={"Banque centrale":"#2f6fd6","Macro":"#2fa6c9","Résultats":"#d4a23a","Politique":"#e0414f","Élection":"#b3121f","Sommet":"#a066ea","Diplomatie":"#2fae72"};
 const todayStr=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
 function addDays(s,n){const d=new Date(s+"T12:00:00");d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
-function evHTML(e){const f=flag(e.p);return `<div class="ev2" style="--cc:${CATC[e.c]||"#888"}"><div class="evd"><b>${+e.d.slice(8)}</b><span>${["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."][+e.d.slice(5,7)-1]}</span></div><div class="evb"><div class="evc">${esc(e.c)}${e.h?" · "+esc(e.h):""}</div><div class="evt">${f?`<img alt="" src="${f}">`:""}${esc(e.t)}</div></div></div>`}
+function evHTML(e){const f=flag(e.p);return `<div class="ev2${e.x?" hasx":""}" style="--cc:${CATC[e.c]||"#888"}"><div class="evd"><b>${+e.d.slice(8)}</b><span>${["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."][+e.d.slice(5,7)-1]}</span></div><div class="evb"><div class="evc">${esc(e.c)}${e.h?" · "+esc(e.h):""}</div><div class="evt">${f?`<img alt="" src="${f}">`:""}${esc(e.t)}</div>${e.x?`<button class="evmore">En savoir plus <i>▾</i></button><div class="evx">${esc(e.x)}</div>`:""}</div></div>`}
+document.addEventListener("click",ev=>{const b=ev.target.closest(".evmore");if(!b)return;ev.stopPropagation();const c=b.closest(".ev2");c.classList.toggle("open");b.firstChild.textContent=c.classList.contains("open")?"Réduire ":"En savoir plus "});
 let calSel=null;
 function dayLabel(d){return new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})}
 function calWidget(){
