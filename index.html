@@ -152,6 +152,13 @@ body.svmode .wrap>footer{display:none}
 .ni .sum a{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--rc,var(--accent));display:inline-block;margin-top:4px}
 .nempty{font-family:var(--sans);font-size:13px;color:var(--muted);padding:18px 0}
 @media (max-width:860px){.svm,.svn{grid-template-columns:1fr}}
+.svn .ni{padding:4px 0}
+.svn .ni h4{font-family:var(--sans);font-size:12.5px;font-weight:500;line-height:1.35;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:baseline;gap:6px}
+.svn .ni.open h4{white-space:normal;font-weight:600}
+.svn .ni h4 em{font-style:normal;color:var(--muted);font-size:11px;flex:none;font-variant-numeric:tabular-nums}
+.svn .ni .cat{width:7px;height:7px;border-radius:50%;padding:0;flex:none;align-self:center}
+.svn .ni .sum{font-size:12.5px;margin:3px 0 4px 13px}
+.svn .ni .sum .src{font-family:var(--sans);font-size:11px;color:var(--rc,var(--accent));font-weight:600}
 /* ticker */
 .tkh{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:16px 0 6px}
 .ticker{display:flex;gap:0;overflow-x:auto;font-family:var(--sans);font-size:12.5px;border-bottom:1px solid var(--rule);scrollbar-width:none}
@@ -673,7 +680,7 @@ function parseFeed(xml,src){
 }
 async function getFeed(src,url){
   const key="feed:"+url;
-  try{const c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.at<5*60e3)return c.items}catch(_){}
+  try{const c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.at<55e3)return c.items}catch(_){}
   const tries=[
     async()=>{const r=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url));if(!r.ok)throw 0;return parseFeed(await r.text(),src)},
     async()=>{const r=await fetch("https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(url));const j=await r.json();if(j.status!=="ok")throw 0;return j.items.map(i=>({t:strip(i.title),s:strip(i.description).slice(0,420),l:i.link,d:+new Date(i.pubDate.replace(" ","T")+"Z")||0,src}))},
@@ -682,6 +689,7 @@ async function getFeed(src,url){
   for(const f of tries){try{const items=await f();if(items.length){try{localStorage.setItem(key,JSON.stringify({at:Date.now(),items}))}catch(_){}return items}}catch(_){}}
   return [];
 }
+function hm(ts){return ts?new Date(ts).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}):""}
 function ago(ts){if(!ts)return"";const m=Math.round((Date.now()-ts)/60e3);if(m<1)return"à l'instant";if(m<60)return`il y a ${m} min`;const h=Math.floor(m/60);if(h<24)return`il y a ${h} h`;return new Date(ts).toLocaleDateString("fr-FR",{day:"numeric",month:"short"})}
 let NEWS={}, svTab={}, svTimer=null, svAt=0;
 function tvEmbed(el,name,cfg){el.innerHTML="";const c=document.createElement("div");c.className="tradingview-widget-container";c.style.height="100%";c.innerHTML='<div class="tradingview-widget-container__widget" style="height:100%"></div>';const sc=document.createElement("script");sc.async=true;sc.src="https://s3.tradingview.com/external-embedding/embed-widget-"+name+".js";sc.textContent=JSON.stringify(cfg);c.appendChild(sc);el.appendChild(c)}
@@ -689,8 +697,8 @@ function renderZone(z){
   const box=document.querySelector(`.svbox[data-z="${CSS.escape(z)}"]`);if(!box)return;
   const tab=svTab[z]||"all", all=NEWS[z]||[];
   const list=all.filter(x=>tab==="all"||x.c===tab);
-  box.querySelector(".tabs").innerHTML=[["all","Tout"],["eco","Éco"],["pol","Politique"],["fd","Faits divers"]].map(([k,l])=>`<button class="${k===tab?"on":""}" data-t="${k}">${l}${k!=="all"?` <span style="opacity:.6">${all.filter(x=>x.c===k).length}</span>`:""}</button>`).join("");
-  box.querySelector(".nlist").innerHTML=list.length?list.slice(0,60).map(x=>`<div class="ni"><div class="meta"><span class="cat ${x.c}">${CATL[x.c]}</span><b>${esc(x.src)}</b><span>${esc(ago(x.d))}</span></div><h4>${esc(x.t)}</h4><div class="sum">${esc(x.s||"")}${x.s?"<br>":""}<a href="${esc(x.l)}" target="_blank" rel="noopener">Lire sur ${esc(x.src)} ↗</a></div></div>`).join(""):`<div class="nempty">${all._loading?"Chargement des dépêches…":"Aucune dépêche pour l'instant dans cette catégorie."}</div>`;
+  box.querySelector(".tabs").innerHTML=[["all","Tout"],["eco","Éco"],["pol","Politique"],["fd","Faits divers"]].map(([k,l])=>`<button class="${k===tab?"on":""}" data-t="${k}">${l}</button>`).join("");
+  box.querySelector(".nlist").innerHTML=list.length?list.slice(0,80).map(x=>`<div class="ni"><h4 title="${esc(x.t)}"><span class="cat ${x.c}" title="${CATL[x.c]}"></span><em>${esc(hm(x.d))}</em>${esc(x.t)}</h4><div class="sum"><span class="src">${esc(x.src)} · ${esc(ago(x.d))}</span> ${esc(x.s||"")}${x.s?"<br>":""}<a href="${esc(x.l)}" target="_blank" rel="noopener">Lire sur ${esc(x.src)} ↗</a></div></div>`).join(""):`<div class="nempty">${all._loading?"Chargement des dépêches…":"Aucune dépêche pour l'instant dans cette catégorie."}</div>`;
 }
 async function loadNews(force){
   if(force){for(const z in FEEDS)for(const [,u] of FEEDS[z].f){try{localStorage.removeItem("feed:"+u)}catch(_){}}}
@@ -719,58 +727,94 @@ async function viaProxy(url,ttl){
   }
   return null;
 }
-async function spark(syms,range){ // -> {sym:{c:[closes], pc:previousClose}}
-  const out={};
-  for(let i=0;i<syms.length;i+=20){
-    const part=syms.slice(i,i+20);
-    const txt=await viaProxy(`https://query1.finance.yahoo.com/v8/finance/spark?symbols=${part.map(encodeURIComponent).join(",")}&range=${range}&interval=1d`,55e3);
-    if(!txt)continue;
-    try{const j=JSON.parse(txt);
-      if(j.spark&&j.spark.result){for(const r of j.spark.result){const x=r.response&&r.response[0];if(!x)continue;out[r.symbol]={c:(x.indicators.quote[0].close||[]).filter(v=>v!=null),pc:x.meta.previousClose??x.meta.chartPreviousClose,p:x.meta.regularMarketPrice}}}
-      else for(const k in j){const x=j[k];if(x&&x.close)out[k]={c:x.close.filter(v=>v!=null),pc:x.previousClose??x.chartPreviousClose,p:x.close.filter(v=>v!=null).slice(-1)[0]}}
-    }catch(_){}
-  }
+// Variation du jour : flux temps réel CNBC (indices, change, matières, taux), secours Yahoo.
+const CNBC={"^FCHI":".FCHI","^STOXX50E":".STOXX50E","^GSPC":".SPX","^IXIC":".IXIC","^DJI":".DJI","EURUSD=X":"EUR=","BZ=F":"@LCO.1","GC=F":"@GC.1","10fry.b":"FR10Y-FR","10dey.b":"DE10Y-DE","10usy.b":"US10Y"};
+const YHIST={"10usy.b":"^TNX"};
+const num=v=>{if(v==null)return null;const x=parseFloat(String(v).replace(/[,%+\s]/g,"").replace("UNCH","0"));return isNaN(x)?null:x};
+async function cnbcDay(){
+  const syms=Object.values(CNBC).join("|");
+  const txt=await viaProxy(`https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=${encodeURIComponent(syms)}&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json&events=1`,9e3);
+  const out={};if(!txt)return out;
+  try{const j=JSON.parse(txt);let q=j.FormattedQuoteResult&&j.FormattedQuoteResult.FormattedQuote;if(q&&!Array.isArray(q))q=[q];
+    for(const x of q||[]){const k=Object.keys(CNBC).find(k=>CNBC[k]===x.symbol);if(!k)continue;const last=num(x.last),ch=num(x.change),pct=num(x.change_pct);if(last==null)continue;out[k]={p:last,dch:ch,dpct:pct}}}catch(_){}
   return out;
 }
+async function spark(syms){ // variation du jour : dernier cours vs clôture de la veille
+  const out={};
+  await Promise.all([...Array(Math.ceil(syms.length/20)).keys()].map(async i=>{
+    const part=syms.slice(i*20,i*20+20);
+    const txt=await viaProxy(`https://query1.finance.yahoo.com/v8/finance/spark?symbols=${part.map(encodeURIComponent).join(",")}&range=1d&interval=5m`,9e3);
+    if(!txt)return;
+    try{const j=JSON.parse(txt);
+      const put=(k,c,pc)=>{c=(c||[]).filter(v=>v!=null);if(c.length&&pc)out[k]={p:c[c.length-1],pc}};
+      if(j.spark&&j.spark.result){for(const r of j.spark.result){const x=r.response&&r.response[0];if(x)put(r.symbol,x.indicators.quote[0].close,x.meta.chartPreviousClose??x.meta.previousClose)}}
+      else for(const k in j){const x=j[k];if(x&&x.close)put(k,x.close,x.chartPreviousClose??x.previousClose)}
+    }catch(_){}
+  }));
+  return out;
+}
+async function yhist(sym){ // historique 1 an (clôtures journalières)
+  const txt=await viaProxy(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1y&interval=1d`,10*60e3);
+  if(!txt)return null;
+  try{const r=JSON.parse(txt).chart.result[0];const t=r.timestamp||[],c=r.indicators.quote[0].close||[];const z=[];t.forEach((ts,i)=>{if(c[i]!=null)z.push([ts,c[i]])});return z.length?z:null}catch(_){return null}
+}
 async function stooq(sym){
-  const txt=await viaProxy(`https://stooq.com/q/d/l/?s=${sym}&i=d`,55e3);
+  const txt=await viaProxy(`https://stooq.com/q/d/l/?s=${sym}&i=d`,10*60e3);
   if(!txt||!/^Date/i.test(txt))return null;
-  const c=txt.trim().split("\n").slice(1).map(l=>+l.split(",")[4]).filter(v=>!isNaN(v));
-  return c.length?{c:c.slice(-260)}:null;
+  const z=txt.trim().split("\n").slice(1).map(l=>{const a=l.split(",");return [Date.parse(a[0])/1e3,+a[4]]}).filter(x=>!isNaN(x[1]));
+  return z.length?z.slice(-260):null;
 }
 const PERIODS=[["1J",1],["5J",5],["1M",21],["6M",126],["1A",252]];
-let svPer="1J", QUOTES={}, MOVERS={};
-function chg(c,n){if(!c||c.length<2)return null;const last=c[c.length-1],ref=c[Math.max(0,c.length-1-n)];return {last,ref}}
+let svPer="1J", QUOTES={}, HIST={}, MOVERS={}, histAt=0;
 const nf=(v,d)=>v==null||isNaN(v)?"—":v.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
+function refClose(h,n){ // clôture d'il y a n séances (hors séance du jour)
+  if(!h||h.length<2)return null;
+  const today=new Date().toDateString();let arr=h;
+  if(new Date(arr[arr.length-1][0]*1e3).toDateString()===today)arr=arr.slice(0,-1);
+  const i=arr.length-n;return i>=0?arr[i][1]:arr[0][1];
+}
 function renderQuotes(){
-  const n=PERIODS.find(p=>p[0]===svPer)[1];
-  const cell=(name,q,rate)=>{
-    if(!q)return `<div class="qc"><b>${esc(name)}</b><span class="qv">—</span><span class="qp flat">indisponible</span></div>`;
-    const r=chg(q.c,n);let last=r?r.last:q.p, txt="—",cls="flat";
-    if(n===1&&q.p!=null&&q.pc&&!rate){last=q.p;const v=(q.p/q.pc-1)*100;txt=(v>0?"+":"")+nf(v,2)+" %";cls=v>0?"up":v<0?"down":"flat"}
-    else if(r){if(rate){const v=(r.last-r.ref)*100;txt=(v>0?"+":"")+nf(v,0)+" pb";cls=v>0?"up":v<0?"down":"flat"}else{const v=(r.last/r.ref-1)*100;txt=(v>0?"+":"")+nf(v,2)+" %";cls=v>0?"up":v<0?"down":"flat"}}
-    const d=rate?3:(name==="EUR/USD"?4:2);
-    return `<div class="qc"><b>${esc(name)}</b><span class="qv">${nf(last,d)}${rate?" %":""}</span><span class="qp ${cls}">${txt}</span></div>`;
-  };
   const el=$("#svq");if(!el)return;
-  el.innerHTML=IDX.map(([s,nm])=>cell(nm,QUOTES[s])).join("")+RATES.map(([s,nm])=>cell(nm,QUOTES[s],true)).join("");
+  const n=PERIODS.find(p=>p[0]===svPer)[1];
+  const cell=(sym,name,rate)=>{
+    const q=QUOTES[sym], h=HIST[sym];
+    let last=q?q.p:(h?h[h.length-1][1]:null), v=null;
+    if(n===1){ if(q&&q.dpct!=null&&!rate)v=q.dpct; else if(q&&q.dch!=null&&rate)v=q.dch*100; else if(q&&q.pc)v=rate?(q.p-q.pc)*100:(q.p/q.pc-1)*100; else {const r=refClose(h,1);if(r!=null&&last!=null)v=rate?(last-r)*100:(last/r-1)*100} }
+    else {const r=refClose(h,n);if(r!=null&&last!=null)v=rate?(last-r)*100:(last/r-1)*100}
+    const cls=v==null?"flat":v>0?"up":v<0?"down":"flat";
+    const txt=v==null?(last==null?"indisponible":"—"):(v>0?"+":"")+(rate?nf(v,0)+" pb":nf(v,2)+" %");
+    const d=rate?3:(name==="EUR/USD"?4:2);
+    return `<div class="qc"><b>${esc(name)}</b><span class="qv">${last==null?"—":nf(last,d)+(rate?" %":"")}</span><span class="qp ${cls}">${txt}</span></div>`;
+  };
+  el.innerHTML=IDX.map(([s,nm])=>cell(s,nm)).join("")+RATES.map(([s,nm])=>cell(s,nm,true)).join("");
 }
 function renderMovers(){
   const el=$("#svmv");if(!el)return;
   el.innerHTML=Object.keys(COMPO).map(ix=>{
     const m=MOVERS[ix];
     const box=(up)=>{let rows=`<div class="nempty sm2">Chargement…</div>`;
-      if(m){const arr=Object.entries(m).filter(([,x])=>x.p!=null&&x.pc).map(([s,x])=>({n:COMPO[ix][s]||s,p:x.p,v:(x.p/x.pc-1)*100})).sort((a,b)=>up?b.v-a.v:a.v-b.v).slice(0,3);
+      if(m){const arr=Object.entries(m).map(([s,x])=>({n:COMPO[ix][s]||s,p:x.p,v:(x.p/x.pc-1)*100})).filter(x=>isFinite(x.v)).sort((a,b)=>up?b.v-a.v:a.v-b.v).slice(0,3);
         rows=arr.length?arr.map(x=>`<div class="mvr"><span>${esc(x.n)}</span><span class="qv">${nf(x.p,2)}</span><span class="qp ${x.v>0?"up":x.v<0?"down":"flat"}">${x.v>0?"+":""}${nf(x.v,2)} %</span></div>`).join(""):`<div class="nempty sm2">Cotations indisponibles</div>`}
-      return `<div class="mvb ${up?"u":"d"}"><h4>${up?"▲":"▼"} ${esc(ix)}</h4>${rows}</div>`};
+      return `<div class="mvb ${up?"u":"d"}"><h4>${up?"▲":"▼"} ${esc(ix)} <span style="font-weight:400;text-transform:none;letter-spacing:0">· jour</span></h4>${rows}</div>`};
     return box(true)+box(false);
   }).join("");
 }
+let qBusy=false;
 async function loadQuotes(){
-  const [ix,...rt]=await Promise.all([spark(IDX.map(x=>x[0]),"1y"),...RATES.map(r=>stooq(r[0]))]);
-  QUOTES={...ix};RATES.forEach((r,i)=>{if(rt[i])QUOTES[r[0]]=rt[i]});renderQuotes();
-  await Promise.all(Object.keys(COMPO).map(async ix=>{MOVERS[ix]=await spark(Object.keys(COMPO[ix]),"5d");renderMovers()}));
-  const u=$("#svqupd");if(u)u.textContent="Cours mis à jour à "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+  if(qBusy)return;qBusy=true;
+  try{
+    if(Date.now()-histAt>10*60e3){histAt=Date.now();
+      Promise.all([...IDX.map(([s])=>yhist(s).then(h=>{if(h)HIST[s]=h})),...RATES.map(([s])=>(YHIST[s]?yhist(YHIST[s]):Promise.resolve(null)).then(h=>h||stooq(s)).then(h=>{if(h)HIST[s]=h}))]).then(renderQuotes);}
+    let day=await cnbcDay();
+    const miss=IDX.map(x=>x[0]).filter(s=>!day[s]);
+    if(miss.length){const y=await spark(miss);for(const k in y)day[k]=y[k]}
+    const miss2=IDX.map(x=>x[0]).filter(s=>!day[s]);
+    await Promise.all(miss2.map(async sym=>{const txt=await viaProxy(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=1d&interval=5m`,9e3);
+      try{const m=JSON.parse(txt).chart.result[0].meta;if(m.regularMarketPrice&&m.chartPreviousClose)day[sym]={p:m.regularMarketPrice,pc:m.chartPreviousClose}}catch(_){}}));
+    QUOTES=day;renderQuotes();
+    await Promise.all(Object.keys(COMPO).map(async ix=>{const r=await spark(Object.keys(COMPO[ix]));if(Object.keys(r).length)MOVERS[ix]=r;renderMovers()}));
+    const u=$("#svqupd");if(u)u.textContent="Cours à "+new Date().toLocaleTimeString("fr-FR");
+  }finally{qBusy=false}
 }
 let qTimer=null;
 function showSuivi(){
@@ -792,8 +836,8 @@ function showSuivi(){
     const h=ev.target.closest(".ni h4");if(h)h.parentNode.classList.toggle("open")};
   $("#svref").onclick=()=>{loadNews(true);loadQuotes()};
   loadNews(false);loadQuotes();
-  clearInterval(svTimer);svTimer=setInterval(()=>{if(location.hash==="#suivi")loadNews(false);else clearInterval(svTimer)},5*60e3);
-  clearInterval(qTimer);qTimer=setInterval(()=>{if(location.hash==="#suivi")loadQuotes();else clearInterval(qTimer)},60e3);
+  clearInterval(svTimer);svTimer=setInterval(()=>{if(location.hash==="#suivi")loadNews(false);else clearInterval(svTimer)},60e3);
+  clearInterval(qTimer);qTimer=setInterval(()=>{if(location.hash==="#suivi")loadQuotes();else clearInterval(qTimer)},10e3);
 }
 function showRubrique(sl){
   const r=RUBS.find(x=>slug(x)===sl); if(!r)return showEdition(EDITIONS[0].date);
