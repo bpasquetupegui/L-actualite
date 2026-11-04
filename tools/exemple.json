@@ -164,7 +164,13 @@
     "v": {
      "n": "-26 %",
      "l": "la chute d'Alstom lundi"
-    }
+    },
+    "logos": [
+     {
+      "u": "Alstom logo.svg",
+      "n": "Alstom"
+     }
+    ]
    },
    {
     "id": "2026-11-04-stif-biomerieux-rubis",
@@ -182,7 +188,15 @@
      "biomérieux",
      "rubis"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "Stif"
+     },
+     {
+      "n": "bioMérieux"
+     }
+    ]
    },
    {
     "id": "2026-11-04-publicis-saint-gobain",
@@ -201,7 +215,15 @@
      "kesko",
      "m&a"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "Publicis"
+     },
+     {
+      "n": "Saint-Gobain"
+     }
+    ]
    },
    {
     "id": "2026-11-04-cac40-seance",
@@ -221,6 +243,11 @@
     "v": {
      "n": "8 020",
      "l": "points à la clôture de mardi"
+    },
+    "img": {
+     "u": "Palais Brongniart Paris.jpg",
+     "credit": "Le palais Brongniart, ancien siège de la Bourse de Paris. Photo : Pol / Wikimedia Commons (GFDL)",
+     "alt": "Palais Brongniart"
     }
    },
    {
@@ -238,7 +265,12 @@
      "littérature",
      "prix littéraires"
     ],
-    "imp": 2
+    "imp": 2,
+    "img": {
+     "u": "Façade - Restaurant Drouant - Paris.jpg",
+     "credit": "Le restaurant Drouant, où sont décernés le Goncourt et le Renaudot. Photo : Maison Weshoot / Wikimedia Commons",
+     "alt": "Restaurant Drouant"
+    }
    },
    {
     "id": "2026-11-04-ukraine-energie",
@@ -256,7 +288,12 @@
      "guerre",
      "énergie"
     ],
-    "imp": 2
+    "imp": 2,
+    "img": {
+     "u": "Khmelnitskiy 2010-1.jpg",
+     "credit": "La centrale nucléaire de Khmelnytskyï. Photo : alexndm / Wikimedia Commons (CC BY-SA 3.0)",
+     "alt": "Centrale de Khmelnytskyï"
+    }
    },
    {
     "id": "2026-11-04-pologne-kaliningrad",
@@ -297,6 +334,11 @@
     "v": {
      "n": "3,8 %",
      "l": "inflation en zone euro en septembre"
+    },
+    "img": {
+     "u": "European Central Bank (EZB), Frankfurt, Germany.jpg",
+     "credit": "Le siège de la BCE à Francfort. Photo : Hartmut Schmidt / Wikimedia Commons",
+     "alt": "BCE"
     }
    },
    {
@@ -319,7 +361,12 @@
     "v": {
      "n": "+27 %",
      "l": "résultat opérationnel ajusté au T3"
-    }
+    },
+    "logos": [
+     {
+      "n": "Novo Nordisk"
+     }
+    ]
    },
    {
     "id": "2026-11-04-jd-ceconomy-nexperia",
@@ -340,7 +387,15 @@
      "wingtech",
      "chine"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "JD.com"
+     },
+     {
+      "n": "Ceconomy"
+     }
+    ]
    },
    {
     "id": "2026-11-04-bourses-europe",
@@ -357,7 +412,12 @@
      "ftse",
      "marchés"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "City of London skyline 22.12.2019.jpg",
+     "credit": "La City de Londres. Photo : QuintusPetillius / Wikimedia Commons",
+     "alt": "City de Londres"
+    }
    },
    {
     "id": "2026-11-04-euro-dollar",
@@ -379,6 +439,11 @@
     "v": {
      "n": "1,124 $",
      "l": "l'euro ce matin"
+    },
+    "img": {
+     "u": "Frankfurt - New headquarters for the European Central Bank (ECB) (16334894341).jpg",
+     "credit": "Le siège de la BCE, gardienne de l'euro. Photo : Fred Romero / Wikimedia Commons (CC BY 2.0)",
+     "alt": "BCE"
     }
    },
    {
@@ -426,7 +491,12 @@
      "californie",
      "élections américaines"
     ],
-    "imp": 2
+    "imp": 2,
+    "img": {
+     "u": "TexasStateCapitol-2010-01.JPG",
+     "credit": "Le Capitole du Texas, à Austin. Photo : LoneStarMike / Wikimedia Commons",
+     "alt": "Capitole du Texas"
+    }
    },
    {
     "id": "2026-11-04-jolts-emploi",
@@ -464,7 +534,13 @@
     "v": {
      "n": "13,4 Md$",
      "l": "CA du T3, +45 % sur un an"
-    }
+    },
+    "logos": [
+     {
+      "u": "AMD Logo.svg",
+      "n": "AMD"
+     }
+    ]
    },
    {
     "id": "2026-11-04-apple-marge",
@@ -480,7 +556,12 @@
      "marges",
      "semi-conducteurs"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Aerial view of Apple Park dllu.jpg",
+     "credit": "Apple Park, le siège d'Apple à Cupertino. Photo : Daniel L. Lu / Wikimedia Commons (CC BY-SA 4.0)",
+     "alt": "Apple Park"
+    }
    },
    {
     "id": "2026-11-04-wall-street",
@@ -501,6 +582,11 @@
     "v": {
      "n": "4,95 %",
      "l": "rendement du 10 ans américain"
+    },
+    "img": {
+     "u": "Wall Street - New York Stock Exchange.jpg",
+     "credit": "Le New York Stock Exchange. Photo : Carlos Delgado / Wikimedia Commons",
+     "alt": "NYSE"
     }
    },
    {
@@ -519,7 +605,12 @@
      "argentine",
      "lula"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Brasilia - Congresso Nacional.jpg",
+     "credit": "Le Congrès national à Brasília. Photo : DlauriniJr / Wikimedia Commons",
+     "alt": "Brasília"
+    }
    },
    {
     "id": "2026-11-04-venezuela-sofa",
@@ -537,7 +628,12 @@
      "eln",
      "colombie"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Entrada Miraflores.JPG",
+     "credit": "Le palais de Miraflores, siège de la présidence vénézuélienne. Photo : ClementeRJ / Wikimedia Commons (domaine public)",
+     "alt": "Palais de Miraflores"
+    }
    },
    {
     "id": "2026-11-04-copom-taux",
@@ -554,7 +650,12 @@
      "taux",
      "banque centrale"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Congresso Nacional.jpg",
+     "credit": "Brasília, capitale fédérale. Photo : Rob Sinclair / Wikimedia Commons (CC BY-SA 2.0)",
+     "alt": "Brasília"
+    }
    },
    {
     "id": "2026-11-04-argentine-risque-pays",
@@ -575,6 +676,11 @@
     "v": {
      "n": "829 pb",
      "l": "risque pays argentin"
+    },
+    "img": {
+     "u": "Casa Rosada, Buenos Aires, Argentina.jpg",
+     "credit": "La Casa Rosada, siège de la présidence argentine. Photo : Diego Delso / Wikimedia Commons (CC BY-SA 3.0)",
+     "alt": "Casa Rosada"
     }
    },
    {
@@ -618,7 +724,12 @@
      "élections",
      "anc"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Johannesburg skyline 2017.jpg",
+     "credit": "Johannesburg. Photo : Mark Hillary / Wikimedia Commons (CC BY 2.0)",
+     "alt": "Johannesburg"
+    }
    },
    {
     "id": "2026-11-04-soudan-kordofan",
@@ -651,7 +762,12 @@
      "carburants",
      "pétrole"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "Dangote"
+     }
+    ]
    },
    {
     "id": "2026-11-04-iran-ormuz-petrole",
@@ -703,6 +819,11 @@
     "v": {
      "n": "-3,6 %",
      "l": "le Nikkei ce mercredi"
+    },
+    "img": {
+     "u": "Tokyo Stock Exchange Main Building (1988).jpg",
+     "credit": "La Bourse de Tokyo, à Kabutochō. Photo : Wikimedia Commons (CC BY-SA 4.0)",
+     "alt": "Bourse de Tokyo"
     }
    },
    {
@@ -721,7 +842,12 @@
      "pboc",
      "hong kong"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Pudong Skyline, Shanghai, PRC.jpg",
+     "credit": "Lujiazui, le quartier financier de Shanghai. Photo : Jens Schott Knudsen / Wikimedia Commons (CC BY 2.0)",
+     "alt": "Shanghai"
+    }
    },
    {
     "id": "2026-11-04-australie-rba",
@@ -756,7 +882,12 @@
      "herzog",
      "trump"
     ],
-    "imp": 1
+    "imp": 1,
+    "img": {
+     "u": "Knesset in Jerusalem Israel.jpg",
+     "credit": "La Knesset, le Parlement israélien, à Jérusalem. Photo : Leif Knutsen / Wikimedia Commons (GFDL)",
+     "alt": "Knesset"
+    }
    },
    {
     "id": "2026-11-04-marvell-lumentum",
@@ -844,7 +975,15 @@
      "togg",
      "m&a"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "XRG · ADNOC"
+     },
+     {
+      "n": "North West Shelf"
+     }
+    ]
    },
    {
     "id": "2026-11-04-keybanc-apc",
@@ -862,7 +1001,15 @@
      "secondaire",
      "private equity"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "KeyBanc"
+     },
+     {
+      "n": "Atlantic-Pacific Capital"
+     }
+    ]
    },
    {
     "id": "2026-11-04-igneo-edif-iv",
@@ -884,7 +1031,12 @@
     "v": {
      "n": "6 Md€",
      "l": "hard cap annoncé"
-    }
+    },
+    "logos": [
+     {
+      "n": "Igneo Infrastructure Partners"
+     }
+    ]
    },
    {
     "id": "2026-11-04-seaya-formation-bio",
@@ -903,7 +1055,15 @@
      "fei",
      "formation bio"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "Seaya"
+     },
+     {
+      "n": "Formation Bio"
+     }
+    ]
    },
    {
     "id": "2026-11-04-apollo-t3",
@@ -924,7 +1084,13 @@
     "v": {
      "n": "1 070 Md$",
      "l": "actifs sous gestion"
-    }
+    },
+    "logos": [
+     {
+      "u": "Apollo Global Management logo.svg",
+      "n": "Apollo"
+     }
+    ]
    },
    {
     "id": "2026-11-04-lgt-gruber",
@@ -940,7 +1106,12 @@
      "secondaire",
      "private equity"
     ],
-    "imp": 1
+    "imp": 1,
+    "logos": [
+     {
+      "n": "LGT Capital Partners"
+     }
+    ]
    },
    {
     "id": "2026-11-04-rumeur-marvell-lumentum-genese",

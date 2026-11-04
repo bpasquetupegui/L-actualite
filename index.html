@@ -261,7 +261,7 @@ a.it:hover h4{color:var(--rc,var(--accent))}
     <h1 id="home">L'Actualité<span class="dot">.</span></h1>
     <div class="sub">Économie · Monde · Marchés · Deals</div>
   </header>
-  <div class="live"><span class="livelbl"><i></i>En direct</span><div class="tvbox" id="tv"></div><div class="eurates" id="eurates"></div><div class="ticker static" id="tkstatic"></div></div>
+  <div class="live"><span class="livelbl"><i></i>En direct</span><div class="tvbox" id="tv"></div><div class="ticker static" id="tkstatic"></div></div>
   <nav class="rub" id="nav"></nav>
   </div>
   <main id="app"><div class="empty">Chargement de l'édition…</div></main>
@@ -294,7 +294,7 @@ const TV_SYMBOLS=[
   {proName:"FOREXCOM:FRA40",title:"CAC 40"},{proName:"FOREXCOM:EU50",title:"Euro Stoxx 50"},
   {proName:"FOREXCOM:SPXUSD",title:"S&P 500"},{proName:"FOREXCOM:NSXUSD",title:"Nasdaq 100"},
   {proName:"FX:EURUSD",title:"EUR/USD"},{proName:"TVC:UKOIL",title:"Brent"},{proName:"TVC:GOLD",title:"Or"},
-  {proName:"TVC:US10Y",title:"US 10 ans"}];
+  {proName:"TVC:FR10Y",title:"OAT 10 ans"},{proName:"TVC:DE10Y",title:"Bund 10 ans"},{proName:"TVC:US10Y",title:"US 10 ans"}];
 function liveTicker(){
   const box=$("#tv"); if(!box)return; box.innerHTML="";
   const c=document.createElement("div");c.className="tradingview-widget-container";
@@ -309,7 +309,7 @@ function liveTicker(){
 function staticTicker(){
   const ed=EDITIONS[0]; if(!ed)return;
   const rt=(ed.chiffres||[]).filter(c=>/OAT|Bund/.test(c.a));
-  $("#eurates").innerHTML=rt.map(c=>`<span title="Dernière clôture connue (${esc(fmtDate(ed.date))}) : pas de cotation en direct gratuite"><b>${esc(c.a.replace(" 10 ans",""))}</b> ${esc(c.n)}${c.v&&c.v!=="n.d."?` <i class="${c.s||"flat"}">${esc(c.v)}</i>`:""}</span>`).join("");
+  if(0)$("#eurates").innerHTML=rt.map(c=>`<span title="Dernière clôture connue (${esc(fmtDate(ed.date))}) : pas de cotation en direct gratuite"><b>${esc(c.a.replace(" 10 ans",""))}</b> ${esc(c.n)}${c.v&&c.v!=="n.d."?` <i class="${c.s||"flat"}">${esc(c.v)}</i>`:""}</span>`).join("");
   $("#tkstatic").innerHTML=(ed.chiffres||[]).map(c=>`<div class="tk"><b>${esc(c.a)}</b>${esc(c.n)} <span class="${c.s||"flat"}">${esc(c.v)}</span></div>`).join("");
 }
 window.addEventListener("scroll",()=>$("#stick").classList.toggle("compact",scrollY>90),{passive:true});
