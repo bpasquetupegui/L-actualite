@@ -255,7 +255,7 @@ function showEdition(date){
     <div class="side">${tl.map(t=>`<a class="s click" href="#a-${esc(t.id)}" style="display:block">${cover(t,true)}<div class="kicker" style="margin-top:10px">${esc(t.r)}</div><h3>${esc(t.t)}</h3><p>${esc(t.c)}</p></a>`).join("")}</div>
   </section>`;
   for(const r of RUBS){
-    const ri=items.filter(i=>i.r===r && i.id!==lead.id && !tl.includes(i));
+    const ri=items.filter(i=>i.r===r);
     if(!ri.length)continue;
     const secs=[...new Set(ri.map(i=>i.s||""))].sort((a,b)=>(SECTS.indexOf(a)+99)%99-(SECTS.indexOf(b)+99)%99);
     html+=`<section class="region" id="r-${slug(r)}"><h2>${esc(r)}</h2><div class="cols">`;
