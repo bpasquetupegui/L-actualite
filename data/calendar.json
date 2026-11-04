@@ -58,6 +58,14 @@
   },
   {
    "d": "2026-11-10",
+   "t": "Inflation américaine (CPI d'octobre)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
+  },
+  {
+   "d": "2026-11-10",
    "t": "Ukraine : reprise possible des pourparlers États-Unis–Russie–Ukraine",
    "c": "Diplomatie",
    "p": "ua",
@@ -97,6 +105,14 @@
    "h": "20 h"
   },
   {
+   "d": "2026-12-10",
+   "t": "Inflation américaine (CPI de novembre)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
+  },
+  {
    "d": "2026-12-14",
    "t": "Sommet du G20 à Miami (14-15 déc.)",
    "c": "Sommet",
@@ -110,7 +126,87 @@
    "c": "Banque centrale",
    "p": "eu",
    "imp": 3,
-   "h": "13 h 45"
+   "h": "14 h 15"
+  },
+  {
+   "d": "2026-12-17",
+   "t": "Banque d'Angleterre : décision de taux",
+   "c": "Banque centrale",
+   "p": "gb",
+   "imp": 3,
+   "h": "13 h"
+  },
+  {
+   "d": "2026-12-18",
+   "t": "Banque du Japon : décision de taux",
+   "c": "Banque centrale",
+   "p": "jp",
+   "imp": 3,
+   "h": ""
+  },
+  {
+   "d": "2027-01-08",
+   "t": "Rapport sur l'emploi américain (décembre)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
+  },
+  {
+   "d": "2027-01-13",
+   "t": "Inflation américaine (CPI de décembre)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
+  },
+  {
+   "d": "2027-01-22",
+   "t": "Banque du Japon : décision de taux et rapport trimestriel",
+   "c": "Banque centrale",
+   "p": "jp",
+   "imp": 3,
+   "h": ""
+  },
+  {
+   "d": "2027-01-27",
+   "t": "Réserve fédérale (FOMC) : décision de taux",
+   "c": "Banque centrale",
+   "p": "us",
+   "imp": 3,
+   "h": "20 h"
+  },
+  {
+   "d": "2027-02-04",
+   "t": "BCE : décision de politique monétaire",
+   "c": "Banque centrale",
+   "p": "eu",
+   "imp": 3,
+   "h": "14 h 15"
+  },
+  {
+   "d": "2027-02-04",
+   "t": "Banque d'Angleterre : décision de taux et rapport de politique monétaire",
+   "c": "Banque centrale",
+   "p": "gb",
+   "imp": 3,
+   "h": "13 h"
+  },
+  {
+   "d": "2027-02-05",
+   "t": "Rapport sur l'emploi américain (janvier)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
+  },
+  {
+   "d": "2027-02-11",
+   "t": "Inflation américaine (CPI de janvier)",
+   "c": "Macro",
+   "p": "us",
+   "imp": 3,
+   "h": "14 h 30"
   }
  ]
 }
