@@ -105,17 +105,40 @@ nav.rub button.on{color:var(--accent)}
 .sv h2{font-family:var(--display);font-size:34px;margin:18px 0 2px}
 .svsub{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .svsub button{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer}
-.svm{display:grid;grid-template-columns:2fr 3fr;gap:20px;align-items:stretch}
+
 .svbox{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;min-width:0}
 .svbox h3{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px}
 .svbox h3 .tabs{display:flex;gap:4px}
 .tabs button{border:1px solid var(--rule);background:none;color:var(--ink);border-radius:999px;padding:3px 10px;font:600 11.5px var(--sans);letter-spacing:0;text-transform:none;cursor:pointer}
 .tabs button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.tvq{flex:1;min-height:520px}.tvh{flex:1;min-height:520px}
-.svday{margin:20px 0}
+body.svmode .mast{display:none}
+body.svmode .wrap>footer{display:none}
+.svhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 10px}
+.svhead h2{margin:0!important;font-size:26px!important}
+.svhead .svsub{margin:0}
+.svref{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;width:28px;height:28px;cursor:pointer;margin-left:auto}
+.qgrid{display:grid;grid-template-columns:repeat(11,1fr);gap:6px}
+.qc{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:7px 9px;font-family:var(--sans);display:flex;flex-direction:column;min-width:0}
+.qc b{font-size:11px;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qv{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.qp{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.mvgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:8px}
+.mvb{background:var(--card);border:1px solid var(--rule);border-top:3px solid #0a7a3e;border-radius:6px;padding:7px 9px;font-family:var(--sans);min-width:0}
+.mvb.d{border-top-color:#c0182a}
+.mvb h4{margin:0 0 4px;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.mvr{display:grid;grid-template-columns:1fr auto auto;gap:6px;font-size:12px;padding:2px 0;align-items:baseline}
+.mvr span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.mvr .qv{font-size:12.5px;font-weight:400;color:var(--ink2)}
+.nempty.sm2{font-size:12px;padding:6px 0}
+.svnote{font-family:var(--sans);font-size:11px;color:var(--muted);margin:8px 0 0}
+@media (max-width:1100px){.qgrid{grid-template-columns:repeat(6,1fr)}.mvgrid{grid-template-columns:repeat(2,1fr)}}
 .svday .evlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 24px}
-.svn{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
-.svn .svbox{height:640px}
+.svn{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.svn .svbox{height:max(320px,calc(100vh - 420px));padding:10px 12px}
+.svn .svbox h3{flex-wrap:wrap;margin-bottom:6px}
+.svn .tabs button{padding:2px 7px;font-size:10.5px}
+.svday{margin:10px 0}
+@media (max-width:1100px){.svn{grid-template-columns:1fr 1fr}}
 .nlist{overflow-y:auto;flex:1;margin:0 -6px;padding:0 6px}
 .ni{border-bottom:1px solid var(--rule);padding:9px 0}
 .ni .meta{font-family:var(--sans);font-size:11px;color:var(--muted);display:flex;gap:8px;align-items:center}
@@ -363,8 +386,8 @@ let EDITIONS=[], CONTENT={}, PHOTOS=[], AUTO={}, CAL=[];
 const TV_SYMBOLS=[
   {proName:"FOREXCOM:FRA40",title:"CAC 40"},{proName:"FOREXCOM:EU50",title:"Euro Stoxx 50"},
   {proName:"FOREXCOM:SPXUSD",title:"S&P 500"},{proName:"FOREXCOM:NSXUSD",title:"Nasdaq 100"},
-  {proName:"FX:EURUSD",title:"EUR/USD"},{proName:"TVC:UKOIL",title:"Brent"},{proName:"TVC:GOLD",title:"Or"},
-  {proName:"TVC:FR10Y",title:"OAT 10 ans"},{proName:"TVC:DE10Y",title:"Bund 10 ans"},{proName:"TVC:US10Y",title:"US 10 ans"}];
+  {proName:"FX:EURUSD",title:"EUR/USD"},{proName:"TVC:UKOIL",title:"Brent"},{proName:"TVC:GOLD",title:"Or"}
+  ];
 function liveTicker(){
   const box=$("#tv"); if(!box)return; box.innerHTML="";
   const c=document.createElement("div");c.className="tradingview-widget-container";
@@ -464,6 +487,7 @@ function setNav(k){document.querySelectorAll("#nav button").forEach(b=>b.classLi
 
 function route(){
   const h=decodeURIComponent(location.hash.slice(1));
+  document.body.classList.toggle("svmode",h==="suivi");
   window.scrollTo(0,0);
   if(!EDITIONS.length){app.innerHTML=`<div class="empty">Aucune édition pour l'instant.</div>`;return}
   if(h.startsWith("a-"))return showArticle(h.slice(2));
@@ -679,32 +703,97 @@ async function loadNews(force){
   }));
   svAt=Date.now();const u=$("#svupd");if(u)u.textContent="Dépêches mises à jour "+new Date(svAt).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 }
+// ---------- Cotations (Yahoo Finance via relais, taux via Stooq)
+const IDX=[["^FCHI","CAC 40"],["^STOXX50E","Euro Stoxx 50"],["^GSPC","S&P 500"],["^IXIC","Nasdaq"],["^DJI","Dow Jones"],["EURUSD=X","EUR/USD"],["BZ=F","Brent"],["GC=F","Or"]];
+const RATES=[["10fry.b","OAT 10 ans"],["10dey.b","Bund 10 ans"],["10usy.b","US 10 ans"]];
+const COMPO={
+ "CAC 40":{"AC.PA":"Accor","AI.PA":"Air Liquide","AIR.PA":"Airbus","ALO.PA":"Alstom","MT.AS":"ArcelorMittal","CS.PA":"AXA","BNP.PA":"BNP","EN.PA":"Bouygues","BVI.PA":"Bureau Veritas","CAP.PA":"Capgemini","CA.PA":"Carrefour","ACA.PA":"Crédit Agricole","BN.PA":"Danone","DSY.PA":"Dassault Systèmes","EDEN.PA":"Edenred","ENGI.PA":"Engie","EL.PA":"EssilorLuxottica","ERF.PA":"Eurofins","RMS.PA":"Hermès","KER.PA":"Kering","LR.PA":"Legrand","OR.PA":"L'Oréal","MC.PA":"LVMH","ML.PA":"Michelin","ORA.PA":"Orange","RI.PA":"Pernod Ricard","PUB.PA":"Publicis","RNO.PA":"Renault","SAF.PA":"Safran","SGO.PA":"Saint-Gobain","SAN.PA":"Sanofi","SU.PA":"Schneider","GLE.PA":"Société Générale","STLAP.PA":"Stellantis","STMPA.PA":"STMicro","TEP.PA":"Teleperformance","HO.PA":"Thales","TTE.PA":"TotalEnergies","URW.PA":"Unibail","VIE.PA":"Veolia","DG.PA":"Vinci"},
+ "Euro Stoxx 50":{"ADS.DE":"Adidas","ADYEN.AS":"Adyen","AD.AS":"Ahold Delhaize","AI.PA":"Air Liquide","AIR.PA":"Airbus","ALV.DE":"Allianz","ABI.BR":"AB InBev","ASML.AS":"ASML","CS.PA":"AXA","BAS.DE":"BASF","BAYN.DE":"Bayer","BBVA.MC":"BBVA","SAN.MC":"Santander","BMW.DE":"BMW","BNP.PA":"BNP","DB1.DE":"Deutsche Börse","DBK.DE":"Deutsche Bank","DHL.DE":"DHL","DTE.DE":"D. Telekom","ENEL.MI":"Enel","ENI.MI":"Eni","EL.PA":"EssilorLuxottica","RACE.MI":"Ferrari","RMS.PA":"Hermès","IBE.MC":"Iberdrola","ITX.MC":"Inditex","IFX.DE":"Infineon","INGA.AS":"ING","ISP.MI":"Intesa","OR.PA":"L'Oréal","MC.PA":"LVMH","MBG.DE":"Mercedes-Benz","MUV2.DE":"Munich Re","NOKIA.HE":"Nokia","RI.PA":"Pernod Ricard","PRX.AS":"Prosus","RHM.DE":"Rheinmetall","SAF.PA":"Safran","SAN.PA":"Sanofi","SAP.DE":"SAP","SU.PA":"Schneider","SIE.DE":"Siemens","ENR.DE":"Siemens Energy","STLAM.MI":"Stellantis","TTE.PA":"TotalEnergies","UCG.MI":"UniCredit","DG.PA":"Vinci","VOW3.DE":"Volkswagen","WKL.AS":"Wolters Kluwer","NDA-FI.HE":"Nordea"},
+ "Dow Jones":{"AAPL":"Apple","AMGN":"Amgen","AMZN":"Amazon","AXP":"AmEx","BA":"Boeing","CAT":"Caterpillar","CRM":"Salesforce","CSCO":"Cisco","CVX":"Chevron","DIS":"Disney","GS":"Goldman Sachs","HD":"Home Depot","HON":"Honeywell","IBM":"IBM","JNJ":"J&J","JPM":"JPMorgan","KO":"Coca-Cola","MCD":"McDonald's","MMM":"3M","MRK":"Merck","MSFT":"Microsoft","NKE":"Nike","NVDA":"Nvidia","PG":"P&G","SHW":"Sherwin-W.","TRV":"Travelers","UNH":"UnitedHealth","V":"Visa","VZ":"Verizon","WMT":"Walmart"}
+};
+async function viaProxy(url,ttl){
+  const key="px:"+url;
+  try{const c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.at<ttl)return c.v}catch(_){}
+  for(const f of [u=>"https://api.allorigins.win/raw?url="+encodeURIComponent(u),u=>"https://corsproxy.io/?url="+encodeURIComponent(u),u=>"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)]){
+    try{const r=await fetch(f(url));if(!r.ok)continue;const v=await r.text();if(!v||v.length<20)continue;try{localStorage.setItem(key,JSON.stringify({at:Date.now(),v}))}catch(_){}return v}catch(_){}
+  }
+  return null;
+}
+async function spark(syms,range){ // -> {sym:{c:[closes], pc:previousClose}}
+  const out={};
+  for(let i=0;i<syms.length;i+=20){
+    const part=syms.slice(i,i+20);
+    const txt=await viaProxy(`https://query1.finance.yahoo.com/v8/finance/spark?symbols=${part.map(encodeURIComponent).join(",")}&range=${range}&interval=1d`,55e3);
+    if(!txt)continue;
+    try{const j=JSON.parse(txt);
+      if(j.spark&&j.spark.result){for(const r of j.spark.result){const x=r.response&&r.response[0];if(!x)continue;out[r.symbol]={c:(x.indicators.quote[0].close||[]).filter(v=>v!=null),pc:x.meta.previousClose??x.meta.chartPreviousClose,p:x.meta.regularMarketPrice}}}
+      else for(const k in j){const x=j[k];if(x&&x.close)out[k]={c:x.close.filter(v=>v!=null),pc:x.previousClose??x.chartPreviousClose,p:x.close.filter(v=>v!=null).slice(-1)[0]}}
+    }catch(_){}
+  }
+  return out;
+}
+async function stooq(sym){
+  const txt=await viaProxy(`https://stooq.com/q/d/l/?s=${sym}&i=d`,55e3);
+  if(!txt||!/^Date/i.test(txt))return null;
+  const c=txt.trim().split("\n").slice(1).map(l=>+l.split(",")[4]).filter(v=>!isNaN(v));
+  return c.length?{c:c.slice(-260)}:null;
+}
+const PERIODS=[["1J",1],["5J",5],["1M",21],["6M",126],["1A",252]];
+let svPer="1J", QUOTES={}, MOVERS={};
+function chg(c,n){if(!c||c.length<2)return null;const last=c[c.length-1],ref=c[Math.max(0,c.length-1-n)];return {last,ref}}
+const nf=(v,d)=>v==null||isNaN(v)?"—":v.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
+function renderQuotes(){
+  const n=PERIODS.find(p=>p[0]===svPer)[1];
+  const cell=(name,q,rate)=>{
+    if(!q)return `<div class="qc"><b>${esc(name)}</b><span class="qv">—</span><span class="qp flat">indisponible</span></div>`;
+    const r=chg(q.c,n);let last=r?r.last:q.p, txt="—",cls="flat";
+    if(n===1&&q.p!=null&&q.pc&&!rate){last=q.p;const v=(q.p/q.pc-1)*100;txt=(v>0?"+":"")+nf(v,2)+" %";cls=v>0?"up":v<0?"down":"flat"}
+    else if(r){if(rate){const v=(r.last-r.ref)*100;txt=(v>0?"+":"")+nf(v,0)+" pb";cls=v>0?"up":v<0?"down":"flat"}else{const v=(r.last/r.ref-1)*100;txt=(v>0?"+":"")+nf(v,2)+" %";cls=v>0?"up":v<0?"down":"flat"}}
+    const d=rate?3:(name==="EUR/USD"?4:2);
+    return `<div class="qc"><b>${esc(name)}</b><span class="qv">${nf(last,d)}${rate?" %":""}</span><span class="qp ${cls}">${txt}</span></div>`;
+  };
+  const el=$("#svq");if(!el)return;
+  el.innerHTML=IDX.map(([s,nm])=>cell(nm,QUOTES[s])).join("")+RATES.map(([s,nm])=>cell(nm,QUOTES[s],true)).join("");
+}
+function renderMovers(){
+  const el=$("#svmv");if(!el)return;
+  el.innerHTML=Object.keys(COMPO).map(ix=>{
+    const m=MOVERS[ix];
+    const box=(up)=>{let rows=`<div class="nempty sm2">Chargement…</div>`;
+      if(m){const arr=Object.entries(m).filter(([,x])=>x.p!=null&&x.pc).map(([s,x])=>({n:COMPO[ix][s]||s,p:x.p,v:(x.p/x.pc-1)*100})).sort((a,b)=>up?b.v-a.v:a.v-b.v).slice(0,3);
+        rows=arr.length?arr.map(x=>`<div class="mvr"><span>${esc(x.n)}</span><span class="qv">${nf(x.p,2)}</span><span class="qp ${x.v>0?"up":x.v<0?"down":"flat"}">${x.v>0?"+":""}${nf(x.v,2)} %</span></div>`).join(""):`<div class="nempty sm2">Cotations indisponibles</div>`}
+      return `<div class="mvb ${up?"u":"d"}"><h4>${up?"▲":"▼"} ${esc(ix)}</h4>${rows}</div>`};
+    return box(true)+box(false);
+  }).join("");
+}
+async function loadQuotes(){
+  const [ix,...rt]=await Promise.all([spark(IDX.map(x=>x[0]),"1y"),...RATES.map(r=>stooq(r[0]))]);
+  QUOTES={...ix};RATES.forEach((r,i)=>{if(rt[i])QUOTES[r[0]]=rt[i]});renderQuotes();
+  await Promise.all(Object.keys(COMPO).map(async ix=>{MOVERS[ix]=await spark(Object.keys(COMPO[ix]),"5d");renderMovers()}));
+  const u=$("#svqupd");if(u)u.textContent="Cours mis à jour à "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+}
+let qTimer=null;
 function showSuivi(){
-  setNav("");
-  const dark=document.documentElement.dataset.theme==="dark", th=dark?"dark":"light", t=todayStr();
+  setNav("");document.body.classList.add("svmode");
+  const t=todayStr();
   const today=CAL.filter(e=>e.d===t).sort((a,b)=>String(a.h||"99").localeCompare(String(b.h||"99"),"fr",{numeric:true}));
-  app.innerHTML=`<section class="sv"><h2>Suivi en direct</h2>
-  <div class="svsub"><span>Marchés : cotations TradingView (indices avec environ 15 min de décalage). Dépêches : flux des rédactions (franceinfo, Le Monde, France 24, BBC, NPR, NYT), actualisés toutes les 5 minutes.</span><span id="svupd"></span><button id="svref">↻ Actualiser</button></div>
-  <div class="svm">
-    <div class="svbox"><h3>Marchés</h3><div class="tvq" id="tvq"></div></div>
-    <div class="svbox"><h3><span>Plus fortes hausses et baisses</span><span class="tabs" id="hmt"><button class="on" data-h="CAC40">CAC 40</button><button data-h="SX5E">Euro Stoxx 50</button></span></h3><div class="tvh" id="tvh"></div></div>
-  </div>
-  ${today.length?`<div class="svbox svday"><h3>Aujourd'hui à l'agenda <a href="#calendrier" style="text-transform:none;letter-spacing:0;color:var(--accent)">Calendrier →</a></h3><div class="evlist">${today.map(evHTML).join("")}</div></div>`:""}
-  <div class="svn">${Object.entries(FEEDS).map(([z,c])=>`<div class="svbox" data-z="${esc(z)}" style="--rc:${c.c}"><h3><span style="color:${c.c}">${esc(z)}</span><span class="tabs"></span></h3><div class="nlist"></div></div>`).join("")}</div></section>`;
-  const S=(n,d)=>({name:n,displayName:d});
-  tvEmbed($("#tvq"),"market-quotes",{width:"100%",height:"100%",isTransparent:true,showSymbolLogo:false,colorTheme:th,locale:"fr",symbolsGroups:[
-    {name:"Indices",symbols:[S("FOREXCOM:FRA40","CAC 40"),S("FOREXCOM:EU50","Euro Stoxx 50"),S("FOREXCOM:SPXUSD","S&P 500"),S("FOREXCOM:NSXUSD","Nasdaq 100"),S("FOREXCOM:DJI","Dow Jones")]},
-    {name:"Taux à 10 ans",symbols:[S("TVC:FR10Y","OAT France"),S("TVC:DE10Y","Bund Allemagne"),S("TVC:US10Y","Treasury US")]},
-    {name:"Change & matières",symbols:[S("FX:EURUSD","EUR/USD"),S("TVC:UKOIL","Brent"),S("TVC:GOLD","Or")]}]});
-  const hm=src=>tvEmbed($("#tvh"),"stock-heatmap",{exchanges:[],dataSource:src,grouping:"no_group",blockSize:"market_cap_basic",blockColor:"change",locale:"fr",symbolUrl:"",colorTheme:th,hasTopBar:false,isDataSetEnabled:false,isZoomEnabled:false,hasSymbolTooltip:true,isMonoSize:false,width:"100%",height:"100%"});
-  hm("CAC40");
-  $("#hmt").onclick=ev=>{const b=ev.target.closest("button");if(!b)return;document.querySelectorAll("#hmt button").forEach(x=>x.classList.toggle("on",x===b));hm(b.dataset.h)};
+  const next=today.length?today:CAL.filter(e=>e.d>t).sort((a,b)=>a.d.localeCompare(b.d)).slice(0,6);
+  app.innerHTML=`<section class="sv">
+  <div class="svhead"><h2>Suivi en direct</h2><div class="tabs" id="svper">${PERIODS.map(([k])=>`<button class="${k===svPer?"on":""}" data-p="${k}">${k}</button>`).join("")}</div><span class="svsub" id="svqupd"></span><span class="svsub" id="svupd"></span><button class="svref" id="svref">↻</button></div>
+  <div class="qgrid" id="svq"></div>
+  <div class="mvgrid" id="svmv"></div>
+  <div class="svn">${Object.entries(FEEDS).map(([z,c])=>`<div class="svbox" data-z="${esc(z)}" style="--rc:${c.c}"><h3><span style="color:${c.c}">${esc(z)}</span><span class="tabs"></span></h3><div class="nlist"></div></div>`).join("")}</div>
+  <div class="svbox svday"><h3>${today.length?"Aujourd'hui à l'agenda":"Prochains rendez-vous"} <a href="#calendrier" style="text-transform:none;letter-spacing:0;color:var(--accent)">Calendrier →</a></h3><div class="evlist">${next.map(evHTML).join("")}</div></div>
+  <p class="svnote">Indices et actions : données Yahoo Finance, avec le décalage imposé par les Bourses (jusqu'à 15 min). Taux : Stooq. Dépêches : franceinfo, Le Monde, France 24, BBC, NPR, New York Times.</p></section>`;
+  renderQuotes();renderMovers();
+  $("#svper").onclick=ev=>{const b=ev.target.closest("button");if(!b)return;svPer=b.dataset.p;document.querySelectorAll("#svper button").forEach(x=>x.classList.toggle("on",x===b));renderQuotes()};
   for(const z in FEEDS)renderZone(z);
   app.querySelector(".svn").onclick=ev=>{const b=ev.target.closest(".tabs button");if(b){const z=b.closest(".svbox").dataset.z;svTab[z]=b.dataset.t;renderZone(z);return}
     const h=ev.target.closest(".ni h4");if(h)h.parentNode.classList.toggle("open")};
-  $("#svref").onclick=()=>loadNews(true);
-  loadNews(false);
+  $("#svref").onclick=()=>{loadNews(true);loadQuotes()};
+  loadNews(false);loadQuotes();
   clearInterval(svTimer);svTimer=setInterval(()=>{if(location.hash==="#suivi")loadNews(false);else clearInterval(svTimer)},5*60e3);
+  clearInterval(qTimer);qTimer=setInterval(()=>{if(location.hash==="#suivi")loadQuotes();else clearInterval(qTimer)},60e3);
 }
 function showRubrique(sl){
   const r=RUBS.find(x=>slug(x)===sl); if(!r)return showEdition(EDITIONS[0].date);
