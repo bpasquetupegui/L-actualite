@@ -171,6 +171,49 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 .tk b{color:var(--gold)}
 .edhead span:first-child{color:var(--accent);font-weight:700}
 .box{border-top-color:var(--rc,var(--ink))}
+
+.region>h2 a{color:inherit}
+.region>h2 .more,.more{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--rc,var(--accent));order:3;white-space:nowrap}
+.region>h2 .more{margin-left:8px}
+.calw{margin:24px 0 4px;padding:18px 20px;background:var(--card);border:1px solid var(--rule);border-radius:6px}
+.calw-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.calw-h h3{font-family:var(--display);font-size:22px;margin:0}
+.calw-h a{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--accent)}
+.calw-b{display:grid;grid-template-columns:280px 1fr;gap:24px}
+.mini{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-family:var(--sans);font-size:12px;text-align:center;align-self:start}
+.mh{color:var(--muted);font-weight:700;font-size:10.5px}
+.mc{position:relative;padding:6px 0;border-radius:4px;color:var(--muted)}
+.mc.has{color:var(--ink);font-weight:700;background:var(--hover);cursor:help}
+.mc.today{outline:2px solid var(--accent)}
+.mc i{position:absolute;left:50%;bottom:2px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%}
+.evlist{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.ev2{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--soft)}
+.evd{min-width:44px;text-align:center;border-left:3px solid var(--cc);padding-left:6px;font-family:var(--sans)}
+.evd b{display:block;font-size:20px;line-height:1}
+.evd span{font-size:10.5px;text-transform:uppercase;color:var(--muted)}
+.evc{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cc)}
+.evt{font-size:15.5px;line-height:1.35}
+.evt img{width:18px;margin-right:6px;vertical-align:-2px;border-radius:2px}
+.past{opacity:.5}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--sans);font-size:12px;margin:10px 0}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.rubp{padding:20px 0 40px}
+.rubh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid var(--rc,var(--ink));margin-bottom:22px}
+.rubh h2{font-family:var(--display);font-size:44px;margin:0;color:var(--rc,var(--ink))}
+.rubh span{font-family:var(--sans);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.rublead{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:center;margin-bottom:30px}
+.rublead h2{font-family:var(--display);font-size:clamp(26px,3.2vw,40px);line-height:1.12;margin:8px 0}
+.rublead p{font-size:18px;color:var(--ink2)}
+.rubgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px;margin-bottom:34px}
+.card{display:block}
+.card h4{font-family:var(--display);font-size:19px;line-height:1.22;margin:8px 0 5px}
+.card p{font-size:15px;color:var(--ink2);margin:0}
+.card .kicker{margin-top:10px}
+.rubarch{border-top:1px solid var(--rule);padding-top:18px}
+.rubarch h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 12px}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:240px;gap:18px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.strip .card{scroll-snap-align:start}
+@media (max-width:860px){.calw-b,.rublead{grid-template-columns:1fr}.evlist{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -202,7 +245,7 @@ const PAL={
 };
 const RC={"France":"#3b7ddd","Europe":"#2fa6c9","Amérique du Nord":"#e0414f","Amérique du Sud":"#2fae72","Afrique":"#e58f2b","Asie & Moyen-Orient":"#a066ea","Deals & buy-side":"#d4a23a"};
 const rc=r=>RC[r]?`--rc:${RC[r]}`:"";
-const NAVS=[["une","À la une"],...RUBS.map(r=>[r,r==="Asie & Moyen-Orient"?"Asie":r==="Amérique du Nord"?"Am. du Nord":r==="Amérique du Sud"?"Am. du Sud":r==="Deals & buy-side"?"Deals":r]),["archives","Archives"]];
+const NAVS=[["une","À la une"],...RUBS.map(r=>["r-"+slug(r),r==="Asie & Moyen-Orient"?"Asie":r==="Amérique du Nord"?"Am. du Nord":r==="Amérique du Sud"?"Am. du Sud":r==="Deals & buy-side"?"Deals":r]),["calendrier","Calendrier"],["archives","Archives"]];
 const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -210,14 +253,13 @@ const app=$("#app");
 function setTheme(m){document.documentElement.dataset.theme=m;$("#theme").textContent=m==="dark"?"☀ Mode clair":"☾ Mode sombre";try{localStorage.setItem("theme",m)}catch(_){}}
 let _t="light";try{_t=localStorage.getItem("theme")||"light"}catch(_){}
 setTheme(_t);$("#theme").onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
-let EDITIONS=[], CONTENT={}, PHOTOS=[], AUTO={};
+let EDITIONS=[], CONTENT={}, PHOTOS=[], AUTO={}, CAL=[];
 
 $("#today").textContent=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
 $("#home").onclick=()=>go("une");
 $("#nav").innerHTML=NAVS.map(([k,l])=>`<button data-k="${esc(k)}">${esc(l)}</button>`).join("");
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;
-  if(k==="une"||k==="archives")go(k);
-  else{ if(!location.hash.startsWith("#e-")&&location.hash!=="#une"&&location.hash!==""){go("une");setTimeout(()=>scrollToRub(k),300)} else scrollToRub(k)}};
+  go(k)};
 function scrollToRub(r){const el=document.getElementById("r-"+slug(r));if(el)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-60,behavior:"smooth"})}
 function slug(s){return s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
 function go(h){if(location.hash==="#"+h)route();else location.hash=h}
@@ -264,6 +306,7 @@ function itemHTML(it,big){
 async function init(){
   try{
     const r=await fetch("data/index.json?v="+Date.now()); EDITIONS=(await r.json()).editions||[];
+    try{CAL=(await (await fetch("data/calendar.json?v="+Date.now())).json()).events||[]}catch(_){CAL=[]}
     try{PHOTOS=(await (await fetch("data/photos.json?v="+Date.now())).json()).photos||[]}catch(_){PHOTOS=[]}
     EDITIONS.sort((a,b)=>b.date.localeCompare(a.date));
   }catch(e){ app.innerHTML=`<div class="empty">Impossible de charger les éditions.</div>`; return }
@@ -283,6 +326,8 @@ function route(){
   if(h.startsWith("a-"))return showArticle(h.slice(2));
   if(h.startsWith("e-"))return showEdition(h.slice(2));
   if(h==="archives")return showArchives("");
+  if(h==="calendrier")return showCalendar();
+  if(h.startsWith("r-"))return showRubrique(h.slice(2));
   return showEdition(EDITIONS[0].date);
 }
 
@@ -298,12 +343,12 @@ function showEdition(date){
   <section class="lead">
     <a class="main click" style="${rc(lead.r)}" href="#a-${esc(lead.id)}">${cover(lead)}<div class="kicker" style="margin-top:14px">${esc(lead.r)} · ${esc(lead.s||"")}</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></a>
     <div class="side">${tl.map(t=>`<a class="s click" href="#a-${esc(t.id)}" style="display:block;${rc(t.r)}">${cover(t,true)}<div class="kicker" style="margin-top:10px">${esc(t.r)}</div><h3>${esc(t.t)}</h3><p>${esc(t.c)}</p></a>`).join("")}</div>
-  </section>`;
+  </section>${calWidget()}`;
   for(const r of RUBS){
     const ri=items.filter(i=>i.r===r);
     if(!ri.length)continue;
     const secs=[...new Set(ri.map(i=>i.s||""))].sort((a,b)=>(SECTS.indexOf(a)+99)%99-(SECTS.indexOf(b)+99)%99);
-    html+=`<section class="region" id="r-${slug(r)}" style="${rc(r)}"><h2>${esc(r)}</h2><div class="cols">`;
+    html+=`<section class="region" id="z-${slug(r)}" style="${rc(r)}"><h2><a href="#r-${slug(r)}">${esc(r)}</a><a class="more" href="#r-${slug(r)}">Toute la rubrique →</a></h2><div class="cols">`;
     for(const s of secs){
       const si=ri.filter(i=>(i.s||"")===s).sort((a,b)=>(b.imp||1)-(a.imp||1));
       const wide=s==="À la une"&&si[0];
@@ -368,6 +413,51 @@ function related(it){
   return out.sort((a,b)=>b[0]-a[0]||b[1].id.localeCompare(a[1].id)).slice(0,5).map(x=>x[1]);
 }
 
+
+const CATC={"Banque centrale":"#2f6fd6","Macro":"#2fa6c9","Résultats":"#d4a23a","Politique":"#e0414f","Élection":"#b3121f","Sommet":"#a066ea","Diplomatie":"#2fae72"};
+const todayStr=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+function addDays(s,n){const d=new Date(s+"T12:00:00");d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+function evHTML(e){const f=flag(e.p);return `<div class="ev2" style="--cc:${CATC[e.c]||"#888"}"><div class="evd"><b>${+e.d.slice(8)}</b><span>${["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."][+e.d.slice(5,7)-1]}</span></div><div class="evb"><div class="evc">${esc(e.c)}${e.h?" · "+esc(e.h):""}</div><div class="evt">${f?`<img alt="" src="${f}">`:""}${esc(e.t)}</div></div></div>`}
+function calWidget(){
+  if(!CAL.length)return"";
+  const t=todayStr(),end=addDays(t,30);
+  const up=CAL.filter(e=>e.d>=t&&e.d<=end).sort((a,b)=>a.d.localeCompare(b.d)||(b.imp-a.imp));
+  if(!up.length)return"";
+  const days=new Set(up.map(e=>e.d));
+  let g="";for(let i=0;i<35;i++){const d=addDays(t,i);const n=up.filter(e=>e.d===d);g+=`<div class="mc${n.length?" has":""}${i===0?" today":""}" title="${esc(n.map(e=>e.t).join(" · "))}"><span>${+d.slice(8)}</span>${n.length?`<i style="background:${CATC[n[0].c]||"#888"}"></i>`:""}</div>`}
+  return `<section class="calw"><div class="calw-h"><h3>Les 30 prochains jours</h3><a href="#calendrier">Calendrier complet →</a></div><div class="calw-b"><div class="mini">${["L","M","M","J","V","S","D"].map(x=>`<div class="mh">${x}</div>`).join("")}${"<div></div>".repeat((new Date(t+"T12:00:00").getDay()+6)%7)}${g}</div><div class="evlist">${up.slice(0,6).map(evHTML).join("")}</div></div></section>`;
+}
+function showCalendar(){
+  setNav("calendrier");
+  const t=todayStr(),end=addDays(t,45);
+  const evs=CAL.filter(e=>e.d>=addDays(t,-3)&&e.d<=end).sort((a,b)=>a.d.localeCompare(b.d)||(b.imp-a.imp));
+  let h=`<section class="arch"><h2>Calendrier</h2><p class="tknote">Les grands rendez-vous des prochaines semaines : banques centrales, élections, sommets, résultats des grandes entreprises, publications macro clés. Mis à jour chaque matin.</p><div class="legend">${Object.entries(CATC).map(([k,v])=>`<span><i style="background:${v}"></i>${esc(k)}</span>`).join("")}</div>`;
+  let cur="";
+  for(const e of evs){const m=e.d.slice(0,7);if(m!==cur){cur=m;h+=`<div class="month">${MOIS[+m.slice(5)-1]} ${m.slice(0,4)}</div>`}h+=`<div class="${e.d<t?"past":""}">${evHTML(e)}</div>`}
+  if(!evs.length)h+=`<div class="empty">Aucun événement à venir pour l'instant.</div>`;
+  app.innerHTML=h+`</section>`;
+}
+function showRubrique(sl){
+  const r=RUBS.find(x=>slug(x)===sl); if(!r)return showEdition(EDITIONS[0].date);
+  setNav("r-"+sl);
+  const ed=EDITIONS[0]; assignPhotos(ed);
+  const today=(ed.items||[]).filter(i=>i.r===r).sort((a,b)=>(b.imp||1)-(a.imp||1));
+  const [lead,...rest]=today;
+  // archives : 3 derniers jours, + les sujets majeurs jusqu'à 7 jours
+  const arch=[];
+  for(const e of EDITIONS.slice(1)){
+    const age=(new Date(ed.date)-new Date(e.date))/864e5; if(age>7)break;
+    assignPhotos(e);
+    for(const x of (e.items||[]))if(x.r===r&&(age<=3||(x.imp||1)>=3))arch.push({...x,_age:age});
+  }
+  arch.sort((a,b)=>a._age-b._age||(b.imp||1)-(a.imp||1));
+  let h=`<section class="rubp" style="${rc(r)}"><div class="rubh"><h2>${esc(r)}</h2><span>${esc(wday(ed.date))} · ${today.length} article${today.length>1?"s":""}</span></div>`;
+  if(lead)h+=`<a class="rublead click" href="#a-${esc(lead.id)}">${cover(lead)}<div><div class="kicker">${esc(lead.s||"")} · L'essentiel du jour</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></div></a>`;
+  else h+=`<div class="empty">Pas d'actualité dans cette rubrique aujourd'hui.</div>`;
+  if(rest.length)h+=`<div class="rubgrid">${rest.map(x=>`<a class="card click" href="#a-${esc(x.id)}">${cover(x,true)}<div class="kicker">${esc(x.s||"")}</div><h4>${esc(x.t)}</h4><p>${esc(x.c)}</p></a>`).join("")}</div>`;
+  if(arch.length)h+=`<div class="rubarch"><h3>Ces derniers jours</h3><div class="strip">${arch.slice(0,12).map(x=>`<a class="card click" href="#a-${esc(x.id)}">${cover(x,true)}<div class="kicker">${esc(fmtDate(x.id.slice(0,10)))}${(x.imp||1)>=3?" · Majeur":""}</div><h4>${esc(x.t)}</h4></a>`).join("")}</div><a class="more" href="#archives">Toutes les archives →</a></div>`;
+  app.innerHTML=h+`</section>`;
+}
 let archFilter="Tout";
 function showArchives(q){
   setNav("archives");
