@@ -87,6 +87,7 @@ nav.rub button.on{color:var(--accent)}
 .it.big h4{font-size:24px}
 .it p{margin:0;font-size:15px;color:var(--ink2);line-height:1.45}
 .it .flg{float:right;width:34px;margin:4px 0 4px 10px;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.secimg{display:block;margin-bottom:10px}
 .wide .row{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
 .agenda{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
 .ag{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);padding:12px 14px;font-size:15px}
@@ -209,7 +210,7 @@ const app=$("#app");
 function setTheme(m){document.documentElement.dataset.theme=m;$("#theme").textContent=m==="dark"?"☀ Mode clair":"☾ Mode sombre";try{localStorage.setItem("theme",m)}catch(_){}}
 let _t="light";try{_t=localStorage.getItem("theme")||"light"}catch(_){}
 setTheme(_t);$("#theme").onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
-let EDITIONS=[], CONTENT={};
+let EDITIONS=[], CONTENT={}, PHOTOS=[], AUTO={};
 
 $("#today").textContent=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
 $("#home").onclick=()=>go("une");
@@ -225,6 +226,7 @@ function fmtDate(d){const [y,m,j]=d.split("-").map(Number);return `${j} ${MOIS[m
 function wday(d){return new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"})}
 
 function cover(item,small,noimg){
+  if(!noimg&&!(item.img&&item.img.u)&&AUTO[item.id])item={...item,img:AUTO[item.id]};
   const p=PAL[item.r]||PAL["Europe"];
   const fl=(item.p||[]).filter(flag).slice(0,2).map(c=>`<img alt="" src="${flag(c)}">`).join("");
   const v=item.v||{};
@@ -237,6 +239,23 @@ function cover(item,small,noimg){
     <div class="flags">${fl}</div>
     ${v.n?`<div class="num"><b>${esc(v.n)}</b>${v.l?`<span>${esc(v.l)}</span>`:""}</div>`:""}</div>`;
 }
+
+function assignPhotos(ed){
+  if(!PHOTOS.length)return;
+  const used=new Set((ed.items||[]).filter(i=>i.img&&i.img.u).map(i=>i.img.u));
+  const items=[...(ed.items||[])].sort((a,b)=>(b.imp||1)-(a.imp||1));
+  for(const it of items){
+    if((it.img&&it.img.u)||AUTO[it.id])continue;
+    const keys=new Set([...(it.k||[]),...(it.p||[])].map(x=>String(x).toLowerCase()));
+    let best=null,bs=0;
+    for(const ph of PHOTOS){
+      let s=0;for(const tg of ph.tags||[])if(keys.has(tg))s+=(tg.length===2?2:3);
+      if(!s)continue; if(used.has(ph.u))s-=4;
+      if(s>bs){bs=s;best=ph}
+    }
+    if(best&&bs>0){AUTO[it.id]=best;used.add(best.u)}
+  }
+}
 function itemHTML(it,big){
   const f=(it.p||[]).map(flag).find(Boolean);
   return `<a class="it${big?" big":""}" href="#a-${esc(it.id)}">${f&&!big?`<img class="flg" alt="" src="${f}">`:""}<h4>${esc(it.t)}</h4>${it.c?`<p>${esc(it.c)}</p>`:""}</a>`;
@@ -245,6 +264,7 @@ function itemHTML(it,big){
 async function init(){
   try{
     const r=await fetch("data/index.json?v="+Date.now()); EDITIONS=(await r.json()).editions||[];
+    try{PHOTOS=(await (await fetch("data/photos.json?v="+Date.now())).json()).photos||[]}catch(_){PHOTOS=[]}
     EDITIONS.sort((a,b)=>b.date.localeCompare(a.date));
   }catch(e){ app.innerHTML=`<div class="empty">Impossible de charger les éditions.</div>`; return }
   route();
@@ -269,7 +289,7 @@ function route(){
 function showEdition(date){
   setNav("une");
   const ed=EDITIONS.find(e=>e.date===date)||EDITIONS[0];
-  const items=ed.items||[]; const by=id=>items.find(i=>i.id===id);
+  const items=ed.items||[]; const by=id=>items.find(i=>i.id===id); assignPhotos(ed);
   const lead=by(ed.une)||items[0];
   const tl=(ed.tldr||[]).map(by).filter(x=>x&&x!==lead);
   const tick=(ed.chiffres||[]).map(c=>`<div class="tk"><b>${esc(c.a)}</b>${esc(c.n)} <span class="${c.s||"flat"}">${esc(c.v)}</span></div>`).join("");
@@ -290,7 +310,7 @@ function showEdition(date){
       if(wide){
         const [f,...rest]=si;
         html+=`<div class="sect wide"><h5>${esc(s)}</h5><div class="row"><a class="click" href="#a-${esc(f.id)}">${cover(f,true)}</a><div>${itemHTML(f,true)}${rest.map(x=>itemHTML(x)).join("")}</div></div></div>`;
-      } else html+=`<div class="sect"><h5>${esc(s||"Actualité")}</h5>${si.map(x=>itemHTML(x,(x.imp||1)>=3)).join("")}</div>`;
+      } else html+=`<div class="sect"><h5>${esc(s||"Actualité")}</h5><a class="click secimg" href="#a-${esc(si[0].id)}">${cover(si[0],true)}</a>${si.map((x,j)=>itemHTML(x,j===0||(x.imp||1)>=3)).join("")}</div>`;
     }
     html+=`</div></section>`;
   }
@@ -308,6 +328,7 @@ async function showArticle(id){
   const ed=EDITIONS.find(e=>e.date===date);
   const it=ed&&(ed.items||[]).find(i=>i.id===id);
   if(!it){app.innerHTML=`<div class="empty">Article introuvable.</div>`;return}
+  assignPhotos(ed);
   app.innerHTML=`<article class="art"><div class="empty">Chargement de l'article…</div></article>`;
   const c=(await content(date))[id]||{};
   const words=JSON.stringify(c).split(/\s+/).length; const min=Math.max(1,Math.round(words/230));
