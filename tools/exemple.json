@@ -781,7 +781,17 @@
     "v": {
      "n": "115 Md$",
      "l": "valeur d'entreprise de Lumentum"
-    }
+    },
+    "logos": [
+     {
+      "u": "Marvell Logo.svg",
+      "n": "Marvell"
+     },
+     {
+      "u": "Lumentum logo dark 2015.svg",
+      "n": "Lumentum"
+     }
+    ]
    },
    {
     "id": "2026-11-04-cvr-marathon",
@@ -803,7 +813,16 @@
     "v": {
      "n": "4,2 Md$",
      "l": "prix d'acquisition hors BFR"
-    }
+    },
+    "logos": [
+     {
+      "n": "CVR Energy"
+     },
+     {
+      "u": "Marathon Petroleum logo 2022.svg",
+      "n": "Marathon Petroleum"
+     }
+    ]
    },
    {
     "id": "2026-11-04-xrg-nws-togg",
@@ -943,7 +962,17 @@
     "v": {
      "n": "+11 % / -8 %",
      "l": "Lumentum et Marvell le jour de la fuite"
-    }
+    },
+    "logos": [
+     {
+      "u": "Marvell Logo.svg",
+      "n": "Marvell"
+     },
+     {
+      "u": "Lumentum logo dark 2015.svg",
+      "n": "Lumentum"
+     }
+    ]
    }
   ]
  },
