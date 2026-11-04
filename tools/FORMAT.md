@@ -16,7 +16,7 @@ Pour publier, écrire un fichier JSON `{"edition": {...}, "articles": {...}}`, p
   - `id` : `<date>-<slug>`, en minuscules ASCII et tirets (ex. `2026-11-04-tanzanie-lissu`).
   - `t` : titre de journal (court, factuel, accrocheur sans exagérer). `c` : chapô (1 à 2 phrases).
   - `r` : rubrique, parmi « France », « Europe », « Amérique du Nord », « Amérique du Sud », « Afrique », « Asie & Moyen-Orient », « Deals & buy-side ».
-  - `s` : section, parmi « À la une », « Politique », « Économie », « Business », « Marchés », « Devises », « Culture », « Société », « M&A », « Levées PE/VC/infra », « Asset management ».
+  - `s` : section, parmi « À la une », « Politique », « Économie », « Business », « Marchés », « Devises », « Culture », « Société », « M&A », « Rumeurs & discussions », « Levées PE/VC/infra », « Asset management ».
   - `p` : codes pays ISO en minuscules (ex. `["us"]`, `["eu"]` pour l'UE). `k` : 3 à 7 mots-clés en minuscules (personnes, entreprises, thèmes). Ils servent aux liens « Sur le même sujet » entre éditions, donc garder les mêmes mots-clés d'un jour à l'autre (« midterms », « iran », « budget 2027 »…).
   - `imp` : 1 (mineur), 2 (important) ou 3 (majeur).
   - `v` (facultatif) : `{"n": "115 Md$", "l": "valeur d'entreprise"}`, chiffre clé affiché en couverture.
@@ -44,3 +44,10 @@ Chaque news a un vrai article, quelle que soit la rubrique.
 - `note` (facultatif) : avertissement de fiabilité si un point n'a pas pu être recoupé.
 
 Le texte est du texte brut, sans HTML ni markdown.
+
+## Rumeurs & discussions (section de « Deals & buy-side »)
+Pour les rapprochements dont le marché a entendu parler sans annonce officielle : discussions rapportées par Bloomberg, Reuters, le FT, le WSJ ou Les Échos (« selon des sources proches du dossier »), offres non sollicitées, revues stratégiques, démentis ou « no comment ». Ces infos sont souvent la cause d'un fort mouvement de cours.
+- Uniquement si la rumeur est rapportée par un média de référence. Toujours nommer le média d'origine et préciser son statut : discussions préliminaires, avancées, démenti, refus de commenter.
+- `v` : la variation de cours qui a suivi (ex. `{"n": "+11 %", "l": "Lumentum à l'annonce des discussions"}`).
+- L'article utilise la fiche `deal` (avec `role_cible` / `role_acquereur` = « Cible potentielle » / « Acquéreur potentiel ») et explique : ce qui a été rapporté et par qui ; la réaction des cours (le mouvement s'explique-t-il par la rumeur ?) ; qui sont les deux sociétés ; la logique possible ; les obstacles (financement, antitrust, prix) ; les prochaines échéances.
+- Quand une rumeur est confirmée par une annonce, l'article M&A du jour le rappelle et reprend les mêmes mots-clés `k` pour relier les deux articles.

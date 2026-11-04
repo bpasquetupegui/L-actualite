@@ -505,8 +505,8 @@
    },
    {
     "id": "2026-11-04-bresil-flavio-bolsonaro",
-    "t": "Brésil : Brasília demande des comptes à Buenos Aires sur Flávio Bolsonaro",
-    "c": "Le candidat battu au second tour a quitté le pays via l'Argentine et se trouve à Miami.",
+    "t": "Brésil : Lula réélu, son rival Flávio Bolsonaro quitte le pays via l'Argentine",
+    "c": "Réélu le 25 octobre, Lula demande des comptes à Buenos Aires : son rival battu aurait quitté le Brésil via l'Argentine et se trouverait à Miami.",
     "r": "Amérique du Sud",
     "s": "Politique",
     "p": [
@@ -774,7 +774,8 @@
      "semi-conducteurs",
      "ia",
      "optique",
-     "nvidia"
+     "nvidia",
+     "rumeur"
     ],
     "imp": 3,
     "v": {
@@ -921,6 +922,28 @@
      "private equity"
     ],
     "imp": 1
+   },
+   {
+    "id": "2026-11-04-rumeur-marvell-lumentum-genese",
+    "t": "De la rumeur à l'accord : comment le marché a appris le deal Marvell-Lumentum",
+    "c": "Six jours avant l'annonce, Bloomberg révélait des discussions avancées. Lumentum avait bondi de 11 %, Marvell plongé de plus de 8 %.",
+    "r": "Deals & buy-side",
+    "s": "Rumeurs & discussions",
+    "p": [
+     "us"
+    ],
+    "k": [
+     "marvell",
+     "lumentum",
+     "m&a",
+     "rumeur",
+     "semi-conducteurs"
+    ],
+    "imp": 2,
+    "v": {
+     "n": "+11 % / -8 %",
+     "l": "Lumentum et Marvell le jour de la fuite"
+    }
    }
   ]
  },
@@ -991,93 +1014,228 @@
   "2026-11-04-greve-5-novembre": {
    "corps": [
     {
-     "h": "",
-     "p": "Les syndicats appellent à une journée de grève interprofessionnelle et dans la fonction publique ce jeudi 5 novembre. Des perturbations sont attendues dans les transports, l'éducation et les administrations. Le mouvement intervient en pleine discussion budgétaire, alors que les syndicats contestent les mesures d'économies sur les services publics et réclament des hausses de salaires."
+     "h": "Ce qui va se passer",
+     "p": "Les syndicats appellent à une journée de grève et de manifestations ce jeudi 5 novembre, à la fois interprofessionnelle (secteur privé) et dans les trois fonctions publiques (État, territoriale, hospitalière). Des perturbations sont attendues dans les transports en commun, les écoles, où certaines classes ne seront pas assurées, et dans les administrations. Les préavis et les prévisions de trafic sont généralement publiés par les opérateurs (SNCF, RATP) la veille au soir, et les familles sont prévenues par les écoles."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "La mobilisation intervient en pleine discussion du budget 2027 à l'Assemblée. Pour contenir un déficit public parmi les plus élevés de la zone euro, le gouvernement de Sébastien Lecornu a proposé des économies qui touchent directement les agents publics et les services : maîtrise de la masse salariale, non-remplacement de certains départs, gel ou faible revalorisation du point d'indice (la valeur qui sert à calculer le salaire des fonctionnaires), et efforts demandés aux collectivités.\n\nL'appel au 5 novembre a été lancé début octobre. Il s'inscrit dans un climat social déjà tendu : inquiétudes sur le pouvoir d'achat liées à la flambée des prix de l'énergie avec la crise iranienne, et un mouvement lycéen que l'AFP mentionnait au moment de l'ouverture des débats budgétaires."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Côté syndical, les grandes confédérations (CGT, CFDT, FO, CFE-CGC, CFTC, Unsa, Solidaires, FSU) se coordonnent souvent en intersyndicale sur ces sujets, même si leur niveau d'engagement varie. Côté gouvernement, les ministres concernés sont ceux de l'Action publique, de l'Éducation et des Comptes publics. L'exécutif n'a pas de majorité à l'Assemblée et dépend de compromis texte par texte."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Une mobilisation forte pèserait sur les arbitrages budgétaires de fin de parcours, notamment sur les dépenses, qui seront examinées après la partie recettes. À l'inverse, une faible participation conforterait le gouvernement dans sa trajectoire de redressement des comptes, scrutée par les agences de notation et les marchés obligataires. Pour l'économie, une journée de grève a un impact limité, sauf si elle se prolonge en mouvement reconductible."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Il faudra regarder les chiffres de participation (ministère, syndicats) jeudi soir et l'éventuel appel à une nouvelle date. Le vote sur l'ensemble du budget en première lecture est attendu d'ici au 17 novembre."
     }
    ],
    "sources": [
     {
      "n": "VousNousIls – Appel à la grève le 5 novembre",
      "u": "https://www.vousnousils.fr/2026/10/06/nouvel-appel-greve-syndicats-fonction-publique-5-novembre-2026-705359"
+    },
+    {
+     "n": "Sud Radio (AFP) – Le budget entre dans l'hémicycle",
+     "u": "https://www.sudradio.fr/societe/le-budget-entre-dans-lhemicycle-mardi-la-presidentielle-aussi"
     }
-   ]
+   ],
+   "cles": [
+    "Grève interprofessionnelle et dans la fonction publique ce jeudi 5 novembre.",
+    "Perturbations attendues dans les transports, les écoles et les administrations.",
+    "Le mouvement vise le budget 2027 et ses économies sur les services publics."
+   ],
+   "note": "La liste des syndicats signataires et les prévisions de trafic n'ont pas encore été vérifiées dans une source de référence pour cette édition."
   },
   "2026-11-04-carburants-smic": {
    "corps": [
     {
-     "h": "",
-     "p": "La détente des prix du pétrole (Brent revenu vers 103 $) se répercute à la pompe : environ 6 000 stations ont baissé leurs prix. En parallèle, une revalorisation du SMIC est évoquée, dans un contexte de pouvoir d'achat sous tension. Les montants et le calendrier ne sont pas encore connus."
+     "h": "Ce qui s'est passé",
+     "p": "Selon la revue de presse de France Info, environ 6 000 stations-service ont baissé leurs prix ces derniers jours. C'est la conséquence directe de la détente du pétrole : le Brent, référence européenne, a clôturé mardi à 103,60 $ le baril, au plus bas depuis début octobre, sur l'espoir d'une désescalade entre les États-Unis et l'Iran. Dans le même temps, un coup de pouce au SMIC est évoqué pour soutenir le pouvoir d'achat."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Depuis le printemps 2026, les affrontements entre Washington et Téhéran autour du détroit d'Ormuz, par où transite environ un cinquième du pétrole mondial, ont fait flamber les cours du brut. Les prix à la pompe ont suivi avec quelques semaines de décalage. Le prix d'un litre de carburant en France dépend pour environ la moitié des taxes (TICPE et TVA) et pour le reste du prix du pétrole raffiné et des marges de distribution : une baisse du baril se répercute donc partiellement, et avec retard, à la pompe.\n\nLe SMIC est revalorisé automatiquement chaque 1er janvier en fonction de l'inflation et de la moitié du gain de pouvoir d'achat du salaire horaire ouvrier. Il l'est aussi en cours d'année si l'inflation dépasse 2 % depuis la dernière revalorisation. Le gouvernement peut décider d'un « coup de pouce » supplémentaire, ce qui a rarement été fait ces dernières années."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Les grands distributeurs (TotalEnergies, Leclerc, Carrefour, Intermarché…) ajustent leurs prix au jour le jour. Le ministère de l'Économie suit les prix et peut faire pression sur les distributeurs pour que les baisses soient répercutées. Pour le SMIC, la décision appartient au gouvernement, après avis d'un groupe d'experts indépendants qui recommande généralement de s'en tenir à la revalorisation automatique."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Le carburant pèse lourd dans le budget des ménages, surtout hors des grandes villes, et dans l'inflation mesurée par l'Insee. Un coup de pouce au SMIC soutient le pouvoir d'achat mais renchérit le coût du travail pour les entreprises et pèse sur les finances publiques via les allègements de charges, au moment où le budget 2027 est très contraint."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Tout dépendra de l'évolution du conflit avec l'Iran. Une nouvelle escalade ferait remonter rapidement le baril. Les décisions sur le SMIC sont attendues d'ici la revalorisation de janvier."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Le nombre de stations en baisse et l'hypothèse d'un coup de pouce au SMIC viennent d'une revue de presse et n'ont pas encore été confirmés par l'Insee, le ministère ou l'AFP.",
    "sources": [
     {
      "n": "Revue de presse France Info (via Presse Évasion)",
      "u": "https://www.presse-evasion.fr/article/revue-presse-04-11-2026"
+    },
+    {
+     "n": "AFP (via Connaissance des Énergies) – Le pétrole baisse",
+     "u": "https://www.connaissancedesenergies.org/afp/usa-iran-les-prix-du-petrole-baissent-avec-les-espoirs-de-desescalade-261103"
     }
+   ],
+   "cles": [
+    "Environ 6 000 stations ont baissé leurs prix avec la détente du pétrole.",
+    "Le Brent est revenu vers 103 $, au plus bas depuis début octobre.",
+    "Une revalorisation du SMIC est évoquée, sans chiffre officiel à ce stade."
    ]
   },
   "2026-11-04-alstom-avertissement": {
    "corps": [
     {
-     "h": "Ce qui se passe",
-     "p": "Alstom a perdu environ 26 % lundi après un avertissement, puis encore 4,8 % mardi. Deux grandes banques, JPMorgan et Citi, ont abaissé leur recommandation à « neutre »."
+     "h": "Ce qui s'est passé",
+     "p": "Alstom a chuté d'environ 26 % lundi, l'une des plus fortes baisses de son histoire en une séance, après avoir publié un avertissement. Le titre a encore perdu 4,8 % mardi, et deux grandes banques, JPMorgan et Citi, ont abaissé leur recommandation à « neutre ». Le détail de l'avertissement (objectifs de marge, de cash-flow ou de chiffre d'affaires revus) n'a pas encore pu être vérifié auprès d'une source de référence pour cette édition."
     },
     {
      "h": "Qui est Alstom",
-     "p": "Fondé en 1928, Alstom est l'un des deux géants mondiaux du ferroviaire avec le chinois CRRC : trains à grande vitesse (TGV, Avelia), métros, tramways, signalisation et maintenance. Le groupe a absorbé Bombardier Transportation en 2021, une acquisition qui a pesé sur ses marges et sa trésorerie pendant plusieurs années. Une chute de cette ampleur pour une valeur du CAC 40 signale que le marché remet en cause la crédibilité de la trajectoire de redressement."
+     "p": "Fondé en 1928 et basé à Saint-Ouen, Alstom est l'un des deux géants mondiaux du ferroviaire avec le chinois CRRC. Il fabrique des TGV et trains à grande vitesse (Avelia), des métros, des tramways, des trains régionaux, et vend de la signalisation et de la maintenance. Il compte environ 80 000 salariés dans le monde. Après la vente de sa branche énergie à General Electric en 2015 (une affaire devenue symbole de perte de souveraineté industrielle), le groupe s'est recentré sur le seul ferroviaire."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "En 2019, la fusion avec Siemens Mobility est bloquée par la Commission européenne au nom de la concurrence. Alstom rachète alors Bombardier Transportation en 2021, pour environ 5,5 Md€. L'opération double sa taille mais l'expose à des contrats déficitaires et à des retards de livraison hérités de Bombardier, qui pèsent sur sa trésorerie. En 2023, le groupe a dû lancer un plan de désendettement : augmentation de capital, cessions d'actifs (notamment une partie de l'activité de signalisation en Amérique du Nord) et réduction des coûts. Depuis, le marché surveille surtout sa capacité à générer du cash à partir de son carnet de commandes record, de plus de 90 Md€."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Une baisse de 26 % en une séance pour une valeur du CAC 40 signale une perte de confiance dans la trajectoire de redressement. Pour les investisseurs, la question est de savoir si les problèmes sont ponctuels (un contrat, un retard) ou structurels (marges trop faibles sur les grands contrats). Alstom est aussi un actif stratégique pour l'État français, client via la SNCF et attentif à l'emploi industriel."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les analystes attendront des précisions de la direction sur le cash-flow et les éventuelles provisions. Une nouvelle dégradation pourrait relancer la question d'un renforcement du bilan."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les variations de cours et les dégradations viennent d'ABC Bourse. Le contenu exact de l'avertissement n'a pas encore été vérifié auprès d'Alstom ou d'une agence.",
    "sources": [
     {
      "n": "ABC Bourse – Revue de marché du 4 novembre",
      "u": "https://www.abcbourse.com/marches/cac-40-la-bourse-de-paris-attendue-dans-le-rouge-les-elections-americaines-en_705461"
     }
+   ],
+   "cles": [
+    "Alstom a perdu environ 26 % lundi après un avertissement, puis 4,8 % mardi.",
+    "JPMorgan et Citi abaissent leur recommandation à « neutre ».",
+    "Le groupe peine depuis le rachat de Bombardier Transportation à transformer son carnet de commandes en cash."
    ]
   },
   "2026-11-04-stif-biomerieux-rubis": {
    "corps": [
     {
-     "h": "",
-     "p": "Stif, PME française spécialiste de la protection des installations industrielles contre les explosions (silos, batteries), bondit de 23 % après une commande de SpaceX. bioMérieux, leader du diagnostic in vitro fondé à Lyon par la famille Mérieux, gagne 4,8 % grâce à un chiffre d'affaires du T3 supérieur aux attentes. Rubis, spécialiste de la distribution d'énergie, confirme ses objectifs."
+     "h": "Ce qui s'est passé",
+     "p": "Trois valeurs françaises ont été recherchées mardi à la Bourse de Paris. Stif a bondi de 23 % après l'annonce d'une commande de SpaceX. bioMérieux a gagné 4,8 % après un chiffre d'affaires du troisième trimestre meilleur que prévu. Rubis a confirmé ses objectifs pour l'année."
+    },
+    {
+     "h": "Stif : une PME qui protège les usines… et les fusées",
+     "p": "Stif, entreprise française cotée sur Euronext Growth, conçoit des équipements qui protègent les installations industrielles contre les explosions de poussières et de gaz : évents d'explosion, systèmes d'isolement pour silos à grains, cimenteries ou usines chimiques. Ces dernières années, elle s'est développée sur un nouveau marché très porteur, la protection des systèmes de stockage d'énergie par batteries (BESS) contre l'emballement thermique. Une commande de SpaceX, client exigeant et très visible, crédibilise sa technologie au-delà de ses marchés historiques. Sur une petite capitalisation, ce type d'annonce provoque des mouvements de cours très violents."
+    },
+    {
+     "h": "bioMérieux : le diagnostic made in Lyon",
+     "p": "bioMérieux, fondé en 1963 par Alain Mérieux et toujours contrôlé par la famille via l'Institut Mérieux, est un leader mondial du diagnostic in vitro. Il fabrique des tests et des automates qui identifient bactéries et virus et mesurent leur résistance aux antibiotiques, notamment avec sa plateforme BioFire de diagnostic moléculaire. Après la normalisation post-Covid, le marché suit sa croissance organique et ses marges : un trimestre au-dessus des attentes rassure sur la demande hospitalière."
+    },
+    {
+     "h": "Rubis : la distribution d'énergie en Afrique et aux Caraïbes",
+     "p": "Rubis distribue des carburants, du GPL et du bitume, surtout en Afrique, dans les Caraïbes et en Europe, et développe une activité de production d'électricité renouvelable (Rubis Photosol). Le groupe a fait l'objet en 2024-2025 d'une bataille avec l'actionnaire activiste Bolloré sur sa gouvernance. Confirmer ses objectifs dans un contexte de prix de l'énergie très volatils rassure les investisseurs, attachés à son dividende."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Ces mouvements rappellent que, même dans un marché nerveux (CAC 40 -0,34 %), les résultats et les annonces commerciales individuelles restent les premiers moteurs des cours."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les variations de cours et les annonces viennent de MoneyVox et n'ont pas été vérifiées dans les communiqués des sociétés pour cette édition.",
    "sources": [
     {
      "n": "MoneyVox – Le journal de la Bourse du 3 novembre",
      "u": "https://www.moneyvox.fr/bourse/actualites/111099/biomerieux-rubis-le-journal-de-la-bourse-du-mardi-3-novembre-2026"
     }
+   ],
+   "cles": [
+    "Stif +23 % après une commande de SpaceX.",
+    "bioMérieux +4,8 % sur un T3 supérieur aux attentes.",
+    "Rubis confirme ses objectifs annuels."
    ]
   },
   "2026-11-04-publicis-saint-gobain": {
    "corps": [
     {
-     "h": "",
-     "p": "Publicis a finalisé le rachat de LiveRamp, une société américaine de gestion de données marketing. Il poursuit ainsi sa stratégie de transformation en groupe de données et de technologie publicitaire, après Epsilon (2019) et Sapient (2015). De son côté, Saint-Gobain a cédé sa distribution de matériaux de construction dans les pays nordiques au finlandais Kesko. Il continue de réduire son exposition au négoce, moins rentable, au profit des solutions de construction légère et durable."
+     "h": "Ce qui s'est passé",
+     "p": "Deux opérations de fusion-acquisition sont arrivées à leur terme. Publicis a finalisé l'acquisition de LiveRamp, une société américaine cotée spécialisée dans la gestion et la connexion des données clients. Saint-Gobain a cédé ses activités de distribution de matériaux de construction dans les pays nordiques au groupe finlandais Kesko."
+    },
+    {
+     "h": "Publicis : de l'agence de pub à la data",
+     "p": "Publicis, troisième groupe publicitaire mondial, est dirigé par Arthur Sadoun. Depuis dix ans, il se transforme en groupe de données et de technologie : rachat de Sapient en 2015 (conseil et transformation numérique), puis d'Epsilon en 2019 pour 4,4 Md$ (données marketing). Cette stratégie lui a permis de dépasser ses concurrents WPP et Omnicom en croissance. LiveRamp, fondé aux États-Unis, permet aux marques de relier leurs données clients à celles des plateformes publicitaires tout en respectant les règles de confidentialité. C'est une brique clé dans un monde sans cookies tiers, où les données « first-party » deviennent l'actif le plus précieux. Le montant de l'opération n'a pas été vérifié pour cette édition."
+    },
+    {
+     "h": "Saint-Gobain : sortir du négoce",
+     "p": "Saint-Gobain, fondé en 1665 pour produire les glaces de Versailles, est aujourd'hui un leader mondial des matériaux de construction (isolation, plâtre, mortiers, vitrage). Sous la direction de Benoit Bazin, le groupe se désengage de la distribution, un métier de négoce à faibles marges, pour se concentrer sur la fabrication de solutions de construction légère et durable. Il a déjà cédé des réseaux de distribution au Royaume-Uni et dans d'autres pays, tout en multipliant les acquisitions dans la chimie de la construction (GCP, Chryso, Fosroc). Kesko, groupe finlandais de distribution (alimentaire, bricolage, automobile), renforce de son côté sa position dans le négoce de matériaux en Scandinavie."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Ces deux opérations illustrent une tendance de fond chez les grands groupes européens : se recentrer sur les activités à plus forte marge et à plus forte croissance, quitte à vendre des métiers historiques. Pour les investisseurs, elles améliorent la lisibilité et la rentabilité des portefeuilles."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Pour Publicis, l'enjeu est l'intégration de LiveRamp et la démonstration de synergies commerciales avec Epsilon. Saint-Gobain pourrait poursuivre ses cessions dans la distribution."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La finalisation des deux opérations est rapportée par ABC Bourse. Les montants n'ont pas été vérifiés dans les communiqués officiels pour cette édition.",
    "sources": [
     {
      "n": "ABC Bourse – Revue de marché du 4 novembre",
      "u": "https://www.abcbourse.com/marches/cac-40-la-bourse-de-paris-attendue-dans-le-rouge-les-elections-americaines-en_705461"
     }
+   ],
+   "cles": [
+    "Publicis a finalisé le rachat de LiveRamp, spécialiste américain des données marketing.",
+    "Saint-Gobain cède sa distribution nordique au finlandais Kesko.",
+    "Deux opérations de recentrage stratégique pour deux poids lourds du CAC 40."
    ]
   },
   "2026-11-04-cac40-seance": {
    "corps": [
     {
-     "h": "",
-     "p": "Le CAC 40 a fini mardi à 8 020,31 points (-0,34 %). Les valeurs automobiles ont été les plus touchées : Stellantis -3,7 %, Valeo -3,3 %. Worldline a gagné 7,2 %. Ce matin, une ouverture en baisse est attendue après la victoire démocrate aux midterms et la chute des bourses asiatiques. JCDecaux et Criteo publient leurs résultats aujourd'hui."
+     "h": "Ce qui s'est passé",
+     "p": "Le CAC 40 a terminé mardi à 8 020,31 points, en baisse de 0,34 %, au-dessus du seuil symbolique des 8 000 points. L'automobile a le plus reculé : Stellantis -3,7 % et l'équipementier Valeo -3,3 %. À l'inverse, Worldline, spécialiste des paiements en grande difficulté depuis deux ans, a rebondi de 7,2 %. Ce matin, une ouverture en baisse est attendue après la victoire démocrate aux midterms et la chute des bourses asiatiques (Nikkei -3,6 %)."
+    },
+    {
+     "h": "Le contexte",
+     "p": "Le CAC 40 a franchi pour la première fois les 8 000 points en 2024. Depuis, il évolue autour de ce niveau, freiné par l'incertitude politique et budgétaire en France et par l'exposition de ses grandes valeurs au luxe et à la Chine. Les investisseurs étaient prudents mardi, avant les résultats des élections américaines, qui pouvaient changer la politique commerciale et budgétaire des États-Unis."
+    },
+    {
+     "h": "Les valeurs à suivre",
+     "p": "Stellantis, né de la fusion PSA-Fiat Chrysler en 2021 et dirigé par Antonio Filosa depuis 2025, souffre des droits de douane américains et de la concurrence chinoise dans l'électrique. Valeo dépend de la production automobile mondiale. Worldline, ancien fleuron des paiements, a vu son cours s'effondrer après des enquêtes sur des pratiques de conformité et une croissance décevante, et chaque signe de redressement provoque des rebonds violents. JCDecaux (mobilier urbain publicitaire) et Criteo (publicité en ligne) publient leurs résultats ce mercredi."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Un Congrès démocrate rend moins probables de nouvelles hausses massives de droits de douane votées par le Congrès, ce qui est plutôt favorable aux exportateurs européens. Mais la correction des valeurs technologiques et de l'IA pèse sur l'ensemble des marchés."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "À surveiller aujourd'hui : l'inflation flash de la zone euro à 11 h, l'ISM des services américain, et la réaction de Wall Street aux résultats définitifs des élections."
     }
    ],
    "sources": [
     {
      "n": "Boursorama (Reuters) – L'Europe finit dans le rouge",
      "u": "https://www.boursorama.com/bourse/actualites/l-europe-finit-dans-le-rouge-avant-les-resultats-des-elections-americaines-2d257c66228a5561e68927c0ad5a384e"
+    },
+    {
+     "n": "MoneyVox – Le journal de la Bourse du 3 novembre",
+     "u": "https://www.moneyvox.fr/bourse/actualites/111099/biomerieux-rubis-le-journal-de-la-bourse-du-mardi-3-novembre-2026"
     }
+   ],
+   "cles": [
+    "CAC 40 : 8 020,31 points (-0,34 %) mardi.",
+    "Stellantis -3,7 %, Valeo -3,3 %, Worldline +7,2 %.",
+    "Ouverture en baisse attendue ce mercredi après les midterms et le recul de l'Asie."
    ]
   },
   "2026-11-04-goncourt-renaudot": {
@@ -1093,6 +1251,14 @@
     {
      "h": "Pourquoi ça compte",
      "p": "Le Goncourt reste le prix le plus prescripteur en France : un lauréat se vend en moyenne à plusieurs centaines de milliers d'exemplaires. C'est aussi un enjeu pour les éditeurs, Flammarion appartenant au groupe Madrigall (Gallimard)."
+    },
+    {
+     "h": "Comment fonctionnent ces prix",
+     "p": "Le prix Goncourt est décerné depuis 1903 par l'Académie Goncourt, dix écrivains réunis au restaurant Drouant, à Paris, selon le testament d'Edmond de Goncourt. La dotation est symbolique (10 euros), mais l'effet commercial est considérable : le bandeau rouge « Prix Goncourt » fait souvent passer un livre de quelques dizaines de milliers à plusieurs centaines de milliers d'exemplaires. Le Renaudot, créé en 1926 par des journalistes, est annoncé le même jour, juste après, dans le même restaurant. Il couronne souvent un livre plus audacieux ou moins attendu."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "La saison des prix se poursuit avec le Femina, le Médicis et l'Interallié dans les prochains jours, puis le Grand prix du roman de l'Académie française. Pour Flammarion, une maison du groupe Madrigall, le Goncourt garantit une part importante des ventes de fin d'année."
     }
    ],
    "sources": [
@@ -1105,42 +1271,101 @@
   "2026-11-04-ukraine-energie": {
    "corps": [
     {
-     "h": "Ce qui se passe",
-     "p": "De nouvelles frappes russes ont mis hors service plusieurs centrales ukrainiennes et menacé une sous-station électrique liée à la centrale nucléaire de Khmelnytskyï, dans l'ouest du pays. Côté ukrainien, des drones ont touché une raffinerie à Iaroslavl et un entrepôt d'Ozon, le géant russe du e-commerce."
+     "h": "Ce qui s'est passé",
+     "p": "La Russie a mené de nouvelles frappes de missiles et de drones contre le réseau électrique ukrainien, mettant hors service plusieurs centrales. Une sous-station électrique liée à la centrale nucléaire de Khmelnytskyï, dans l'ouest du pays, a été menacée. Côté ukrainien, des drones ont frappé une raffinerie à Iaroslavl, au nord-est de Moscou, ainsi qu'un entrepôt d'Ozon, le principal site de e-commerce russe."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Depuis l'invasion de février 2022, la Russie cible chaque automne et chaque hiver les infrastructures énergétiques ukrainiennes pour priver la population de chauffage et d'électricité et peser sur le moral du pays. L'Ukraine a perdu une grande partie de sa capacité de production thermique et hydroélectrique. Elle s'appuie sur ses centrales nucléaires, sur des importations d'électricité depuis l'UE et sur des générateurs décentralisés.\n\nEn retour, Kiev a développé une campagne de frappes de drones à longue portée contre les raffineries et dépôts pétroliers russes, pour réduire les capacités de raffinage et les recettes d'exportation qui financent la guerre."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "La centrale de Khmelnytskyï, avec deux réacteurs en service, est l'une des quatre centrales nucléaires ukrainiennes encore sous contrôle de Kiev (Zaporijjia, la plus grande d'Europe, est occupée par la Russie). L'Agence internationale de l'énergie atomique (AIEA), dirigée par Rafael Grossi, a des inspecteurs sur place et alerte régulièrement : un réacteur, même arrêté, doit être alimenté en électricité extérieure pour refroidir son combustible. Perdre ces lignes oblige à utiliser des groupes diesel de secours."
     },
     {
      "h": "Pourquoi c'est important",
-     "p": "À l'approche de l'hiver, Moscou cible à nouveau le réseau électrique ukrainien. Les centrales nucléaires ont besoin d'une alimentation extérieure pour refroidir leurs réacteurs : l'AIEA alerte régulièrement sur ce risque. Kiev, de son côté, vise les capacités de raffinage russes pour réduire les recettes pétrolières du Kremlin."
+     "p": "Ces frappes interviennent alors qu'une reprise des pourparlers entre Washington, Moscou et Kiev est évoquée. Selon l'AFP, le conseiller diplomatique du Kremlin Iouri Ouchakov a parlé d'une reprise des échanges vers le 10 novembre. Chaque camp cherche à négocier en position de force. Pour l'Europe, le risque d'un incident nucléaire et la sécurité énergétique de l'hiver restent des sujets majeurs."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "À surveiller : les communiqués de l'AIEA sur Khmelnytskyï, l'ampleur des coupures de courant en Ukraine et la tenue effective des discussions trilatérales autour du 10 novembre."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les frappes du jour viennent de la newsletter Foreign Exchanges et n'ont pas encore été confirmées par une agence pour cette édition. La reprise des discussions vers le 10 novembre est rapportée par l'AFP.",
    "sources": [
     {
      "n": "Foreign Exchanges – World roundup, 3 novembre",
      "u": "https://www.foreignexchanges.news/p/world-roundup-november-3-2026"
+    },
+    {
+     "n": "AFP (via Connaissance des Énergies) – Ukraine : la diplomatie est relancée",
+     "u": "https://www.connaissancedesenergies.org/afp/ukraine-la-diplomatie-est-relancee-trump-se-rejouit-moscou-temporise-261021"
     }
+   ],
+   "cles": [
+    "Nouvelles frappes russes sur les centrales électriques ukrainiennes.",
+    "Une sous-station alimentant la centrale nucléaire de Khmelnytskyï menacée.",
+    "Kiev riposte avec des drones contre une raffinerie russe à Iaroslavl.",
+    "Des pourparlers trilatéraux pourraient reprendre vers le 10 novembre."
    ]
   },
   "2026-11-04-pologne-kaliningrad": {
    "corps": [
     {
-     "h": "",
-     "p": "Le Premier ministre polonais Donald Tusk affirme avoir déjoué une « provocation » à la frontière avec l'enclave russe de Kaliningrad, sans donner de détails publics. Dans le même temps, des manifestations ont lieu à Varsovie autour du Tribunal constitutionnel, au cœur d'un bras de fer institutionnel entre le gouvernement pro-européen et le camp conservateur (PiS) depuis 2023."
+     "h": "Ce qui s'est passé",
+     "p": "Le Premier ministre polonais Donald Tusk a affirmé que ses services avaient déjoué une « provocation » à la frontière avec l'enclave russe de Kaliningrad, sans donner de détails publics à ce stade. Parallèlement, des manifestations ont eu lieu à Varsovie autour du Tribunal constitutionnel, au cœur d'un conflit institutionnel qui dure depuis des années."
+    },
+    {
+     "h": "Kaliningrad, une enclave sous tension",
+     "p": "Kaliningrad, ancienne Königsberg prussienne, est un territoire russe coincé entre la Pologne et la Lituanie, sans continuité terrestre avec la Russie. C'est le siège de la flotte russe de la Baltique et une zone très militarisée, où Moscou a déployé des missiles Iskander. Le « corridor de Suwałki », une bande de 65 km entre Kaliningrad et la Biélorussie, est considéré comme le point le plus vulnérable de l'OTAN. Depuis 2022, la Pologne fait face à des sabotages, des cyberattaques, des incursions de drones et à l'instrumentalisation de migrants à la frontière biélorusse, qu'elle attribue à Moscou et Minsk."
+    },
+    {
+     "h": "La bataille du Tribunal constitutionnel",
+     "p": "Sous le gouvernement du PiS (droite nationale-conservatrice, 2015-2023), le Tribunal constitutionnel a été remanié avec des juges jugés politisés, ce qui a déclenché un long conflit avec l'UE sur l'État de droit. Arrivé au pouvoir fin 2023 avec une coalition pro-européenne, Donald Tusk ne reconnaît pas la légitimité de certaines décisions de ce tribunal. L'élection du président Karol Nawrocki, soutenu par le PiS, en 2025, a renforcé la cohabitation conflictuelle : le président peut bloquer les lois par son veto."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "La Pologne est devenue un poids lourd militaire de l'Europe : elle consacre plus de 4 % de son PIB à la défense, le niveau le plus élevé de l'OTAN. Toute tension à Kaliningrad touche directement la sécurité européenne. En interne, la paralysie institutionnelle freine les réformes et l'accès à certains fonds européens."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le gouvernement pourrait donner plus de détails sur l'incident. La crise institutionnelle devrait rester au cœur de la vie politique polonaise jusqu'aux législatives de 2027."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "L'incident de Kaliningrad et les manifestations viennent de la newsletter Foreign Exchanges et n'ont pas encore été confirmés par une agence pour cette édition.",
    "sources": [
     {
      "n": "Foreign Exchanges – World roundup, 3 novembre",
      "u": "https://www.foreignexchanges.news/p/world-roundup-november-3-2026"
     }
+   ],
+   "cles": [
+    "Donald Tusk affirme avoir déjoué une « provocation » russe à la frontière de Kaliningrad.",
+    "Manifestations à Varsovie autour du Tribunal constitutionnel.",
+    "La Pologne, en première ligne face à la Russie, vit aussi une crise institutionnelle interne."
    ]
   },
   "2026-11-04-inflation-zone-euro": {
    "corps": [
     {
-     "h": "",
-     "p": "Eurostat publie à 11 h l'estimation rapide de l'inflation d'octobre en zone euro. En septembre, elle atteignait 3,8 %, bien au-dessus de l'objectif de 2 % de la BCE, sous l'effet de la flambée du pétrole liée au conflit avec l'Iran. Un chiffre élevé renforcerait la pression pour un resserrement monétaire. En Suède, la Riksbank annonce sa décision de taux ce matin."
+     "h": "Ce qui va se passer",
+     "p": "Eurostat publie ce mercredi à 11 h l'estimation rapide (« flash ») de l'inflation d'octobre en zone euro. En septembre, la hausse des prix à la consommation atteignait 3,8 % sur un an, bien au-dessus de l'objectif de 2 % de la Banque centrale européenne. En Suède, la Riksbank annonce aussi sa décision de taux ce matin."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Après le pic de 2022 (plus de 10 % en octobre 2022, avec la guerre en Ukraine et la crise du gaz), l'inflation de la zone euro était revenue autour de 2 % en 2025, ce qui avait permis à la BCE de baisser ses taux. Le conflit entre les États-Unis et l'Iran en 2026, avec les menaces sur le détroit d'Ormuz, a fait remonter le pétrole au-dessus de 100 $ le baril. Les prix de l'énergie se sont répercutés sur l'essence, le chauffage et les transports, puis progressivement sur les autres prix."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "La BCE, présidée par Christine Lagarde, fixe les taux pour les 21 pays de la zone euro. Son mandat est la stabilité des prix. Elle distingue l'inflation totale de l'inflation « sous-jacente », hors énergie et alimentation, plus révélatrice des tensions durables. Les gouvernements, eux, sont pris entre le soutien au pouvoir d'achat et des budgets déjà tendus, comme en France."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Si l'inflation reste élevée, la BCE pourrait remonter ses taux, ce qui renchérirait le crédit pour les ménages, les entreprises et les États (et donc le coût de la dette française). À l'inverse, la détente récente du pétrole pourrait permettre une décrue dès les prochains mois. Les marchés obligataires réagiront immédiatement au chiffre, en particulier les taux allemands et français à 10 ans."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "La prochaine réunion de politique monétaire de la BCE est attendue mi-décembre, avec de nouvelles projections économiques. Le chiffre définitif d'octobre sera publié mi-novembre."
     }
    ],
    "sources": [
@@ -1152,6 +1377,12 @@
      "n": "TradingView (AFP) – Agenda",
      "u": "https://fr.tradingview.com/news/afp:cbb845dd0555c:0/"
     }
+   ],
+   "cles": [
+    "Inflation flash d'octobre publiée à 11 h par Eurostat.",
+    "Septembre : 3,8 %, près du double de l'objectif de 2 % de la BCE.",
+    "La hausse est surtout tirée par l'énergie, liée à la crise iranienne.",
+    "La Riksbank suédoise annonce aussi ses taux ce matin."
    ]
   },
   "2026-11-04-novo-nordisk-t3": {
@@ -1173,6 +1404,18 @@
     {
      "h": "Le contexte",
      "p": "Le laboratoire danois, longtemps première capitalisation européenne, a vécu deux années difficiles face à la concurrence d'Eli Lilly (Zepbound) et aux préparations copiées aux États-Unis. Le directeur général Mike Doustdar, arrivé en 2025, a lancé une restructuration. Relever une fourchette de prévisions qui reste proche de zéro montre que le groupe stabilise sa situation, sans encore relancer sa croissance."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Novo Nordisk, fondé en 1923 à Copenhague, est contrôlé par la Fondation Novo Nordisk, l'une des plus riches fondations du monde. Pionnier de l'insuline, il a inventé le sémaglutide, la molécule d'Ozempic (diabète) et de Wegovy (obésité), qui a fait de lui la première capitalisation européenne en 2023-2024. Son grand rival est l'américain Eli Lilly, avec le tirzépatide (Mounjaro, Zepbound), plus efficace selon les essais cliniques, qui lui a pris des parts de marché. En 2025, Novo a remplacé son directeur général et lancé un plan de restructuration avec des milliers de suppressions de postes."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Les traitements GLP-1 sont le plus grand marché pharmaceutique en création, évalué à plus de 100 Md$ par an d'ici la fin de la décennie. La version en comprimé de Wegovy, plus simple que l'injection hebdomadaire, peut élargir le marché à des millions de patients. Pour l'économie danoise, Novo pèse si lourd qu'il influence la croissance du pays et le niveau de la couronne."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les investisseurs surveilleront la concurrence de la pilule d'Eli Lilly (orforglipron), les prix négociés avec l'administration américaine et l'arrivée de génériques du sémaglutide dans plusieurs pays où le brevet expire en 2026."
     }
    ],
    "sources": [
@@ -1185,23 +1428,60 @@
   "2026-11-04-jd-ceconomy-nexperia": {
    "corps": [
     {
-     "h": "",
-     "p": "La Commission européenne a donné un feu vert conditionnel à JD.com pour le rachat de Ceconomy, maison mère allemande de MediaMarkt et Saturn, pour environ 2,5 Md$. C'est l'une des plus grosses acquisitions chinoises dans la distribution européenne. Par ailleurs, Nexperia, fabricant néerlandais de semi-conducteurs passé sous contrôle chinois, réclame environ 2 Md$ à son ancien actionnaire Wingtech devant la justice néerlandaise. Ce contentieux découle de la mise sous tutelle de l'entreprise par La Haye en 2025."
+     "h": "Ce qui s'est passé",
+     "p": "La Commission européenne a donné son feu vert, sous conditions, au rachat de Ceconomy par le géant chinois du e-commerce JD.com, pour environ 2,5 Md$. Dans un autre dossier sino-européen, le fabricant néerlandais de puces Nexperia réclame environ 2 Md$ à son ancien actionnaire chinois Wingtech devant la justice néerlandaise."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Ceconomy, basé à Düsseldorf, est la maison mère de MediaMarkt et Saturn, premier distributeur d'électronique grand public en Europe, avec environ un millier de magasins. Issu de la scission du groupe Metro en 2017, il souffre de la concurrence d'Amazon et de marges faibles. Son premier actionnaire historique est la famille Kellerhals (Convergenta).\n\nJD.com, fondé en 1998 par Richard Liu à Pékin, est le deuxième acteur du e-commerce chinois derrière Alibaba. Il est réputé pour sa logistique intégrée et cherche à se développer à l'international face au ralentissement de la consommation en Chine.\n\nNexperia, basé à Nimègue, est issu de l'ancienne division de semi-conducteurs standards de Philips (NXP). Il fabrique des composants basiques mais indispensables, notamment pour l'automobile. Il a été racheté en 2019 par le chinois Wingtech."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Pour JD.com, racheter Ceconomy permet d'acheter d'un coup un réseau physique et une marque connue en Europe, plutôt que de construire une présence de zéro. Pour Bruxelles, le dossier pose la question des investissements chinois dans des enseignes européennes : les conditions imposées (non précisées dans nos sources) visent sans doute les données clients et la concurrence.\n\nPour Nexperia, le gouvernement néerlandais a pris le contrôle de l'entreprise en 2025 en invoquant une loi d'exception sur la sécurité des approvisionnements, après des inquiétudes sur des transferts de technologie vers la Chine. Pékin a riposté en bloquant temporairement les exportations de puces Nexperia assemblées en Chine, ce qui a provoqué des pénuries chez les constructeurs automobiles européens. La procédure engagée contre Wingtech est un nouvel épisode de ce bras de fer."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Ces deux dossiers résument le dilemme européen face à la Chine : accueillir des capitaux et des acheteurs chinois tout en protégeant les technologies et les chaînes d'approvisionnement jugées stratégiques."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le closing du rachat de Ceconomy devrait intervenir dans les prochains mois. Le contentieux Nexperia-Wingtech risque de durer et de rester un sujet diplomatique entre La Haye et Pékin."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Le feu vert européen et la réclamation de Nexperia viennent de City News Service et n'ont pas encore été confirmés par la Commission ou une agence pour cette édition.",
    "sources": [
     {
      "n": "City News Service – Daily Buzz, 4 novembre",
      "u": "https://www.citynewsservice.cn/articles/china-biz-buzz/daily-buzz/daily-buzz-4-november-2026-3n70vrym"
     }
+   ],
+   "cles": [
+    "Bruxelles autorise sous conditions le rachat de Ceconomy (MediaMarkt, Saturn) par le chinois JD.com.",
+    "Montant d'environ 2,5 Md$.",
+    "Nexperia réclame environ 2 Md$ à son ancien actionnaire chinois Wingtech devant la justice néerlandaise."
    ]
   },
   "2026-11-04-bourses-europe": {
    "corps": [
     {
-     "h": "",
-     "p": "Le Stoxx 600 a reculé de 0,47 % mardi et le FTSE 100 de 1,14 %, pénalisé par les valeurs minières (ressources de base -2,2 %). Philips (+5,5 %) et Bayer (+4,9 %) ont progressé, tandis que Zalando a chuté de 5,9 %. Les investisseurs se positionnaient avant les résultats des midterms américains."
+     "h": "Ce qui s'est passé",
+     "p": "Les bourses européennes ont fini en baisse mardi, avant les résultats des élections américaines. Le Stoxx 600, qui regroupe les 600 plus grandes capitalisations européennes, a reculé de 0,47 %. Londres a été plus touché (FTSE 100 -1,14 %), à cause du poids des groupes miniers dans l'indice britannique : le secteur des ressources de base a perdu 2,2 %."
+    },
+    {
+     "h": "Les valeurs du jour",
+     "p": "Philips a gagné 5,5 %. Le groupe néerlandais, recentré sur les équipements médicaux après avoir vendu l'éclairage et l'électroménager, se remet d'années difficiles marquées par le rappel massif de ses appareils respiratoires (2021). Bayer a progressé de 4,9 %. Le chimiste allemand reste plombé par les milliers de procès aux États-Unis liés au glyphosate (Roundup), hérités du rachat de Monsanto en 2018, et chaque avancée juridique ou opérationnelle fait réagir le titre. Zalando, champion allemand de la mode en ligne, a perdu 5,9 %, dans un secteur sensible au ralentissement de la consommation."
+    },
+    {
+     "h": "Le contexte",
+     "p": "Les investisseurs européens étaient pris entre trois forces : l'attente des midterms américains, la correction des valeurs liées à l'IA, et la baisse du pétrole qui pèse sur les majors pétrolières mais soulage les consommateurs. Les minières souffrent aussi des doutes sur la demande chinoise de métaux."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Le Stoxx 600 reste un baromètre de la santé des entreprises européennes. Un Congrès démocrate aux États-Unis réduit le risque de nouvelles hausses de droits de douane votées par le Parlement américain, ce qui est plutôt positif pour les exportateurs européens."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Ce mercredi, l'inflation de la zone euro et la poursuite des résultats trimestriels (BMW, Arm, Ahold Delhaize, Heidelberg Materials, Novo Nordisk) dicteront la tendance."
     }
    ],
    "sources": [
@@ -1209,13 +1489,34 @@
      "n": "Boursorama (Reuters) – L'Europe finit dans le rouge",
      "u": "https://www.boursorama.com/bourse/actualites/l-europe-finit-dans-le-rouge-avant-les-resultats-des-elections-americaines-2d257c66228a5561e68927c0ad5a384e"
     }
+   ],
+   "cles": [
+    "Stoxx 600 -0,47 %, FTSE 100 -1,14 %.",
+    "Les ressources de base (minières) chutent de 2,2 %.",
+    "Philips +5,5 %, Bayer +4,9 %, Zalando -5,9 %."
    ]
   },
   "2026-11-04-euro-dollar": {
    "corps": [
     {
-     "h": "",
-     "p": "L'euro monte à 1,1241 $ ce matin, contre 1,1194 $ la veille. Le dollar recule aussi face au yen (157,76 contre 158,69). Le marché anticipe qu'un Congrès démocrate freinera l'agenda budgétaire et commercial de Donald Trump, ce qui pèse sur le billet vert."
+     "h": "Ce qui s'est passé",
+     "p": "L'euro s'échange à 1,1241 dollar ce matin, contre 1,1194 la veille, soit environ +0,4 %. Le dollar recule aussi face au yen, à 157,76 contre 158,69. Ce mouvement suit la victoire des démocrates, qui prennent le contrôle des deux chambres du Congrès américain."
+    },
+    {
+     "h": "Pourquoi le dollar baisse",
+     "p": "Le marché des changes réagit aux perspectives de croissance, de taux et de politique budgétaire. Un Congrès démocrate rend moins probables de nouvelles baisses d'impôts financées par la dette et des hausses de droits de douane votées par le Congrès, deux politiques qui avaient tendance à soutenir le dollar. Les investisseurs anticipent aussi un climat politique plus conflictuel à Washington, avec des enquêtes parlementaires et des blocages budgétaires."
+    },
+    {
+     "h": "Le contexte",
+     "p": "Un euro autour de 1,12 $ reste dans la fourchette des dernières années. Le yen, lui, est historiquement faible (plus de 150 pour un dollar) à cause de l'écart de taux entre le Japon et les États-Unis, malgré les hausses de taux de la Banque du Japon. Les autorités japonaises sont déjà intervenues sur le marché pour soutenir leur monnaie."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Un euro plus fort rend les importations moins chères pour les Européens, notamment le pétrole facturé en dollars, ce qui aide à freiner l'inflation. Mais il pèse sur la compétitivité des exportateurs européens et réduit la valeur en euros des bénéfices réalisés aux États-Unis par les entreprises du CAC 40."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le rapport sur l'emploi américain de vendredi et l'inflation de la zone euro ce mercredi pourraient modifier les anticipations de taux, et donc le change."
     }
    ],
    "sources": [
@@ -1223,6 +1524,11 @@
      "n": "AP (via News4Jax) – Asian shares fall",
      "u": "https://www.news4jax.com/business/2026/11/04/asian-shares-fall-on-selling-of-tech-shares-as-markets-watch-for-results-of-us-midterm-elections/"
     }
+   ],
+   "cles": [
+    "L'euro monte à 1,1241 $ contre 1,1194 $ la veille.",
+    "Le dollar recule aussi face au yen (157,76).",
+    "Le marché anticipe un frein à l'agenda de Trump après la vague démocrate."
    ]
   },
   "2026-11-04-midterms-congres": {
@@ -1302,12 +1608,24 @@
   "2026-11-04-gouverneurs-prop40": {
    "corps": [
     {
-     "h": "Les gouverneurs",
-     "p": "Au Texas, la démocrate Gina Hinojosa bat le gouverneur sortant Greg Abbott, qui a reconnu sa défaite, selon le Boston Globe. C'est une secousse majeure dans un État dirigé par des républicains depuis 1995. En Ohio, Amy Acton, ancienne directrice de la santé publique de l'État, bat Vivek Ramaswamy. En Floride, Byron Donalds (républicain) l'emporte. Josh Shapiro (Pennsylvanie), Wes Moore (Maryland) et JB Pritzker (Illinois), trois prétendants potentiels pour 2028, sont réélus."
+     "h": "Ce qui s'est passé",
+     "p": "En plus du Congrès, 36 postes de gouverneur étaient en jeu mardi. La surprise la plus spectaculaire vient du Texas : la démocrate Gina Hinojosa bat Greg Abbott, gouverneur républicain depuis 2015, qui a reconnu sa défaite selon le Boston Globe. En Ohio, la démocrate Amy Acton prend le poste au Parti républicain en battant l'entrepreneur Vivek Ramaswamy. En Floride, Byron Donalds, proche de Donald Trump, garde l'État aux républicains. Josh Shapiro (Pennsylvanie), Wes Moore (Maryland) et JB Pritzker (Illinois) sont réélus."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Gina Hinojosa, avocate et élue de la Chambre des représentants du Texas depuis 2017, est issue d'une famille politique d'Austin. Greg Abbott, ancien procureur général, s'est fait connaître pour sa politique migratoire très dure (opération Lone Star, envoi de bus de migrants vers les villes démocrates).\n\nAmy Acton, médecin, a dirigé la santé publique de l'Ohio pendant la pandémie. Vivek Ramaswamy, entrepreneur des biotechnologies, candidat à la primaire républicaine de 2024 puis brièvement associé au DOGE d'Elon Musk, était soutenu par Trump.\n\nShapiro, Moore et Pritzker sont régulièrement cités comme candidats potentiels à la primaire démocrate pour la présidentielle de 2028."
     },
     {
      "h": "La Californie et l'impôt sur les milliardaires",
-     "p": "Les Californiens se prononcent sur la Proposition 40, un impôt exceptionnel de 5 % sur la fortune d'environ 260 milliardaires. Le résultat est encore attendu. Une adoption serait une première aux États-Unis et pourrait relancer les départs de grandes fortunes vers le Texas ou la Floride."
+     "p": "Les Californiens votaient aussi sur la Proposition 40, qui créerait un impôt exceptionnel de 5 % sur la fortune d'environ 260 milliardaires résidant dans l'État. Le résultat était encore attendu à l'heure de notre bouclage. Les partisans y voient un moyen de financer la santé et l'éducation. Les opposants, dont une partie de la Silicon Valley, préviennent qu'il provoquerait des départs vers des États sans impôt sur le revenu comme le Texas ou la Floride, et des contestations juridiques."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Les gouverneurs pèsent lourd : ils gèrent la santé, l'éducation, la police, l'organisation des élections et une partie de la politique énergétique. Le basculement du Texas, deuxième économie du pays et symbole du conservatisme, serait un tournant politique majeur, à deux ans de la présidentielle de 2028."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les nouveaux gouverneurs prendront leurs fonctions en janvier. Le dépouillement final de la Proposition 40 pourrait prendre plusieurs jours, la Californie comptant de nombreux votes par correspondance."
     }
    ],
    "sources": [
@@ -1319,13 +1637,36 @@
      "n": "Forbes – Live updates",
      "u": "https://www.forbes.com/sites/saradorn/2026/11/03/midterm-election-results-live-updates-democrat-roy-cooper-wins-north-carolina-first-senate-seat-flipped/"
     }
-   ]
+   ],
+   "cles": [
+    "Texas : la démocrate Gina Hinojosa bat le gouverneur sortant Greg Abbott.",
+    "Ohio : Amy Acton bat Vivek Ramaswamy.",
+    "Floride : Byron Donalds (républicain) l'emporte.",
+    "Californie : la Proposition 40 prévoit un impôt exceptionnel de 5 % sur la fortune d'environ 260 milliardaires."
+   ],
+   "note": "Les résultats des gouverneurs sont ceux connus au matin du 4 novembre et peuvent encore évoluer. Le résultat de la Proposition 40 n'était pas encore disponible."
   },
   "2026-11-04-jolts-emploi": {
    "corps": [
     {
-     "h": "",
-     "p": "Les offres d'emploi (enquête JOLTS) sont remontées à 7,52 millions en septembre, contre 7,19 millions en août, au-dessus des attentes. Le marché du travail reste solide, ce qui a fait monter le rendement du 10 ans américain à 4,96 %. Aujourd'hui sont publiés l'enquête ADP sur l'emploi privé et l'indice ISM des services, avant le rapport officiel sur l'emploi vendredi."
+     "h": "Ce qui s'est passé",
+     "p": "Le nombre d'offres d'emploi non pourvues aux États-Unis est remonté à 7,52 millions fin septembre, contre 7,19 millions en août, selon l'enquête JOLTS du département du Travail. C'est plus que prévu. Dans la foulée, le rendement des emprunts d'État américains à 10 ans a grimpé à 4,96 %."
+    },
+    {
+     "h": "Qu'est-ce que JOLTS ?",
+     "p": "Le « Job Openings and Labor Turnover Survey » mesure chaque mois les postes vacants, les embauches, les démissions et les licenciements. C'est l'un des indicateurs préférés de la Réserve fédérale (Fed) pour juger de la tension sur le marché du travail. Beaucoup d'offres par rapport au nombre de chômeurs signifie que les employeurs doivent augmenter les salaires pour recruter, ce qui peut alimenter l'inflation. En 2022, au pic post-Covid, les offres avaient dépassé 12 millions."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Depuis 2023, le marché du travail américain se normalise lentement : moins d'offres, moins de démissions, mais peu de licenciements. En 2026, la flambée du pétrole liée au conflit avec l'Iran a relancé l'inflation, ce qui complique la tâche de la Fed. Elle doit choisir entre soutenir l'emploi en baissant ses taux et combattre l'inflation en les maintenant élevés."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Un marché de l'emploi solide éloigne la perspective de baisses de taux rapides de la Fed. C'est ce qui pousse les rendements obligataires à la hausse. Or des taux longs proches de 5 % renchérissent les crédits immobiliers, le financement des entreprises et des opérations de LBO, et pèsent sur la valorisation des actions de croissance, notamment dans la tech."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Trois rendez-vous cette semaine : l'enquête ADP sur l'emploi privé et l'indice ISM des services ce mercredi, puis vendredi à 14 h 30 (heure de Paris) le rapport officiel sur l'emploi d'octobre (créations d'emplois, taux de chômage, salaires)."
     }
    ],
    "sources": [
@@ -1337,6 +1678,12 @@
      "n": "AP (via News4Jax)",
      "u": "https://www.news4jax.com/business/2026/11/04/asian-shares-fall-on-selling-of-tech-shares-as-markets-watch-for-results-of-us-midterm-elections/"
     }
+   ],
+   "cles": [
+    "Offres d'emploi JOLTS : 7,52 millions en septembre, contre 7,19 millions en août.",
+    "Le marché du travail américain reste solide malgré le ralentissement.",
+    "Le 10 ans américain monte à 4,96 %.",
+    "ADP et ISM services aujourd'hui, rapport officiel sur l'emploi vendredi."
    ]
   },
   "2026-11-04-amd-resultats": {
@@ -1354,6 +1701,18 @@
     {
      "h": "Pourquoi c'est important",
      "p": "AMD est le principal concurrent de Nvidia sur les puces d'IA. Ces chiffres arrivent alors que les marchés s'inquiètent d'une bulle de l'IA : le Nasdaq 100 est en correction et les bourses asiatiques ont plongé ce matin. Ils montrent que les dépenses d'infrastructure des hyperscalers restent très fortes pour l'instant."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "AMD (Advanced Micro Devices), fondé en 1969 dans la Silicon Valley, était au bord de la faillite en 2014 quand Lisa Su en a pris la direction. Elle l'a relancé avec les processeurs Ryzen (PC) et EPYC (serveurs), qui ont pris des parts de marché à Intel, puis avec les accélérateurs d'IA Instinct, seule vraie alternative aux GPU de Nvidia. AMD a racheté Xilinx (puces programmables) en 2022 pour environ 49 Md$, puis ZT Systems (conception de serveurs pour data centers) en 2025. En 2025, il a signé un partenariat majeur avec OpenAI pour la fourniture de GPU sur plusieurs années."
+    },
+    {
+     "h": "Ce que sont Helios et Venice",
+     "p": "Helios est un système complet d'IA à l'échelle d'une baie de serveurs, qui assemble GPU Instinct, processeurs EPYC et réseau. C'est la réponse d'AMD aux systèmes NVL de Nvidia. « Venice » est le nom de code de la nouvelle génération de processeurs serveurs EPYC. Leur montée en production doit porter la croissance des prochains trimestres."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "AMD vise environ 17 Md$ de chiffre d'affaires au quatrième trimestre. La capacité de TSMC, qui fabrique ses puces, et la poursuite des dépenses des hyperscalers (Microsoft, Meta, Oracle, OpenAI) seront déterminantes."
     }
    ],
    "sources": [
@@ -1366,91 +1725,300 @@
   "2026-11-04-apple-marge": {
    "corps": [
     {
-     "h": "",
-     "p": "Apple a reculé de 1,9 % mardi. Le groupe prévoit une marge brute de 45 à 46 % pour le trimestre de décembre, sous les attentes des analystes, à cause de la hausse du coût des composants. Les puces mémoire, très demandées par l'IA, ont fortement renchéri. C'est un signe que la course aux data centers pèse aussi sur les fabricants d'appareils grand public."
+     "h": "Ce qui s'est passé",
+     "p": "L'action Apple a reculé de 1,9 % mardi. Le groupe prévoit pour le trimestre de décembre, le plus important de l'année avec les fêtes, une marge brute de 45 à 46 %, en dessous de ce qu'attendaient les analystes. Il explique cette pression par la hausse du coût des composants."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "La course aux data centers d'IA a fait exploser la demande de puces mémoire, en particulier la mémoire à haute bande passante (HBM) utilisée avec les GPU de Nvidia et AMD. Les trois grands fabricants (Samsung, SK Hynix, Micron) ont réorienté leurs capacités vers ces produits très rentables. Résultat : la mémoire classique (DRAM, NAND) utilisée dans les smartphones et les ordinateurs devient plus rare et plus chère. Apple, premier acheteur mondial de composants, subit cette hausse sur ses iPhone, Mac et iPad."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Apple, dirigé par Tim Cook, réalise environ la moitié de son chiffre d'affaires avec l'iPhone. Sa marge brute, autour de 45-47 % ces dernières années, est l'une des plus élevées du secteur matériel grâce à sa puissance de négociation et au poids croissant des services (App Store, iCloud, Apple Music), beaucoup plus rentables. Pour défendre ses marges, Apple peut augmenter ses prix, réduire certaines spécifications ou accepter une baisse temporaire."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "C'est un effet secondaire du boom de l'IA : les dépenses massives des hyperscalers profitent aux fabricants de puces mais renchérissent les coûts des fabricants d'appareils grand public. Pour les investisseurs, la question est de savoir si Apple pourra répercuter ces coûts sur ses clients sans freiner les ventes, alors que son offre d'IA (Apple Intelligence) est jugée en retard face à Google et Samsung."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le résultat du trimestre de décembre sera publié fin janvier. Les prix de la mémoire et les annonces des fabricants (Samsung, SK Hynix, Micron) seront des indicateurs avancés."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les prévisions de marge et la baisse du titre viennent de TechFlow et n'ont pas encore été vérifiées dans le communiqué d'Apple pour cette édition.",
    "sources": [
     {
      "n": "TechFlow – Market wrap",
      "u": "https://www.techflowpost.com/en-US/article/35085"
     }
+   ],
+   "cles": [
+    "Apple recule de 1,9 %.",
+    "Marge brute attendue de 45 à 46 % au trimestre de décembre, sous le consensus.",
+    "En cause : la flambée du prix des composants, notamment de la mémoire, aspirée par l'IA."
    ]
   },
   "2026-11-04-wall-street": {
    "corps": [
     {
-     "h": "",
-     "p": "Le S&P 500 a gagné 0,36 % mardi, à 7 568,92 points, mettant fin à trois séances de baisse. Le Nasdaq Composite a progressé de 0,83 %. L'indice reste pourtant à plus de 5 % de son record, et le Nasdaq 100 est en correction. Le rendement du 10 ans américain grimpe à 4,95 % et l'indice de volatilité VIX est à 20,8. Ce matin, les contrats à terme reculent d'environ 0,5 à 0,6 % après les résultats des midterms et la chute des bourses asiatiques."
+     "h": "Ce qui s'est passé",
+     "p": "Wall Street a terminé en hausse mardi : le S&P 500 a gagné 0,36 %, à 7 568,92 points, mettant fin à trois séances de baisse, et le Nasdaq Composite 0,83 %. Mais le contexte reste fragile : le S&P 500 est à plus de 5 % de son record et le Nasdaq 100, qui regroupe les grandes valeurs technologiques, est en « correction », c'est-à-dire en baisse de plus de 10 % par rapport à son sommet. Ce matin, les contrats à terme reculent d'environ 0,5 à 0,6 %."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Depuis 2023, la Bourse américaine est portée par l'IA : Nvidia, Microsoft, Alphabet, Meta, Amazon et Broadcom ont concentré une grande partie des gains. Depuis quelques semaines, le doute s'installe sur la rentabilité des centaines de milliards investis dans les data centers et sur le niveau de valorisation de ces titres. S'y ajoutent des taux longs proches de 5 %, qui rendent les obligations plus attractives que les actions, et l'incertitude politique des midterms."
+    },
+    {
+     "h": "Les indicateurs",
+     "p": "Le rendement du Trésor américain à 10 ans, à 4,95 %, est la référence mondiale du coût de l'argent. Il a monté après des offres d'emploi plus fortes que prévu. Le VIX, « l'indice de la peur » qui mesure la volatilité attendue sur le S&P 500, est à 20,8. Au-dessus de 20, il signale une nervosité nette, sans panique (il dépasse 30 à 40 lors des crises)."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Historiquement, selon un analyste d'Edward Jones cité par l'AP, le S&P 500 a toujours progressé dans les six mois suivant une élection de mi-mandat depuis 1970. Un Congrès divisé est souvent perçu comme rassurant, car il limite les changements brutaux de politique. Mais la correction de la tech peut s'auto-entretenir si les résultats ou les prévisions déçoivent."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les résultats de grandes valeurs technologiques et le rapport sur l'emploi de vendredi seront déterminants. La séance de mercredi dira comment Wall Street digère la vague démocrate."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les niveaux de clôture et la correction du Nasdaq 100 viennent de TechFlow et Finwire. Les données de l'AP confirment la tendance et les taux.",
    "sources": [
     {
      "n": "TechFlow – Market wrap",
      "u": "https://www.techflowpost.com/en-US/article/35085"
+    },
+    {
+     "n": "AP (via News4Jax)",
+     "u": "https://www.news4jax.com/business/2026/11/04/asian-shares-fall-on-selling-of-tech-shares-as-markets-watch-for-results-of-us-midterm-elections/"
     }
+   ],
+   "cles": [
+    "S&P 500 +0,36 % à 7 568,92, fin d'une série de trois baisses.",
+    "Le Nasdaq 100 reste en correction (plus de 10 % sous son record).",
+    "10 ans américain à 4,95 %, VIX à 20,8.",
+    "Contrats à terme en baisse ce matin après les midterms."
    ]
   },
   "2026-11-04-bresil-flavio-bolsonaro": {
    "corps": [
     {
-     "h": "",
-     "p": "Le gouvernement brésilien demande des explications à l'Argentine. Flávio Bolsonaro, fils aîné de l'ancien président Jair Bolsonaro, battu au second tour de la présidentielle face à Lula, aurait quitté le Brésil en passant par l'Argentine et se trouverait désormais à Miami. L'affaire tend un peu plus les relations entre Lula et le président argentin Javier Milei, proche du clan Bolsonaro."
+     "h": "Ce qui s'est passé",
+     "p": "Le gouvernement brésilien a demandé des explications à l'Argentine après la sortie du territoire de Flávio Bolsonaro, battu au second tour de la présidentielle le 25 octobre. Selon la revue de presse régionale, le sénateur serait passé par l'Argentine avant de rejoindre Miami. Brasília veut savoir dans quelles conditions ce départ a eu lieu, alors que la famille Bolsonaro est visée par plusieurs procédures judiciaires."
+    },
+    {
+     "h": "L'élection",
+     "p": "Le premier tour, le 4 octobre, avait créé la surprise : Flávio Bolsonaro était arrivé en tête avec environ 47,3 % des voix contre 44,9 % pour Lula, selon le Tribunal supérieur électoral (TSE). Au second tour, le 25 octobre, Lula a renversé la tendance et a été réélu avec environ 51,7 % des voix. À 80 ans, il entame un quatrième mandat non consécutif, après 2003-2010 et 2023-2026. Les sondages avaient montré pendant des mois un duel très serré."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Luiz Inácio Lula da Silva, ancien ouvrier métallurgiste et syndicaliste, fondateur du Parti des travailleurs (PT), a été président de 2003 à 2010, emprisonné en 2018-2019 dans l'affaire Lava Jato (condamnation ensuite annulée), puis réélu en 2022 face à Jair Bolsonaro.\n\nFlávio Bolsonaro, 45 ans, est le fils aîné de Jair Bolsonaro et sénateur de Rio de Janeiro (Parti libéral). Il est devenu le candidat de la droite après la condamnation de son père : Jair Bolsonaro purge une peine de 27 ans de prison pour avoir tenté d'organiser un coup d'État après sa défaite de 2022. Pendant la campagne, Flávio avait promis de gracier son père s'il était élu.\n\nJavier Milei, président argentin libertarien depuis fin 2023, est un allié idéologique déclaré des Bolsonaro et entretient des relations exécrables avec Lula."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "L'épisode tend un peu plus les relations entre les deux premières économies d'Amérique du Sud, partenaires au sein du Mercosur. Il pose aussi la question de l'avenir de la droite brésilienne sans les Bolsonaro au Brésil, et des procédures judiciaires que pourrait éviter Flávio en restant à l'étranger. Lula avait par ailleurs accusé Donald Trump d'avoir tenté d'influencer l'élection en faveur de son rival."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Il faudra suivre la réponse de Buenos Aires, la durée du séjour de Flávio Bolsonaro aux États-Unis et la formation du nouveau gouvernement de Lula, qui doit prendre ses fonctions le 1er janvier 2027."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La sortie du territoire de Flávio Bolsonaro et la demande d'explications de Brasília viennent du Rio Times et n'ont pas encore été confirmées par une agence. Les résultats électoraux sont confirmés par le TSE et la presse brésilienne.",
    "sources": [
     {
      "n": "Rio Times – Latin American Pulse, 4 novembre",
      "u": "https://www.riotimesonline.com/latin-american-pulse-for-wednesday-november-4-2026/"
+    },
+    {
+     "n": "TSE – Flávio Bolsonaro et Lula au second tour",
+     "u": "https://tse.jus.br/comunicacao/noticias/2026/Outubro/flavio-bolsonaro-e-lula-vao-disputar-o-2o-turno-para-a-presidencia-da-republica"
+    },
+    {
+     "n": "MercoPress – Sondage CNT/MDA (août 2026)",
+     "u": "https://en.mercopress.com/2026/08/13/lula-s-runoff-lead-over-flavio-bolsonaro-narrows-to-8.9-points-cnt-mda-poll-finds"
+    },
+    {
+     "n": "LBC (AP) – Premier tour",
+     "u": "https://www.lbc.co.uk/world-news/election-brazil-lula-bolsonaro-2026/"
+    }
+   ],
+   "cles": [
+    "Lula a été réélu le 25 octobre avec environ 51,7 % des voix, pour un quatrième mandat.",
+    "Battu, Flávio Bolsonaro aurait quitté le Brésil via l'Argentine et se trouverait à Miami.",
+    "Brasília demande des explications à Buenos Aires.",
+    "Son père, Jair Bolsonaro, purge une peine de 27 ans de prison pour tentative de coup d'État."
+   ],
+   "chrono": [
+    {
+     "d": "2003-2010",
+     "t": "Deux premiers mandats de Lula."
+    },
+    {
+     "d": "Oct. 2022",
+     "t": "Lula bat Jair Bolsonaro."
+    },
+    {
+     "d": "8 janv. 2023",
+     "t": "Assaut des partisans de Bolsonaro sur les institutions à Brasília."
+    },
+    {
+     "d": "2025",
+     "t": "Jair Bolsonaro condamné à 27 ans de prison pour tentative de coup d'État."
+    },
+    {
+     "d": "4 oct. 2026",
+     "t": "Premier tour : Flávio Bolsonaro devant Lula."
+    },
+    {
+     "d": "25 oct. 2026",
+     "t": "Second tour : Lula réélu."
+    },
+    {
+     "d": "Nov. 2026",
+     "t": "Flávio Bolsonaro quitte le Brésil via l'Argentine."
     }
    ]
   },
   "2026-11-04-venezuela-sofa": {
    "corps": [
     {
-     "h": "",
-     "p": "Washington négocie avec Caracas un accord sur le statut des forces (SOFA), qui fixerait le cadre juridique de la présence de militaires américains au Venezuela. La négociation suit une opération conjointe contre l'Armée de libération nationale (ELN), une guérilla colombienne active à la frontière, qui a fait au moins 23 morts. C'est un renversement spectaculaire après des années de sanctions et de rupture diplomatique."
+     "h": "Ce qui s'est passé",
+     "p": "Les États-Unis négocient avec le Venezuela un accord sur le statut des forces (SOFA, pour « Status of Forces Agreement »). Ce type de traité fixe le cadre juridique de la présence de militaires américains dans un pays : immunités, juridiction en cas d'infraction, bases, mouvements. La négociation suit une opération conjointe contre l'Armée de libération nationale (ELN), une guérilla colombienne, qui a fait au moins 23 morts."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le 3 janvier 2026, une opération militaire américaine a capturé le président vénézuélien Nicolás Maduro et son épouse à Caracas pour les juger aux États-Unis, notamment pour narcoterrorisme. La vice-présidente Delcy Rodríguez a été désignée présidente par intérim. Après avoir d'abord dénoncé une « atrocité », elle a rapidement choisi la coopération avec Washington : rétablissement des relations diplomatiques, accord énergétique de long terme, levée progressive des sanctions américaines, y compris contre elle.\n\nL'ELN, guérilla d'origine marxiste fondée en Colombie en 1964 et classée terroriste par Washington, utilisait depuis des années le territoire vénézuélien comme base arrière, avec la complicité d'une partie de l'appareil chaviste. Washington exige désormais que Caracas l'en chasse."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Delcy Rodríguez, ancienne ministre et figure du chavisme, cherche à conserver le pouvoir en se rendant indispensable aux États-Unis, notamment sur le pétrole et les minerais. Donald Trump veut un Venezuela stable, ouvert aux compagnies américaines et fermé aux groupes armés et aux trafics. La Colombie, voisine directe, s'est engagée dans des actions conjointes contre l'ELN."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Un SOFA institutionnaliserait une présence militaire américaine durable dans un pays qui fut pendant vingt ans le principal adversaire de Washington en Amérique latine. Le Venezuela possède les plus grandes réserves de pétrole prouvées au monde : sa normalisation pèse sur l'offre pétrolière mondiale. Le sujet reste contesté aux États-Unis : en 2026, une résolution pour retirer les troupes américaines du Venezuela a été rejetée de justesse à la Chambre, à égalité de voix."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Avec un Congrès désormais démocrate, la présence militaire américaine au Venezuela pourrait faire l'objet de nouveaux votes et d'enquêtes. La signature du SOFA et l'évolution des opérations contre l'ELN sont à surveiller."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "L'opération contre l'ELN (23 morts) et la négociation du SOFA viennent de Foreign Exchanges et n'ont pas encore été confirmées par une agence. Le contexte (capture de Maduro, rôle de Delcy Rodríguez) est confirmé par plusieurs médias de référence.",
    "sources": [
     {
      "n": "Foreign Exchanges – World roundup, 3 novembre",
      "u": "https://www.foreignexchanges.news/p/world-roundup-november-3-2026"
+    },
+    {
+     "n": "InSight Crime – ELN in Venezuela",
+     "u": "https://insightcrime.org/venezuelaorganized-crime-news/eln-in-venezuela"
+    },
+    {
+     "n": "Jerusalem Post (The Guardian) – Rodríguez agreed to work with the US",
+     "u": "https://www.jpost.com/international/article-884295"
+    }
+   ],
+   "cles": [
+    "Washington négocie un accord sur le statut de ses forces armées (SOFA) avec Caracas.",
+    "Il fait suite à une opération conjointe contre la guérilla de l'ELN (au moins 23 morts).",
+    "Depuis la capture de Nicolás Maduro par les États-Unis en janvier 2026, Delcy Rodríguez dirige le pays et s'est rapprochée de Washington."
+   ],
+   "chrono": [
+    {
+     "d": "1964",
+     "t": "Fondation de l'ELN en Colombie."
+    },
+    {
+     "d": "2013",
+     "t": "Nicolás Maduro succède à Hugo Chávez."
+    },
+    {
+     "d": "3 janv. 2026",
+     "t": "Capture de Maduro par les forces américaines."
+    },
+    {
+     "d": "5 janv. 2026",
+     "t": "Delcy Rodríguez prête serment comme présidente par intérim."
+    },
+    {
+     "d": "Mars 2026",
+     "t": "Rétablissement des relations diplomatiques avec Washington."
+    },
+    {
+     "d": "Nov. 2026",
+     "t": "Négociation d'un SOFA après une opération conjointe contre l'ELN."
     }
    ]
   },
   "2026-11-04-copom-taux": {
    "corps": [
     {
-     "h": "",
-     "p": "Le Copom, comité de politique monétaire de la Banque centrale du Brésil, annonce sa décision ce soir (22 h 30, heure de Paris). Une baisse du taux directeur vers 7,5 % est discutée, et le sujet divise le camp de Lula, réélu : certains veulent relancer le crédit, d'autres craignent l'inflation."
+     "h": "Ce qui va se passer",
+     "p": "Le Comité de politique monétaire (Copom) de la Banque centrale du Brésil annonce ce soir sa décision sur le taux Selic, le taux directeur du pays. Selon le Rio Times, une baisse vers 7,5 % est discutée. C'est la première réunion depuis la réélection de Lula le 25 octobre."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le Brésil a historiquement des taux d'intérêt parmi les plus élevés du monde, hérités de décennies d'hyperinflation (jusqu'au plan Real de 1994). Pour combattre l'inflation post-Covid, la banque centrale avait monté la Selic jusqu'à 13,75 % en 2022-2023, puis à nouveau à environ 15 % en 2025 face au dérapage des anticipations d'inflation. Depuis, l'inflation s'est modérée et le cycle de baisse a commencé."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "La Banque centrale du Brésil est indépendante depuis une loi de 2021. Elle est présidée par Gabriel Galípolo, nommé par Lula fin 2024, ancien numéro deux du ministère des Finances. Lula critique depuis des années des taux trop élevés qui, selon lui, étouffent le crédit et la croissance. Le ministre des Finances Fernando Haddad défend un cadre budgétaire plus rigoureux pour rassurer les marchés. Le débat oppose ceux qui veulent relancer l'économie rapidement à ceux qui craignent un retour de l'inflation et une fuite des capitaux."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Une baisse rapide des taux soutiendrait le crédit, l'investissement et la Bourse de São Paulo, mais pourrait affaiblir le real si les investisseurs doutent de la discipline budgétaire du nouveau mandat. Pour les investisseurs étrangers, le Brésil reste une destination de « carry trade » : on emprunte dans une devise à taux bas pour placer en real à taux élevé."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le communiqué de ce soir et le compte rendu publié la semaine prochaine diront si la banque centrale accélère la baisse ou temporise. Les marchés surveilleront aussi les premières annonces budgétaires du nouveau mandat."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Le niveau de 7,5 % évoqué et les divisions dans le camp Lula viennent du Rio Times. Le niveau actuel de la Selic n'a pas été vérifié pour cette édition.",
    "sources": [
     {
      "n": "Rio Times – Latin American Pulse",
      "u": "https://www.riotimesonline.com/latin-american-pulse-for-wednesday-november-4-2026/"
     }
+   ],
+   "cles": [
+    "Le Copom, comité monétaire de la Banque centrale du Brésil, annonce sa décision ce soir (22 h 30, heure de Paris).",
+    "Une baisse du taux directeur (Selic) vers 7,5 % est débattue.",
+    "Le sujet divise le camp de Lula, qui vient d'être réélu."
    ]
   },
   "2026-11-04-argentine-risque-pays": {
    "corps": [
     {
-     "h": "",
-     "p": "Le risque pays argentin, c'est-à-dire l'écart de rendement entre la dette argentine et celle des États-Unis, a grimpé de 3 % à environ 829 points de base, au plus haut depuis un an. Le dollar de gros atteint 1 550 pesos. Les investisseurs doutent de la capacité du pays à honorer ses remboursements de 2027 sans nouvel accès aux marchés. À São Paulo, l'Ibovespa a reculé de 1,4 %."
+     "h": "Ce qui s'est passé",
+     "p": "Le « risque pays » argentin a grimpé de 3 % mardi, à environ 829 points de base, son plus haut niveau depuis un an. Le dollar de gros (le taux officiel entre banques) a atteint 1 550 pesos. Les investisseurs s'inquiètent de la capacité du pays à rembourser les échéances de dette de 2027. À São Paulo, l'Ibovespa a reculé de 1,4 %."
+    },
+    {
+     "h": "Qu'est-ce que le risque pays ?",
+     "p": "C'est l'écart de rendement entre les obligations en dollars de l'Argentine et celles du Trésor américain, mesuré par JPMorgan (indice EMBI). 829 points de base signifient que l'Argentine doit payer environ 8,3 points de plus que les États-Unis pour emprunter. Au-delà de 1 000 points, un pays est considéré comme quasiment exclu des marchés internationaux."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "L'Argentine a fait défaut neuf fois sur sa dette souveraine, la dernière en 2020. Élu fin 2023, le président libertarien Javier Milei a mené une thérapie de choc : coupes massives dans les dépenses, fin du financement monétaire du déficit, forte dévaluation. L'inflation, qui dépassait 200 % par an, a fortement reculé et le pays a dégagé un excédent budgétaire. L'Argentine a obtenu un nouveau programme du FMI de 20 Md$ en 2025 et un soutien du Trésor américain.\n\nMais les réserves de change de la banque centrale restent faibles, et de grosses échéances obligataires arrivent en 2027. Le marché doute que le pays puisse se refinancer sur les marchés à un coût raisonnable."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Si le risque pays continue de monter, l'Argentine ne pourra pas revenir sur les marchés et devra puiser dans ses réserves ou négocier avec le FMI, ce qui ferait pression sur le peso. Pour les investisseurs en dette émergente, l'Argentine est un pari à haut rendement et à haut risque. Une crise affecterait aussi le Brésil voisin, premier partenaire commercial."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "À surveiller : les réserves de la banque centrale argentine, d'éventuelles annonces de refinancement ou d'échange de dette, et les déclarations du FMI."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les niveaux de marché viennent du Rio Times et n'ont pas été vérifiés auprès d'une agence pour cette édition. Le contexte historique est établi.",
    "sources": [
     {
      "n": "Rio Times – Argentina markets, 3 novembre",
      "u": "https://www.riotimesonline.com/argentina-markets-merval-peso-tuesday-november-3-2026/"
     }
+   ],
+   "cles": [
+    "Le risque pays argentin grimpe de 3 % à environ 829 points de base, au plus haut depuis un an.",
+    "Le dollar de gros atteint 1 550 pesos.",
+    "Les investisseurs doutent des remboursements de 2027.",
+    "L'Ibovespa brésilien recule de 1,4 %."
    ]
   },
   "2026-11-04-tanzanie-lissu": {
@@ -1550,46 +2118,109 @@
   "2026-11-04-afrique-du-sud-locales": {
    "corps": [
     {
-     "h": "",
-     "p": "Plus de 29 millions de Sud-Africains sont appelés aux urnes ce mercredi pour les élections municipales. La campagne a été marquée par une vingtaine d'assassinats de candidats et de militants, un phénomène récurrent dans la politique locale sud-africaine. C'est le premier grand test pour le gouvernement d'union nationale formé en 2024 entre l'ANC et l'Alliance démocratique, après que l'ANC a perdu sa majorité absolue."
+     "h": "Ce qui se passe",
+     "p": "Les Sud-Africains votent ce mercredi pour élire leurs conseils municipaux, avec plus de 29 millions d'inscrits. La campagne a été marquée par une vingtaine d'assassinats de candidats et de militants, selon le Rio Times."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Depuis la fin de l'apartheid en 1994, le Congrès national africain (ANC), le parti de Nelson Mandela, a dominé la vie politique. Mais corruption, chômage massif (plus de 30 %), coupures d'électricité à répétition et effondrement des services municipaux ont érodé son soutien. Aux législatives de mai 2024, l'ANC a perdu pour la première fois sa majorité absolue (environ 40 %). Le président Cyril Ramaphosa a dû former un « gouvernement d'union nationale » avec l'Alliance démocratique (DA), parti libéral et pro-marché, son principal opposant historique."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "L'ANC, dirigé par Cyril Ramaphosa, cherche à stopper son déclin. La DA, menée par John Steenhuisen, dirige déjà la province du Cap-Occidental et la ville du Cap, réputée mieux gérée. Le parti uMkhonto weSizwe (MK) de l'ancien président Jacob Zuma, très fort au KwaZulu-Natal, et les Combattants pour la liberté économique (EFF) de Julius Malema, à la gauche radicale, se disputent l'électorat déçu de l'ANC. Les violences politiques locales sont un fléau ancien, surtout au KwaZulu-Natal, où les postes municipaux donnent accès aux marchés publics."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Les municipalités gèrent l'eau, l'électricité, les routes et les déchets, au cœur des frustrations quotidiennes. Le scrutin dira si la coalition nationale ANC-DA est récompensée ou sanctionnée, et préparera les élections générales de 2029. Pour les investisseurs, la stabilité de la coalition est un facteur clé de la remontée du rand et des actifs sud-africains."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les résultats sont attendus dans les jours qui suivent. Les grandes métropoles (Johannesburg, Tshwane/Pretoria, eThekwini/Durban) seront scrutées : sans majorité, elles sont souvent gouvernées par des coalitions instables."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Le nombre d'inscrits et le bilan des violences viennent du Rio Times et n'ont pas encore été confirmés par la commission électorale sud-africaine ou une agence.",
    "sources": [
     {
      "n": "Rio Times – Africa Intelligence Brief",
      "u": "https://www.riotimesonline.com/africa-intelligence-brief-tuesday-november-3-2026/"
     }
+   ],
+   "cles": [
+    "Plus de 29 millions d'électeurs inscrits pour les élections municipales.",
+    "Une vingtaine de meurtres liés à la campagne.",
+    "Premier grand test du gouvernement d'union nationale ANC-DA formé en 2024."
    ]
   },
   "2026-11-04-soudan-kordofan": {
    "corps": [
     {
-     "h": "",
-     "p": "Une frappe de drone attribuée aux Forces de soutien rapide (FSR) sur une station-service du Kordofan-Sud a fait au moins 7 morts. Depuis avril 2023, la guerre entre l'armée soudanaise et les FSR du général Hemedti a provoqué l'une des pires crises humanitaires au monde, avec plus de dix millions de déplacés. Après la chute d'El-Fasher en 2025, les combats se sont déplacés vers la région du Kordofan."
+     "h": "Ce qui s'est passé",
+     "p": "Une frappe de drone attribuée aux Forces de soutien rapide (FSR) a touché une station-service dans l'État du Kordofan-Sud, au centre-sud du Soudan, faisant au moins 7 morts."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "En avril 2023, la rivalité entre les deux hommes forts du régime militaire a dégénéré en guerre ouverte. D'un côté, le général Abdel Fattah al-Burhane, chef de l'armée et dirigeant de fait du pays. De l'autre, le général Mohamed Hamdan Dagalo, dit « Hemedti », chef des FSR, une force paramilitaire issue des milices janjawids accusées de génocide au Darfour dans les années 2000. Les deux hommes avaient ensemble renversé le gouvernement civil de transition en 2021.\n\nL'armée a repris Khartoum en 2025, mais les FSR contrôlent l'essentiel du Darfour, à l'ouest. Fin 2025, la chute d'El-Fasher, dernière grande ville du Darfour aux mains de l'armée, s'est accompagnée de massacres documentés par l'ONU. Depuis, le front s'est déplacé vers le Kordofan, région charnière entre l'ouest et la vallée du Nil."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "L'armée soudanaise est soutenue notamment par l'Égypte et a reçu des armes de Turquie et d'Iran. Les FSR sont accusées par plusieurs gouvernements et experts de l'ONU de bénéficier d'un soutien des Émirats arabes unis, ce que ceux-ci démentent. Les deux camps utilisent massivement des drones, qui frappent souvent des infrastructures civiles : marchés, centrales, dépôts de carburant."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Selon l'ONU, c'est la pire crise humanitaire au monde : plus de 12 millions de personnes déplacées, des famines déclarées dans plusieurs zones et des dizaines de milliers de morts, probablement bien plus. Les frappes sur les stations-service et les dépôts de carburant paralysent aussi l'acheminement de l'aide et l'économie locale."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les efforts de médiation, menés notamment par les États-Unis, l'Arabie saoudite, l'Égypte et les Émirats, n'ont pas abouti à un cessez-le-feu durable. Le Kordofan devrait rester le principal théâtre des combats dans les prochains mois."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La frappe du jour vient de Foreign Exchanges et n'a pas encore été confirmée par une agence. Le contexte du conflit est établi par l'ONU et les médias de référence.",
    "sources": [
     {
      "n": "Foreign Exchanges – World roundup",
      "u": "https://www.foreignexchanges.news/p/world-roundup-november-3-2026"
     }
+   ],
+   "cles": [
+    "Une frappe de drone des Forces de soutien rapide (FSR) sur une station-service du Kordofan-Sud fait au moins 7 morts.",
+    "La guerre entre l'armée et les FSR dure depuis avril 2023.",
+    "Après la chute d'El-Fasher, au Darfour, les combats se concentrent sur le Kordofan."
    ]
   },
   "2026-11-04-nigeria-dangote": {
    "corps": [
     {
-     "h": "",
-     "p": "La raffinerie Dangote, près de Lagos, a baissé le prix de l'essence de 55 nairas, à 1 210 nairas le litre. Avec 650 000 barils par jour, c'est la plus grande raffinerie d'Afrique, détenue par Aliko Dangote, l'homme le plus riche du continent. Elle bouleverse le marché nigérian, longtemps dépendant des importations malgré la production de brut du pays."
+     "h": "Ce qui s'est passé",
+     "p": "La raffinerie Dangote, près de Lagos, a baissé le prix de son essence de 55 nairas, à 1 210 nairas le litre. Cette baisse suit la détente des cours mondiaux du pétrole."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le Nigeria est le premier producteur de pétrole d'Afrique, mais ses quatre raffineries publiques, mal entretenues, ne fonctionnaient presque plus. Pendant des décennies, le pays a exporté son brut et réimporté de l'essence raffinée, le tout subventionné par l'État à coups de milliards de dollars par an. En 2023, le président Bola Tinubu a supprimé cette subvention dès son arrivée au pouvoir, ce qui a fait tripler le prix à la pompe et provoqué une flambée de l'inflation.\n\nLa raffinerie Dangote, à Lekki, a commencé à produire en 2024 après des années de retard. D'une capacité de 650 000 barils par jour, c'est la plus grande d'Afrique et l'une des plus grandes au monde à train unique. Elle a coûté environ 20 Md$."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Aliko Dangote, homme le plus riche d'Afrique, a bâti sa fortune dans le ciment (Dangote Cement), le sucre et la farine avant de miser sur le raffinage. Sa raffinerie est en conflit récurrent avec la compagnie pétrolière nationale NNPC et les importateurs de carburant, qui voient leur marché menacé, ainsi qu'avec les syndicats sur les conditions de travail. Elle exporte aussi de l'essence et du kérosène vers d'autres pays africains."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Pour les Nigérians, le prix de l'essence est un sujet hautement politique, qui pèse sur le coût des transports et de l'alimentation. Pour l'Afrique, Dangote est le symbole d'une industrialisation qui permettrait de garder sur le continent la valeur ajoutée de ses matières premières. Pour l'Europe, la raffinerie concurrence les exportations européennes d'essence vers l'Afrique de l'Ouest."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les prix à la pompe suivront l'évolution du baril et du naira. Le projet d'introduction en Bourse de la raffinerie, évoqué par Aliko Dangote, est à suivre."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La baisse de prix du jour vient du Rio Times et n'a pas encore été confirmée par Dangote ou une agence.",
    "sources": [
     {
      "n": "Rio Times – Africa Intelligence Brief",
      "u": "https://www.riotimesonline.com/africa-intelligence-brief-tuesday-november-3-2026/"
     }
+   ],
+   "cles": [
+    "La raffinerie Dangote baisse l'essence de 55 nairas, à 1 210 ₦ le litre.",
+    "Avec 650 000 barils par jour, c'est la plus grande raffinerie d'Afrique.",
+    "Elle bouleverse un pays producteur de pétrole qui importait presque tout son carburant."
    ]
   },
   "2026-11-04-iran-ormuz-petrole": {
@@ -1611,6 +2242,14 @@
     {
      "h": "Pourquoi c'est important",
      "p": "Le prix du pétrole est au cœur de l'inflation mondiale : il explique en grande partie l'inflation de 3,8 % en zone euro et a pesé sur la défaite républicaine aux midterms. Pour UBS, la baisse s'explique en partie par les espoirs de désescalade. Selon The Schork Group, une forte prime de risque s'était accumulée pendant deux à trois semaines. ING reste prudent."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Côté américain, Donald Trump alterne pression militaire (frappes, blocus des ports iraniens) et appels à un accord. Côté iranien, le régime de la République islamique, affaibli par la guerre de douze jours avec Israël en juin 2025 et par les sanctions, joue sur la menace de bloquer Ormuz. Les pays du Golfe (Arabie saoudite, Émirats, Qatar, Koweït, Bahreïn), dont les exportations passent par le détroit, sont en première ligne et ont été visés par des tirs iraniens. Plusieurs pays, dont le Pakistan, le Qatar et la Suisse, ont accueilli des tentatives de médiation en 2026."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les marchés suivront l'annonce éventuelle de nouvelles négociations directes, les mouvements de pétroliers dans le détroit et les stocks pétroliers américains (publiés le mercredi). Une rechute de l'escalade ferait remonter rapidement le Brent au-dessus de 105-110 $."
     }
    ],
    "sources": [
@@ -1639,6 +2278,18 @@
     {
      "h": "Pourquoi c'est important",
      "p": "Les valeurs liées à l'IA sont vendues depuis plusieurs jours, sur fond de doutes sur la rentabilité des centaines de milliards investis dans les data centers. L'incertitude des midterms américains s'y est ajoutée. Un analyste d'Edward Jones cité par l'AP rappelle que depuis 1970, le S&P 500 a toujours progressé dans les six mois suivant une élection de mi-mandat."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "SoftBank, le conglomérat japonais de Masayoshi Son, a misé des dizaines de milliards de dollars sur OpenAI et sur le projet de data centers Stargate aux États-Unis. Son cours est devenu un baromètre du sentiment sur l'IA. Kioxia, ex-division mémoire de Toshiba introduite en Bourse fin 2024, fabrique de la mémoire flash NAND. SK Hynix et Samsung dominent la mémoire HBM indispensable aux GPU d'IA. Taïwan abrite TSMC, qui fabrique la quasi-totalité des puces d'IA avancées."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Ces valeurs ont été parmi les plus grandes gagnantes du boom de l'IA en 2024-2026 : le Nikkei a dépassé 60 000 points et le Kospi 5 000, des records. Leur poids dans les indices rend les marchés asiatiques très sensibles à toute inquiétude sur une bulle de l'IA. Ces dernières semaines, des doutes sur le financement des data centers (endettement des hyperscalers, montages financiers circulaires entre Nvidia, OpenAI et leurs partenaires) ont déclenché des prises de bénéfices."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "La réaction de Wall Street aux midterms et les prochains résultats des géants de l'IA, dont Nvidia fin novembre, diront s'il s'agit d'une correction passagère ou d'un retournement plus profond."
     }
    ],
    "sources": [
@@ -1651,23 +2302,60 @@
   "2026-11-04-chine-pboc-yuan": {
    "corps": [
     {
-     "h": "",
-     "p": "La Banque populaire de Chine relève de 4 % à 6 % le ratio de réserves obligatoires en devises des banques. En les obligeant à immobiliser davantage de dollars, elle réduit l'offre de devises sur le marché local et freine l'appréciation du yuan, qui a gagné environ 5 % depuis janvier. Un yuan trop fort pénaliserait les exportateurs chinois. Par ailleurs, Hong Kong affiche une croissance de 5,2 % au troisième trimestre."
+     "h": "Ce qui s'est passé",
+     "p": "La banque centrale chinoise a relevé de 4 % à 6 % le ratio de réserves obligatoires en devises étrangères des banques. Concrètement, les banques chinoises doivent immobiliser une plus grande part de leurs dépôts en dollars et autres devises. Moins de devises circulent donc sur le marché intérieur, ce qui freine l'appréciation du yuan."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le yuan s'est apprécié d'environ 5 % face au dollar depuis janvier, une évolution rare. Elle s'explique par l'affaiblissement du dollar, l'énorme excédent commercial chinois et le rapatriement de devises par les exportateurs. Pékin gère étroitement sa monnaie : chaque matin, la PBoC fixe un cours pivot autour duquel le yuan peut fluctuer de 2 %. L'outil du ratio de réserves en devises a déjà été utilisé, dans un sens ou dans l'autre, pour freiner des mouvements jugés trop rapides."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "La PBoC, dirigée par Pan Gongsheng, veut éviter qu'un yuan trop fort pénalise les exportateurs, moteur essentiel de la croissance chinoise au moment où la consommation intérieure et l'immobilier restent faibles. Hong Kong, dont la monnaie est arrimée au dollar, bénéficie du retour des introductions en Bourse et de la reprise des flux financiers chinois, d'où une croissance solide de 5,2 % au troisième trimestre."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Le niveau du yuan est un sujet politique avec les États-Unis, qui accusent depuis longtemps la Chine de maintenir sa monnaie artificiellement basse. Un yuan plus fort rendrait les exportations chinoises plus chères, ce qui soulagerait les industriels européens confrontés à la concurrence chinoise, notamment dans l'automobile électrique. Freiner cette hausse montre que Pékin reste prioritairement focalisé sur ses exportations."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "À surveiller : les fixings quotidiens de la PBoC, les chiffres du commerce extérieur chinois et un éventuel sommet Trump-Xi en marge de l'APEC à Shenzhen en novembre."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La mesure de la PBoC et la croissance de Hong Kong viennent de City News Service et n'ont pas encore été confirmées par une agence pour cette édition.",
    "sources": [
     {
      "n": "City News Service – Daily Buzz",
      "u": "https://www.citynewsservice.cn/articles/china-biz-buzz/daily-buzz/daily-buzz-4-november-2026-3n70vrym"
+    },
+    {
+     "n": "AFP (via Connaissance des Énergies) – APEC à Shenzhen",
+     "u": "https://www.connaissancedesenergies.org/afp/ukraine-la-diplomatie-est-relancee-trump-se-rejouit-moscou-temporise-261021"
     }
+   ],
+   "cles": [
+    "La Banque populaire de Chine (PBoC) relève de 4 % à 6 % le ratio de réserves en devises des banques.",
+    "Objectif : freiner la hausse du yuan, en progression d'environ 5 % depuis janvier.",
+    "Hong Kong affiche 5,2 % de croissance au troisième trimestre."
    ]
   },
   "2026-11-04-australie-rba": {
    "corps": [
     {
-     "h": "",
-     "p": "La Banque de réserve d'Australie a relevé mardi son taux directeur de 25 points de base pour contenir une inflation relancée par l'énergie. La Bourse de Sydney a cédé 0,8 % ce mercredi. C'est l'une des premières grandes banques centrales à reprendre le chemin de la hausse en 2026."
+     "h": "Ce qui s'est passé",
+     "p": "La Banque de réserve d'Australie a relevé mardi son taux directeur de 0,25 point. Le lendemain, l'indice S&P/ASX 200 de Sydney a cédé 0,8 %, à 8 812 points, dans un contexte de baisse générale des bourses asiatiques."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Comme les autres banques centrales, la RBA avait fortement monté ses taux en 2022-2023 contre l'inflation post-Covid, puis commencé à les baisser en 2025 quand l'inflation est revenue vers sa cible de 2 à 3 %. La flambée du pétrole en 2026 et un marché du travail resté tendu ont relancé les prix. La RBA, dirigée par Michele Bullock, a donc choisi de remonter ses taux plutôt que de laisser l'inflation s'installer."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "L'Australie est l'une des premières grandes économies à reprendre le chemin de la hausse des taux en 2026. C'est un signal pour les autres banques centrales, dont la BCE et la Banque d'Angleterre, qui se réunit jeudi : l'inflation énergétique pourrait forcer d'autres resserrements. En Australie, la hausse pèse directement sur les ménages, car la grande majorité des crédits immobiliers y sont à taux variable."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "La RBA a indiqué qu'elle suivrait les données d'inflation trimestrielle et l'évolution du pétrole. Le dollar australien et les valeurs immobilières et bancaires seront les plus sensibles aux prochaines annonces."
     }
    ],
    "sources": [
@@ -1675,20 +2363,77 @@
      "n": "AP (via News4Jax)",
      "u": "https://www.news4jax.com/business/2026/11/04/asian-shares-fall-on-selling-of-tech-shares-as-markets-watch-for-results-of-us-midterm-elections/"
     }
+   ],
+   "cles": [
+    "La Banque de réserve d'Australie (RBA) relève son taux directeur de 25 points de base.",
+    "Objectif : contenir une inflation relancée par l'énergie.",
+    "La Bourse de Sydney recule de 0,8 % ce mercredi."
    ]
   },
   "2026-11-04-israel-eisenkot": {
    "corps": [
     {
-     "h": "",
-     "p": "L'opposition israélienne soutient l'ancien chef d'état-major Gadi Eisenkot pour le poste de Premier ministre, et le président Isaac Herzog a lancé ses consultations avec les partis. Donald Trump a par ailleurs déclaré vouloir mettre fin, fin 2026, à l'aide militaire américaine d'environ 3,8 Md$ par an, prévue par un protocole d'accord signé en 2016 pour la période 2019-2028."
+     "h": "Ce qui s'est passé",
+     "p": "Après des législatives sans vainqueur net le 27 octobre, les partis d'opposition ont recommandé Gadi Eisenkot comme Premier ministre auprès du président Isaac Herzog, qui lance ses consultations avec chaque groupe. Le camp de Benyamin Netanyahou explore de son côté un gouvernement d'union nationale qui inclurait Eisenkot, avec ou sans rotation au poste de Premier ministre. Donald Trump a par ailleurs déclaré vouloir mettre fin, fin 2026, à l'aide militaire américaine d'environ 3,8 Md$ par an."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Ces élections sont les premières depuis 1988 à se tenir au terme d'une législature complète de quatre ans. Elles interviennent après la guerre à Gaza déclenchée par l'attaque du Hamas du 7 octobre 2023, les conflits avec le Hezbollah et l'Iran, et une profonde fracture sur la réforme judiciaire et la conscription des ultra-orthodoxes. La participation a atteint 77,7 %, un record depuis 1999. Ni le bloc de Netanyahou ni l'opposition n'ont obtenu les 61 sièges nécessaires sur 120. Les partis arabes ont obtenu un nombre inédit de 19 sièges, ce qui complique les calculs des deux camps."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Gadi Eisenkot, ancien chef d'état-major de l'armée (2015-2019), a perdu un fils et un neveu à Gaza. Il a quitté le cabinet de guerre en 2024 et fondé le parti centriste Yashar, en tête de plusieurs sondages pendant la campagne. Benyamin Netanyahou, Premier ministre le plus longtemps en poste de l'histoire d'Israël, est jugé pour corruption et dirige le Likoud, allié à l'extrême droite et aux partis religieux. Isaac Herzog, président (fonction largement honorifique), doit confier la formation du gouvernement au député ayant le plus de chances de réunir une majorité. Il a appelé à tout faire pour éviter un nouveau scrutin."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "L'issue déterminera la politique d'Israël sur Gaza, l'Iran, la Cisjordanie et les relations avec les États-Unis. L'annonce de Trump sur l'aide militaire, prévue par un protocole d'accord de 2016 couvrant 2019-2028, serait un tournant historique dans la relation entre les deux pays. Selon les médias israéliens, Trump avait soutenu Netanyahou pendant la campagne."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Le candidat désigné par Herzog disposera de 28 jours, prolongeables de 14, pour former une coalition. En cas d'échec, un nouveau scrutin pourrait être convoqué."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Le soutien de l'opposition à Eisenkot et l'annonce de Trump sur l'aide militaire viennent de Foreign Exchanges. Les résultats et le contexte des élections sont confirmés par JTA et le Jerusalem Post.",
    "sources": [
     {
      "n": "Foreign Exchanges – World roundup",
      "u": "https://www.foreignexchanges.news/p/world-roundup-november-3-2026"
+    },
+    {
+     "n": "JTA (via J. Weekly) – Herzog urges avoiding another election",
+     "u": "https://jweekly.com/?p=313059"
+    },
+    {
+     "n": "Jerusalem Post – Israel Elections 2026",
+     "u": "https://www.jpost.com/tags/israel-elections-2026"
+    }
+   ],
+   "cles": [
+    "Les législatives du 27 octobre n'ont pas donné de majorité claire.",
+    "L'opposition soutient Gadi Eisenkot comme Premier ministre, Herzog lance ses consultations.",
+    "Netanyahou explore un gouvernement d'union avec Eisenkot.",
+    "Trump évoque la fin de l'aide militaire de 3,8 Md$ par an fin 2026."
+   ],
+   "chrono": [
+    {
+     "d": "7 oct. 2023",
+     "t": "Attaque du Hamas et début de la guerre à Gaza."
+    },
+    {
+     "d": "2024",
+     "t": "Eisenkot quitte le cabinet de guerre."
+    },
+    {
+     "d": "Avr. 2026",
+     "t": "Bennett et Lapid lancent une liste commune, Eisenkot mène Yashar."
+    },
+    {
+     "d": "27 oct. 2026",
+     "t": "Législatives sans majorité claire."
+    },
+    {
+     "d": "Nov. 2026",
+     "t": "Consultations de Herzog."
     }
    ]
   },
@@ -1841,6 +2586,16 @@
      "n": "CVR Energy – Résultats T3 2026 (SEC)",
      "u": "https://www.sec.gov/Archives/edgar/data/0001376139/000119312526444434/d897437dex991.htm"
     }
+   ],
+   "corps": [
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le raffinage américain a vécu des années exceptionnelles depuis 2022 : capacités réduites (fermetures pendant le Covid), forte demande et crises géopolitiques ont fait exploser les marges. En 2026, la crise iranienne a encore dopé les marges de raffinage, d'où un EBITDA de référence élevé. Les raffineries du nord du Midwest (« PADD II ») ont un avantage : elles s'approvisionnent en brut canadien et du Bakken, souvent moins cher que le WTI."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Pour un analyste, le point clé est le cycle : acheter au sommet des marges est risqué. Un multiple d'environ 3,5 fois l'EBITDA peut sembler bon marché, mais si les marges reviennent à leur moyenne historique, l'EBITDA des actifs pourrait baisser fortement et le multiple réel monter. L'opération augmente aussi l'endettement de CVR. En contrepartie, la taille et la diversification géographique réduisent le risque d'un incident sur une seule raffinerie."
+    }
    ]
   },
   "2026-11-04-xrg-nws-togg": {
@@ -1854,13 +2609,51 @@
      "p": "En Turquie, le fonds souverain turc et l'opérateur Turkcell montent au capital de Togg, le constructeur national de voitures électriques lancé en 2023, pour 368 M€."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les deux opérations viennent d'un agrégateur de dépêches Reuters (Rallies.ai). Nous ne les avons pas encore vérifiées dans un communiqué officiel ou sur Reuters.com.",
    "sources": [
     {
      "n": "Rallies.ai (Reuters) – Deals of the day",
      "u": "https://rallies.ai/news/deals-of-the-day-mergers-and-acquisitions-081ba89cee7c4b04"
     }
-   ]
+   ],
+   "deal": {
+    "role_cible": "Actif cédé",
+    "role_acquereur": "Acquéreur",
+    "cible": {
+     "nom": "Participation de Shell dans le North West Shelf",
+     "activite": "Le North West Shelf, au large de l'Australie-Occidentale, est l'un des plus anciens et des plus grands projets de gaz naturel liquéfié (GNL) au monde : champs offshore, gazoducs et usine de liquéfaction de Karratha.",
+     "origine": "Lancé dans les années 1980 par un consortium de majors. Il est opéré par l'australien Woodside, avec des partenaires dont Shell, BP, Chevron et MIMI (Mitsubishi-Mitsui). Ses réserves déclinent et le projet se transforme en plateforme de traitement pour de nouveaux gisements.",
+     "chiffres": "Prix de la participation : 1,45 Md$"
+    },
+    "acquereur": {
+     "nom": "XRG (ADNOC)",
+     "activite": "Bras d'investissement international d'ADNOC, la compagnie pétrolière nationale d'Abou Dhabi, créé fin 2024 pour bâtir un portefeuille mondial dans le gaz et la chimie.",
+     "origine": "Basé à Abou Dhabi. ADNOC est dirigé par Sultan Al Jaber, qui a présidé la COP28. XRG a notamment repris le chimiste allemand Covestro et des actifs gaziers aux États-Unis et en Afrique.",
+     "chiffres": "Objectif annoncé de plus de 80 Md$ de valeur d'entreprise"
+    },
+    "termes": [
+     [
+      "Prix",
+      "1,45 Md$"
+     ],
+     [
+      "Vendeur",
+      "Shell"
+     ],
+     [
+      "Togg",
+      "368 M€ investis par le fonds souverain turc et Turkcell"
+     ]
+    ],
+    "strategie": "Pour Abou Dhabi, l'objectif est de sécuriser des volumes de GNL à long terme et de devenir un acteur mondial du gaz, considéré comme l'énergie de transition. Pour Shell, dirigé par Wael Sawan, l'opération s'inscrit dans une stratégie de recentrage sur les actifs les plus rentables, avec des cessions d'actifs matures ou non stratégiques et des rachats d'actions.\n\nEn Turquie, Togg (Türkiye'nin Otomobili Girişim Grubu) est le constructeur national de voitures électriques, lancé en 2023 par un consortium de grands groupes turcs dont Turkcell, avec un fort soutien politique du président Erdogan. L'entrée du fonds souverain turc et la montée de Turkcell confirment le soutien public à ce projet de prestige, qui doit encore prouver sa rentabilité face à la concurrence chinoise.",
+    "acteurs": [
+     "XRG / ADNOC (Sultan Al Jaber)",
+     "Shell, vendeur",
+     "Woodside, opérateur du North West Shelf",
+     "Fonds souverain turc (TVF) et Turkcell, actionnaires de Togg"
+    ],
+    "etapes": "Les deux opérations sont soumises aux autorisations habituelles. En Australie, le Foreign Investment Review Board (FIRB) examine les investissements étrangers dans les actifs énergétiques."
+   }
   },
   "2026-11-04-keybanc-apc": {
    "deal": {
@@ -1914,6 +2707,10 @@
     {
      "h": "Pourquoi c'est intéressant",
      "p": "Le segment mid-market de l'infrastructure européenne attire les investisseurs institutionnels pour ses rendements stables indexés sur l'inflation. La transition énergétique, les data centers et la sécurité énergétique soutiennent ce mouvement. Un hard cap atteint aussi vite confirme l'appétit des LP pour les gérants installés, alors que les levées restent difficiles pour les nouveaux venus."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Igneo va déployer le fonds sur 4 à 5 ans dans une quinzaine d'entreprises européennes de taille moyenne. Pour les acteurs du secteur, comme les gérants d'infrastructure mid-market en France, cette levée confirme la concurrence accrue pour les actifs de transition énergétique, de numérique (fibre, data centers) et de services aux collectivités, et donc une pression sur les prix d'acquisition."
     }
    ],
    "note": "Le closing d'EDIF IV à 6 Md€ vient de la revue de presse (AltAssets). Nous n'avons pas encore trouvé le communiqué d'Igneo. Les données sur EDIF III sont confirmées par IPE Real Assets et IREI.",
@@ -1939,13 +2736,54 @@
      "p": "Seaya, société de capital-risque madrilène, réalise un premier closing à 600 M€ pour un fonds growth visant 1 Md€, avec 300 M€ apportés par le Fonds européen d'investissement (FEI). Elle ouvre aussi un bureau à Londres. Ce programme du FEI vise à faire émerger des fonds européens capables de financer des scale-ups sans dépendre de capitaux américains. Aux États-Unis, Formation Bio, une biotech qui utilise l'IA pour accélérer le développement de médicaments, lève 600 M$ pour son premier fonds."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "Les montants viennent d'AltAssets et n'ont pas encore été vérifiés dans les communiqués officiels. La présentation des acteurs repose sur des informations publiques établies.",
    "sources": [
     {
      "n": "AltAssets",
      "u": "https://www.altassets.net/"
     }
-   ]
+   ],
+   "deal": {
+    "role_cible": "Gérant",
+    "role_acquereur": "Investisseur clé",
+    "cible": {
+     "nom": "Seaya Ventures",
+     "activite": "Société de capital-risque et de growth equity basée à Madrid, qui finance des start-ups et scale-ups technologiques en Espagne, en Europe et en Amérique latine.",
+     "origine": "Fondée en 2013 par Beatriz González, l'une des figures du capital-risque espagnol. Elle a notamment investi tôt dans Glovo et Spotahome. Elle s'est ensuite étendue au climat (Seaya Andromeda) et au growth.",
+     "chiffres": "Premier closing à 600 M€ pour un fonds cible de 1 Md€"
+    },
+    "acquereur": {
+     "nom": "Fonds européen d'investissement (FEI)",
+     "activite": "Filiale du groupe Banque européenne d'investissement, spécialisée dans le financement des PME et des fonds de capital-investissement.",
+     "origine": "Basé au Luxembourg. Via l'initiative European Tech Champions (ETCI), il apporte de gros tickets à des fonds growth européens pour que les scale-ups européennes ne dépendent plus des seuls capitaux américains.",
+     "chiffres": "300 M€ engagés dans le fonds de Seaya"
+    },
+    "termes": [
+     [
+      "Taille visée",
+      "1 Md€"
+     ],
+     [
+      "Premier closing",
+      "600 M€"
+     ],
+     [
+      "Apport du FEI",
+      "300 M€"
+     ],
+     [
+      "Nouveauté",
+      "Ouverture d'un bureau à Londres"
+     ]
+    ],
+    "strategie": "L'Europe manque de fonds capables de financer les tours de 50 à 200 M€ des scale-ups. Ce « growth gap » pousse beaucoup de start-ups européennes à lever aux États-Unis, voire à s'y installer. L'ETCI du FEI vise à combler ce manque. Un fonds growth espagnol à 1 Md€ serait une première de cette taille pour l'écosystème ibérique.\n\nAux États-Unis, Formation Bio, une biotech new-yorkaise qui utilise l'IA pour accélérer le développement clinique de médicaments acquis sous licence, lève 600 M$ pour son premier fonds. Ce modèle hybride entre biotech et gestion d'actifs cherche à racheter des molécules prometteuses et à les faire avancer plus vite et moins cher.",
+    "acteurs": [
+     "Seaya (Beatriz González)",
+     "Fonds européen d'investissement",
+     "Formation Bio"
+    ],
+    "etapes": "Seaya poursuivra sa levée jusqu'au closing final, visé à 1 Md€."
+   }
   },
   "2026-11-04-apollo-t3": {
    "cles": [
@@ -1961,6 +2799,14 @@
     {
      "h": "Pourquoi c'est important",
      "p": "Apollo est l'un des leaders mondiaux du crédit privé, ce marché où des fonds prêtent directement aux entreprises à la place des banques. Le secteur a été secoué cette année par des demandes de retrait d'investisseurs, et le titre a perdu environ 17,5 % depuis janvier. Le président d'Apollo met en avant les besoins de financement dans l'infrastructure, l'énergie, la défense, l'industrie et le calcul informatique. Le directeur général Marc Rowan promet davantage de transparence et de liquidité sur les actifs privés. Evercore ISI parle d'un trimestre « hybride » : commissions meilleures que prévu, revenus de spread moins bons."
+    },
+    {
+     "h": "Les acteurs",
+     "p": "Apollo Global Management, fondé en 1990 par Leon Black, Josh Harris et Marc Rowan, anciens de Drexel Burnham Lambert, s'est d'abord fait connaître dans le LBO et la dette en difficulté. Sous la direction de Marc Rowan depuis 2021, il s'est transformé en géant du crédit privé adossé à l'assurance. Athene, l'assureur-vie qu'il contrôle entièrement depuis 2022, collecte l'épargne retraite des Américains (rentes) et l'investit dans le crédit originé par Apollo. Ce modèle assurance plus crédit privé a été copié par KKR (Global Atlantic), Blackstone et Brookfield."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "Les investisseurs surveilleront la qualité du crédit dans les portefeuilles, les demandes de rachat sur les fonds evergreen ouverts aux particuliers et l'impact de taux durablement élevés sur les marges d'Athene."
     }
    ],
    "sources": [
@@ -1973,15 +2819,104 @@
   "2026-11-04-lgt-gruber": {
    "corps": [
     {
-     "h": "",
-     "p": "LGT Capital Partners, la branche de gestion alternative de LGT, groupe bancaire de la famille princière du Liechtenstein, nomme Sascha Gruber directeur général. LGT CP est l'un des grands investisseurs mondiaux en fonds de fonds et en secondaire. Promouvoir un spécialiste du secondaire confirme la place centrale de cette activité dans le private equity."
+     "h": "Ce qui s'est passé",
+     "p": "LGT Capital Partners a nommé Sascha Gruber au poste de directeur général. Il est connu pour son expertise dans le secondaire, le marché où les investisseurs (LP) revendent leurs parts de fonds de private equity et où les gérants (GP) organisent des opérations de continuation."
+    },
+    {
+     "h": "Qui est LGT",
+     "p": "LGT est un groupe bancaire privé détenu par la famille princière du Liechtenstein. Sa filiale LGT Capital Partners, basée à Pfäffikon (Suisse), gère plusieurs dizaines de milliards de dollars d'actifs alternatifs pour des institutionnels : fonds de fonds de private equity, co-investissements, secondaire, dette privée et hedge funds. Elle est l'un des acteurs historiques du secondaire en Europe, avec des fonds régulièrement de plusieurs milliards."
+    },
+    {
+     "h": "Comment on en est arrivé là",
+     "p": "Le secondaire a explosé ces dernières années. Avec le ralentissement des introductions en Bourse et des cessions, les fonds de private equity peinent à rendre l'argent à leurs investisseurs. Les LP vendent donc des parts sur le marché secondaire pour récupérer de la liquidité, et les GP créent des « fonds de continuation » pour garder leurs meilleurs actifs plus longtemps tout en offrant une sortie aux LP qui le souhaitent (GP-led). Le volume mondial du secondaire dépasse désormais 150 Md$ par an, un record."
+    },
+    {
+     "h": "Pourquoi c'est important",
+     "p": "Confier la direction à un spécialiste du secondaire montre que ce métier est devenu central dans la stratégie des grands gérants de fonds de fonds. C'est aussi un signal pour le marché du conseil (banques et boutiques spécialisées en GP-led), en pleine croissance."
+    },
+    {
+     "h": "Et maintenant ?",
+     "p": "La nouvelle direction devrait accélérer les levées de LGT dans le secondaire et les solutions de liquidité."
     }
    ],
-   "note": "Information issue de la revue de presse du matin, pas encore recoupée par une source de référence (agence, journal de référence ou communiqué officiel). À prendre avec prudence.",
+   "note": "La nomination vient d'AltAssets et n'a pas encore été vérifiée dans le communiqué de LGT. Les ordres de grandeur sur le marché du secondaire sont indicatifs.",
    "sources": [
     {
      "n": "AltAssets",
      "u": "https://www.altassets.net/"
+    }
+   ],
+   "cles": [
+    "Sascha Gruber devient CEO de LGT Capital Partners.",
+    "LGT CP est l'un des grands investisseurs mondiaux en fonds de fonds et en secondaire.",
+    "La nomination d'un spécialiste du secondaire reflète le poids croissant de ce marché."
+   ]
+  },
+  "2026-11-04-rumeur-marvell-lumentum-genese": {
+   "deal": {
+    "role_cible": "Cible (rumeur confirmée)",
+    "role_acquereur": "Acquéreur",
+    "cible": {
+     "nom": "Lumentum",
+     "activite": "Lasers et composants optiques pour les data centers d'IA.",
+     "origine": "San Jose (Californie), issu de JDS Uniphase en 2015.",
+     "chiffres": "Environ 83 Md$ de capitalisation au moment de la fuite"
+    },
+    "acquereur": {
+     "nom": "Marvell Technology",
+     "activite": "Puces de connectivité et ASIC sur mesure pour les data centers.",
+     "origine": "Santa Clara (Californie), fondé en 1995.",
+     "chiffres": "Environ 221 Md$ de capitalisation"
+    },
+    "termes": [
+     [
+      "Source de la rumeur",
+      "Bloomberg, 28 octobre 2026, citant des personnes proches du dossier"
+     ],
+     [
+      "Statut rapporté",
+      "Discussions avancées, annonce possible « dès la semaine prochaine »"
+     ],
+     [
+      "Réaction des cours",
+      "Lumentum +11 %, Marvell -8 % et plus"
+     ],
+     [
+      "Issue",
+      "Accord annoncé le 2 novembre : 115 Md$ en actions"
+     ]
+    ],
+    "strategie": "Pourquoi la cible monte et l'acheteur baisse ? C'est le schéma classique d'une rumeur de rachat. Le marché anticipe qu'une offre sera faite avec une prime sur le cours de la cible, donc les investisseurs achètent Lumentum. Côté acheteur, il craint que Marvell surpaie, dilue ses actionnaires (s'il paie en actions) ou s'endette, et s'inquiète du risque d'intégration. Bernstein soulignait que Marvell, avec moins de 4 Md$ de trésorerie, ne pouvait pas payer en numéraire.\n\nLa prime finale de 23,9 % a été calculée sur le cours du 28 octobre, « dernier jour avant les spéculations », justement pour neutraliser l'effet de la fuite.",
+    "acteurs": [
+     "Bloomberg, source de la fuite",
+     "Marvell et Lumentum, qui n'ont pas commenté avant l'annonce",
+     "Bernstein, qui a pointé le problème de financement"
+    ],
+    "etapes": "La rumeur s'est confirmée en six jours. Voir l'article sur l'accord définitif pour les termes et la logique stratégique."
+   },
+   "cles": [
+    "Le 28 octobre, Bloomberg révèle des discussions avancées.",
+    "Lumentum bondit de 11 %, Marvell perd plus de 8 %.",
+    "Le 2 novembre, l'accord est officiel : 115 Md$ en actions."
+   ],
+   "corps": [
+    {
+     "h": "Comment lire une rumeur de deal",
+     "p": "Quand Bloomberg, Reuters, le Wall Street Journal, le Financial Times ou Les Échos rapportent des discussions « selon des personnes proches du dossier », l'information est généralement fiable sur l'existence des discussions, mais pas sur leur issue : beaucoup de négociations échouent. Le statut compte (« premières discussions », « discussions avancées », « offre non sollicitée », « revue stratégique ») et la réaction des sociétés aussi : un « no comment » n'est pas un démenti. Le mouvement de cours de la cible donne une idée de la probabilité que le marché attribue au deal.\n\nCette nouvelle section de L'Actualité recensera chaque jour ces rapprochements possibles rapportés par des médias de référence, pour expliquer les mouvements de cours qu'ils provoquent."
+    }
+   ],
+   "sources": [
+    {
+     "n": "AI Weekly (Bloomberg) – Marvell in advanced talks",
+     "u": "https://aiweekly.co/alerts/marvell-in-advanced-talks-to-acquire-ai-optics-maker-lumentum"
+    },
+    {
+     "n": "TrendForce – Marvell eyes Lumentum",
+     "u": "https://www.trendforce.com/news/?p=65896"
+    },
+    {
+     "n": "Lumentum – Communication (SEC 425)",
+     "u": "https://www.sec.gov/Archives/edgar/data/0001633978/000119312526442760/d163169d425.htm"
     }
    ]
   }
