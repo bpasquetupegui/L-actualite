@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#16161a; --ink2:#3d3d45; --muted:#6b6b75; --rule:#d9d6cf; --paper:#fbfaf7; --card:#fff;
+  --ink:#16161a; --ink2:#3d3d45; --muted:#6b6b75; --rule:#d9d6cf; --paper:#fbfaf7; --card:#fff; --hover:#efece5; --soft:#ebe8e1; --notebg:#fff7e6; --notebd:#f0d9a8; --gold:#b07d1a;
   --accent:#b3121f; --accent2:#0d3b66;
   --serif:"Source Serif 4",Georgia,serif; --display:"Playfair Display",Georgia,serif; --sans:Inter,system-ui,sans-serif;
 }
@@ -21,14 +21,14 @@ button{font:inherit;cursor:pointer}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 /* masthead */
 .topbar{font-family:var(--sans);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule);gap:12px;flex-wrap:wrap}
-.topbar .search{display:flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:999px;padding:4px 12px;background:#fff}
+.topbar .search{display:flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:999px;padding:4px 12px;background:var(--card)}
 .topbar input{border:0;outline:0;font:inherit;font-size:13px;width:200px;background:transparent}
 .mast{text-align:center;padding:22px 0 10px}
 .mast h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,6vw,68px);margin:0;letter-spacing:-.5px;cursor:pointer}
 .mast .sub{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 nav.rub{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:6px 0;font-family:var(--sans);font-size:13px;font-weight:600;position:sticky;top:0;background:var(--paper);z-index:20}
 nav.rub button{background:none;border:0;padding:6px 10px;border-radius:4px;color:var(--ink)}
-nav.rub button:hover{background:#efece5}
+nav.rub button:hover{background:var(--hover)}
 nav.rub button.on{color:var(--accent)}
 /* ticker */
 .ticker{display:flex;gap:0;overflow-x:auto;font-family:var(--sans);font-size:12.5px;border-bottom:1px solid var(--rule);scrollbar-width:none}
@@ -65,7 +65,7 @@ nav.rub button.on{color:var(--accent)}
 .cover.sm .flags img{width:clamp(70px,9vw,110px)}
 .cover.sm .flags img+img{width:clamp(50px,6vw,80px)}
 .cover.sm .tag{display:none}
-.photo{margin:0;position:relative;border-radius:4px;overflow:hidden;background:#e9e6df}
+.photo{margin:0;position:relative;border-radius:4px;overflow:hidden;background:var(--soft)}
 .photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .photo.sm img{aspect-ratio:16/10}
 .photo figcaption{font-family:var(--sans);font-size:11.5px;color:var(--muted);padding:6px 2px 0;background:var(--paper)}
@@ -81,7 +81,7 @@ nav.rub button.on{color:var(--accent)}
 .sect{grid-column:span 1}
 .sect.wide{grid-column:span 3}
 .sect h5{font-family:var(--sans);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 10px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
-.it{padding:0 0 13px;margin:0 0 13px;border-bottom:1px solid #ebe8e1;cursor:pointer;display:block}
+.it{padding:0 0 13px;margin:0 0 13px;border-bottom:1px solid var(--soft);cursor:pointer;display:block}
 .it:last-child{border-bottom:0}
 .it h4{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.22;margin:0 0 5px}
 .it.big h4{font-size:24px}
@@ -89,7 +89,7 @@ nav.rub button.on{color:var(--accent)}
 .it .flg{float:right;width:34px;margin:4px 0 4px 10px;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 .wide .row{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
 .agenda{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
-.ag{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--accent2);padding:12px 14px;font-size:15px}
+.ag{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);padding:12px 14px;font-size:15px}
 .ag b{display:block;font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);margin-bottom:4px}
 /* article */
 .art{max-width:760px;margin:0 auto;padding:26px 0 60px}
@@ -101,17 +101,17 @@ nav.rub button.on{color:var(--accent)}
 .art .cover{margin:0 0 28px}
 .art h2{font-family:var(--display);font-size:26px;margin:34px 0 10px}
 .art p{margin:0 0 16px;font-size:18.5px;line-height:1.65}
-.box{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--ink);padding:16px 20px;margin:0 0 26px}
+.box{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--ink);padding:16px 20px;margin:0 0 26px}
 .box h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 10px}
 .box ul{margin:0;padding-left:18px}
 .box li{margin:0 0 7px;font-size:16.5px}
 .deal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 22px}
-.party{background:#fff;border:1px solid var(--rule);padding:16px 18px;border-radius:4px}
+.party{background:var(--card);border:1px solid var(--rule);padding:16px 18px;border-radius:4px}
 .party .role{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .party h4{font-family:var(--display);font-size:22px;margin:4px 0 8px}
 .party p{font-size:15.5px;line-height:1.5;margin:0 0 8px}
 .party .orig{font-family:var(--sans);font-size:12.5px;color:var(--muted)}
-table.terms{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:14px;margin:0 0 26px;background:#fff}
+table.terms{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:14px;margin:0 0 26px;background:var(--card)}
 table.terms td{border-bottom:1px solid var(--rule);padding:9px 12px;vertical-align:top}
 table.terms td:first-child{color:var(--muted);width:38%}
 .chrono{border-left:2px solid var(--ink);margin:8px 0 26px 6px;padding-left:20px}
@@ -123,22 +123,22 @@ table.terms td:first-child{color:var(--muted);width:38%}
 .sources h3{font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 8px}
 .sources a{color:var(--accent2);text-decoration:underline;text-underline-offset:2px}
 .sources li{margin-bottom:5px}
-.note{font-family:var(--sans);font-size:13px;background:#fff7e6;border:1px solid #f0d9a8;padding:10px 14px;border-radius:4px;margin:0 0 22px}
+.note{font-family:var(--sans);font-size:13px;background:var(--notebg);border:1px solid var(--notebd);padding:10px 14px;border-radius:4px;margin:0 0 22px}
 .related{margin-top:34px}
 .related h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 10px}
 .related .it h4{font-size:17px}
 /* archives */
 .arch h2{font-family:var(--display);font-size:34px;margin:26px 0 6px}
 .filters{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 18px;font-family:var(--sans);font-size:13px}
-.filters button{border:1px solid var(--rule);background:#fff;border-radius:999px;padding:5px 12px}
-.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.filters button{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 12px}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 .month{margin:22px 0 8px;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .edlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.edcard{background:#fff;border:1px solid var(--rule);padding:14px 16px;cursor:pointer;border-radius:4px}
+.edcard{background:var(--card);border:1px solid var(--rule);padding:14px 16px;cursor:pointer;border-radius:4px}
 .edcard:hover{border-color:var(--ink)}
 .edcard .d{font-family:var(--sans);font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 .edcard h4{font-family:var(--display);font-size:18px;line-height:1.25;margin:6px 0 0}
-.results .it{background:#fff;border:1px solid var(--rule);padding:12px 14px;border-radius:4px;margin-bottom:10px}
+.results .it{background:var(--card);border:1px solid var(--rule);padding:12px 14px;border-radius:4px;margin-bottom:10px}
 .results .it .d{font-family:var(--sans);font-size:11.5px;color:var(--muted)}
 .empty{padding:60px 0;text-align:center;color:var(--muted);font-family:var(--sans)}
 footer{font-family:var(--sans);font-size:12px;color:var(--muted);text-align:center;padding:30px 0 40px;border-top:1px solid var(--rule);margin-top:30px}
@@ -150,17 +150,37 @@ footer{font-family:var(--sans);font-size:12px;color:var(--muted);text-align:cent
   .deal{grid-template-columns:1fr}
   .topbar input{width:130px}
 }
+
+/* thème sombre */
+html[data-theme=dark]{--ink:#efebe3;--ink2:#c3beb4;--muted:#8f8a82;--rule:#2d2c30;--paper:#0e0e11;--card:#17171b;--hover:#202026;--soft:#232328;--notebg:#2a2213;--notebd:#5a4520;--accent:#ff4f5e;--accent2:#7db8ff;--gold:#e0b24e}
+html[data-theme=dark] .cover,html[data-theme=dark] .photo{box-shadow:0 10px 30px rgba(0,0,0,.45)}
+html[data-theme=dark] .topbar input{color:var(--ink)}
+.themebtn{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 12px;font-family:var(--sans);font-size:12.5px}
+.topbar .right{display:flex;gap:8px;align-items:center}
+.mast h1 .dot{color:var(--accent)}
+.mast .sub{color:var(--gold);font-weight:600}
+nav.rub{border-top:3px solid var(--accent)}
+.region>h2{color:var(--rc,var(--ink))}
+.region>h2::before{content:"";width:10px;height:28px;background:var(--rc,var(--accent));border-radius:2px;flex:none}
+.region>h2::after{background:var(--rc,var(--ink));opacity:.45}
+.region .sect h5{border-bottom-color:var(--rc,var(--ink));color:var(--rc,var(--muted))}
+.kicker{color:var(--rc,var(--accent))}
+a.it:hover h4{color:var(--rc,var(--accent))}
+.ticker{background:var(--card)}
+.tk b{color:var(--gold)}
+.edhead span:first-child{color:var(--accent);font-weight:700}
+.box{border-top-color:var(--rc,var(--ink))}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="topbar">
     <span id="today"></span>
-    <label class="search">🔎<input id="q" type="search" placeholder="Rechercher dans les archives…"></label>
+    <div class="right"><button class="themebtn" id="theme"></button><label class="search">🔎<input id="q" type="search" placeholder="Rechercher dans les archives…"></label></div>
   </div>
   <header class="mast">
-    <h1 id="home">L'Actualité</h1>
-    <div class="sub">Le quotidien de Bruno · Économie · Monde · Deals</div>
+    <h1 id="home">L'Actualité<span class="dot">.</span></h1>
+    <div class="sub">Économie · Monde · Marchés · Deals</div>
   </header>
   <nav class="rub" id="nav"></nav>
   <main id="app"><div class="empty">Chargement de l'édition…</div></main>
@@ -179,11 +199,16 @@ const PAL={
   "Asie & Moyen-Orient":["#4a2470","#9b6bcf","#220f36"],
   "Deals & buy-side":["#14213d","#fca311","#0a1020"]
 };
+const RC={"France":"#3b7ddd","Europe":"#2fa6c9","Amérique du Nord":"#e0414f","Amérique du Sud":"#2fae72","Afrique":"#e58f2b","Asie & Moyen-Orient":"#a066ea","Deals & buy-side":"#d4a23a"};
+const rc=r=>RC[r]?`--rc:${RC[r]}`:"";
 const NAVS=[["une","À la une"],...RUBS.map(r=>[r,r==="Asie & Moyen-Orient"?"Asie":r==="Amérique du Nord"?"Am. du Nord":r==="Amérique du Sud"?"Am. du Sud":r==="Deals & buy-side"?"Deals":r]),["archives","Archives"]];
 const MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const app=$("#app");
+function setTheme(m){document.documentElement.dataset.theme=m;$("#theme").textContent=m==="dark"?"☀ Mode clair":"☾ Mode sombre";try{localStorage.setItem("theme",m)}catch(_){}}
+let _t="dark";try{_t=localStorage.getItem("theme")||"dark"}catch(_){}
+setTheme(_t);$("#theme").onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
 let EDITIONS=[], CONTENT={};
 
 $("#today").textContent=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
@@ -251,14 +276,14 @@ function showEdition(date){
   let html=`${tick?`<div class="ticker">${tick}</div>`:""}${ed.chiffres_note?`<div class="tknote">${esc(ed.chiffres_note)}</div>`:""}
   <div class="edhead"><span>Édition du ${esc(wday(ed.date))}</span><span>${items.length} articles</span></div>
   <section class="lead">
-    <a class="main click" href="#a-${esc(lead.id)}">${cover(lead)}<div class="kicker" style="margin-top:14px">${esc(lead.r)} · ${esc(lead.s||"")}</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></a>
-    <div class="side">${tl.map(t=>`<a class="s click" href="#a-${esc(t.id)}" style="display:block">${cover(t,true)}<div class="kicker" style="margin-top:10px">${esc(t.r)}</div><h3>${esc(t.t)}</h3><p>${esc(t.c)}</p></a>`).join("")}</div>
+    <a class="main click" style="${rc(lead.r)}" href="#a-${esc(lead.id)}">${cover(lead)}<div class="kicker" style="margin-top:14px">${esc(lead.r)} · ${esc(lead.s||"")}</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></a>
+    <div class="side">${tl.map(t=>`<a class="s click" href="#a-${esc(t.id)}" style="display:block;${rc(t.r)}">${cover(t,true)}<div class="kicker" style="margin-top:10px">${esc(t.r)}</div><h3>${esc(t.t)}</h3><p>${esc(t.c)}</p></a>`).join("")}</div>
   </section>`;
   for(const r of RUBS){
     const ri=items.filter(i=>i.r===r);
     if(!ri.length)continue;
     const secs=[...new Set(ri.map(i=>i.s||""))].sort((a,b)=>(SECTS.indexOf(a)+99)%99-(SECTS.indexOf(b)+99)%99);
-    html+=`<section class="region" id="r-${slug(r)}"><h2>${esc(r)}</h2><div class="cols">`;
+    html+=`<section class="region" id="r-${slug(r)}" style="${rc(r)}"><h2>${esc(r)}</h2><div class="cols">`;
     for(const s of secs){
       const si=ri.filter(i=>(i.s||"")===s).sort((a,b)=>(b.imp||1)-(a.imp||1));
       const wide=s==="À la une"&&si[0];
@@ -286,7 +311,7 @@ async function showArticle(id){
   app.innerHTML=`<article class="art"><div class="empty">Chargement de l'article…</div></article>`;
   const c=(await content(date))[id]||{};
   const words=JSON.stringify(c).split(/\s+/).length; const min=Math.max(1,Math.round(words/230));
-  let h=`<article class="art"><button class="back" onclick="go('e-${date}')">← Édition du ${esc(fmtDate(date))}</button>
+  let h=`<article class="art" style="${rc(it.r)}"><button class="back" onclick="go('e-${date}')">← Édition du ${esc(fmtDate(date))}</button>
   <div class="kicker">${esc(it.r)}${it.s?" · "+esc(it.s):""}</div><h1>${esc(it.t)}</h1>${it.c?`<p class="chapo">${esc(it.c)}</p>`:""}
   <div class="meta"><span>${esc(wday(date))}</span><span>Lecture ${min} min</span>${(c.sources||[]).length?`<span>${c.sources.length} source${c.sources.length>1?"s":""}</span>`:""}</div>
   ${cover(it)}`;

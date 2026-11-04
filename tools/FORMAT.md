@@ -25,7 +25,13 @@ Pour publier, écrire un fichier JSON `{"edition": {...}, "articles": {...}}`, p
 ## articles["<id>"]
 Chaque news a un vrai article, quelle que soit la rubrique.
 - `cles` : 3 à 5 points « L'essentiel ».
-- `corps` : `[{"h": "Intertitre", "p": "Paragraphes séparés par une ligne vide"}]`. Viser au minimum 3 sections : « Ce qui se passe », « Le contexte » (historique, acteurs, origine du sujet) et « Pourquoi c'est important / Et maintenant ». Environ 250 à 700 mots selon `imp`.
+- `corps` : `[{"h": "Intertitre", "p": "Paragraphes séparés par une ligne vide"}]`. Chaque article, même pour une news mineure, est un vrai article de journal qui répond au quoi, au pourquoi et au comment, avec au minimum ces 5 sections :
+  1. « Ce qui s'est passé » : les faits précis (qui, quoi, quand, où, combien).
+  2. « Comment on en est arrivé là » : l'historique et la genèse du sujet, avec dates clés.
+  3. « Les acteurs » : qui sont les personnes, partis, entreprises ou institutions, d'où ils viennent, leurs positions et intérêts. Ne jamais supposer que le lecteur les connaît.
+  4. « Pourquoi c'est important » : enjeux politiques, économiques et pour les marchés, en France et à l'international.
+  5. « Et maintenant ? » : prochaines étapes, dates, scénarios possibles.
+  Longueur : environ 450 mots minimum pour imp=1, 700 pour imp=2, 1 000 et plus pour imp=3. Ajouter `chrono` dès que le sujet a une histoire.
 - `deal` (pour toute opération M&A, levée ou rachat) :
   - `cible` et `acquereur` : `{"nom", "activite", "origine", "chiffres"}`. `origine` couvre la fondation, le pays, l'historique et les dirigeants.
   - `termes` : `[["Prix", "…"], ["Structure", "…"], ["Multiple", "…"]]`.
