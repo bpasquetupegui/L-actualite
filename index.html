@@ -117,7 +117,10 @@ body.svmode .wrap>footer{display:none}
 .svhead h2{margin:0!important;font-size:26px!important}
 .svhead .svsub{margin:0}
 .svref{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;width:28px;height:28px;cursor:pointer;margin-left:auto}
-.qgrid{display:grid;grid-template-columns:repeat(11,1fr);gap:6px}
+.qgrid{display:grid;grid-template-columns:repeat(11,1fr);gap:6px;min-height:62px}
+.qgrid.tvrow{display:flex;gap:6px;align-items:stretch}
+.tvw{flex:1;min-width:0;height:72px;background:var(--card);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.rates{display:grid;grid-template-columns:repeat(3,110px);gap:6px}
 .qc{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:7px 9px;font-family:var(--sans);display:flex;flex-direction:column;min-width:0}
 .qc b{font-size:11px;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .qv{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
@@ -133,8 +136,8 @@ body.svmode .wrap>footer{display:none}
 .svnote{font-family:var(--sans);font-size:11px;color:var(--muted);margin:8px 0 0}
 @media (max-width:1100px){.qgrid{grid-template-columns:repeat(6,1fr)}.mvgrid{grid-template-columns:repeat(2,1fr)}}
 .svday .evlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 24px}
-.svn{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
-.svn .svbox{height:max(320px,calc(100vh - 420px));padding:10px 12px}
+.svn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.svn .svbox{height:300px;padding:10px 12px}
 .svn .svbox h3{flex-wrap:wrap;margin-bottom:6px}
 .svn .tabs button{padding:2px 7px;font-size:10.5px}
 .svday{margin:10px 0}
@@ -153,7 +156,7 @@ body.svmode .wrap>footer{display:none}
 .nempty{font-family:var(--sans);font-size:13px;color:var(--muted);padding:18px 0}
 @media (max-width:860px){.svm,.svn{grid-template-columns:1fr}}
 .svn .ni{padding:4px 0}
-.svn .ni h4{font-family:var(--sans);font-size:12.5px;font-weight:500;line-height:1.35;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:baseline;gap:6px}
+.svn .ni h4{font-family:var(--sans);font-size:12.5px;font-weight:500;line-height:1.35;margin:0;display:flex;align-items:baseline;gap:6px}
 .svn .ni.open h4{white-space:normal;font-weight:600}
 .svn .ni h4 em{font-style:normal;color:var(--muted);font-size:11px;flex:none;font-variant-numeric:tabular-nums}
 .svn .ni .cat{width:7px;height:7px;border-radius:50%;padding:0;flex:none;align-self:center}
@@ -717,18 +720,21 @@ const RATES=[["10fry.b","OAT 10 ans"],["10dey.b","Bund 10 ans"],["10usy.b","US 1
 const COMPO={
  "CAC 40":{"AC.PA":"Accor","AI.PA":"Air Liquide","AIR.PA":"Airbus","ALO.PA":"Alstom","MT.AS":"ArcelorMittal","CS.PA":"AXA","BNP.PA":"BNP","EN.PA":"Bouygues","BVI.PA":"Bureau Veritas","CAP.PA":"Capgemini","CA.PA":"Carrefour","ACA.PA":"Crédit Agricole","BN.PA":"Danone","DSY.PA":"Dassault Systèmes","EDEN.PA":"Edenred","ENGI.PA":"Engie","EL.PA":"EssilorLuxottica","ERF.PA":"Eurofins","RMS.PA":"Hermès","KER.PA":"Kering","LR.PA":"Legrand","OR.PA":"L'Oréal","MC.PA":"LVMH","ML.PA":"Michelin","ORA.PA":"Orange","RI.PA":"Pernod Ricard","PUB.PA":"Publicis","RNO.PA":"Renault","SAF.PA":"Safran","SGO.PA":"Saint-Gobain","SAN.PA":"Sanofi","SU.PA":"Schneider","GLE.PA":"Société Générale","STLAP.PA":"Stellantis","STMPA.PA":"STMicro","TEP.PA":"Teleperformance","HO.PA":"Thales","TTE.PA":"TotalEnergies","URW.PA":"Unibail","VIE.PA":"Veolia","DG.PA":"Vinci"},
  "Euro Stoxx 50":{"ADS.DE":"Adidas","ADYEN.AS":"Adyen","AD.AS":"Ahold Delhaize","AI.PA":"Air Liquide","AIR.PA":"Airbus","ALV.DE":"Allianz","ABI.BR":"AB InBev","ASML.AS":"ASML","CS.PA":"AXA","BAS.DE":"BASF","BAYN.DE":"Bayer","BBVA.MC":"BBVA","SAN.MC":"Santander","BMW.DE":"BMW","BNP.PA":"BNP","DB1.DE":"Deutsche Börse","DBK.DE":"Deutsche Bank","DHL.DE":"DHL","DTE.DE":"D. Telekom","ENEL.MI":"Enel","ENI.MI":"Eni","EL.PA":"EssilorLuxottica","RACE.MI":"Ferrari","RMS.PA":"Hermès","IBE.MC":"Iberdrola","ITX.MC":"Inditex","IFX.DE":"Infineon","INGA.AS":"ING","ISP.MI":"Intesa","OR.PA":"L'Oréal","MC.PA":"LVMH","MBG.DE":"Mercedes-Benz","MUV2.DE":"Munich Re","NOKIA.HE":"Nokia","RI.PA":"Pernod Ricard","PRX.AS":"Prosus","RHM.DE":"Rheinmetall","SAF.PA":"Safran","SAN.PA":"Sanofi","SAP.DE":"SAP","SU.PA":"Schneider","SIE.DE":"Siemens","ENR.DE":"Siemens Energy","STLAM.MI":"Stellantis","TTE.PA":"TotalEnergies","UCG.MI":"UniCredit","DG.PA":"Vinci","VOW3.DE":"Volkswagen","WKL.AS":"Wolters Kluwer","NDA-FI.HE":"Nordea"},
- "Dow Jones":{"AAPL":"Apple","AMGN":"Amgen","AMZN":"Amazon","AXP":"AmEx","BA":"Boeing","CAT":"Caterpillar","CRM":"Salesforce","CSCO":"Cisco","CVX":"Chevron","DIS":"Disney","GS":"Goldman Sachs","HD":"Home Depot","HON":"Honeywell","IBM":"IBM","JNJ":"J&J","JPM":"JPMorgan","KO":"Coca-Cola","MCD":"McDonald's","MMM":"3M","MRK":"Merck","MSFT":"Microsoft","NKE":"Nike","NVDA":"Nvidia","PG":"P&G","SHW":"Sherwin-W.","TRV":"Travelers","UNH":"UnitedHealth","V":"Visa","VZ":"Verizon","WMT":"Walmart"}
+ "Nasdaq 100":{"AAPL":"Apple","MSFT":"Microsoft","NVDA":"Nvidia","AMZN":"Amazon","META":"Meta","GOOGL":"Alphabet","AVGO":"Broadcom","TSLA":"Tesla","COST":"Costco","NFLX":"Netflix","AMD":"AMD","PEP":"PepsiCo","ADBE":"Adobe","CSCO":"Cisco","TMUS":"T-Mobile US","LIN":"Linde","INTU":"Intuit","QCOM":"Qualcomm","TXN":"Texas Instr.","AMGN":"Amgen","ISRG":"Intuitive Surg.","CMCSA":"Comcast","BKNG":"Booking","HON":"Honeywell","AMAT":"Applied Mat.","PDD":"PDD","ARM":"Arm","ADP":"ADP","PANW":"Palo Alto","VRTX":"Vertex","GILD":"Gilead","SBUX":"Starbucks","MU":"Micron","ADI":"Analog Devices","LRCX":"Lam Research","MELI":"MercadoLibre","KLAC":"KLA","MDLZ":"Mondelez","INTC":"Intel","CTAS":"Cintas","PYPL":"PayPal","REGN":"Regeneron","SNPS":"Synopsys","CDNS":"Cadence","CRWD":"CrowdStrike","MAR":"Marriott","CEG":"Constellation","ORLY":"O'Reilly","MRVL":"Marvell","ABNB":"Airbnb","FTNT":"Fortinet","CSX":"CSX","DASH":"DoorDash","WDAY":"Workday","ADSK":"Autodesk","ASML":"ASML","ROP":"Roper","PCAR":"Paccar","NXPI":"NXP","CPRT":"Copart","CHTR":"Charter","TTD":"Trade Desk","MNST":"Monster","AEP":"AEP","PAYX":"Paychex","FANG":"Diamondback","ROST":"Ross Stores","KDP":"Keurig Dr Pepper","ODFL":"Old Dominion","FAST":"Fastenal","BKR":"Baker Hughes","EA":"Electronic Arts","VRSK":"Verisk","CTSH":"Cognizant","LULU":"Lululemon","XEL":"Xcel Energy","KHC":"Kraft Heinz","EXC":"Exelon","GEHC":"GE HealthCare","DDOG":"Datadog","CCEP":"Coca-Cola EP","AZN":"AstraZeneca","IDXX":"Idexx","TEAM":"Atlassian","CSGP":"CoStar","ZS":"Zscaler","TTWO":"Take-Two","ON":"ON Semi","DXCM":"Dexcom","BIIB":"Biogen","CDW":"CDW","GFS":"GlobalFoundries","MDB":"MongoDB","WBD":"Warner Bros.","MCHP":"Microchip","PLTR":"Palantir","APP":"AppLovin","AXON":"Axon","MSTR":"Strategy","SHOP":"Shopify","LITE":"Lumentum"}
 };
+let PXOK=null;
 async function viaProxy(url,ttl){
   const key="px:"+url;
   try{const c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.at<ttl)return c.v}catch(_){}
-  for(const f of [u=>"https://api.allorigins.win/raw?url="+encodeURIComponent(u),u=>"https://corsproxy.io/?url="+encodeURIComponent(u),u=>"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)]){
-    try{const r=await fetch(f(url));if(!r.ok)continue;const v=await r.text();if(!v||v.length<20)continue;try{localStorage.setItem(key,JSON.stringify({at:Date.now(),v}))}catch(_){}return v}catch(_){}
-  }
-  return null;
+  const P=[u=>"https://corsproxy.io/?url="+encodeURIComponent(u),u=>"https://api.allorigins.win/raw?url="+encodeURIComponent(u),u=>"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)];
+  const one=async i=>{const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),8000);try{const r=await fetch(P[i](url),{signal:ctl.signal});if(!r.ok)throw 0;const v=await r.text();if(!v||v.length<20)throw 0;PXOK=i;return v}finally{clearTimeout(to)}};
+  let v=null;
+  try{v=PXOK!=null?await one(PXOK).catch(()=>Promise.any(P.map((_,i)=>one(i)))):await Promise.any(P.map((_,i)=>one(i)))}catch(_){v=null}
+  if(v){try{localStorage.setItem(key,JSON.stringify({at:Date.now(),v}))}catch(_){}}
+  return v;
 }
 // Variation du jour : flux temps réel CNBC (indices, change, matières, taux), secours Yahoo.
-const CNBC={"^FCHI":".FCHI","^STOXX50E":".STOXX50E","^GSPC":".SPX","^IXIC":".IXIC","^DJI":".DJI","EURUSD=X":"EUR=","BZ=F":"@LCO.1","GC=F":"@GC.1","10fry.b":"FR10Y-FR","10dey.b":"DE10Y-DE","10usy.b":"US10Y"};
+const CNBC={"^FCHI":".FCHI","^STOXX50E":".STOXX50E","^GDAXI":".GDAXI","^FTSE":".FTSE","^GSPC":".SPX","^IXIC":".IXIC","^DJI":".DJI","^N225":".N225","EURUSD=X":"EUR=","BZ=F":"@LCO.1","GC=F":"@GC.1","10fry.b":"FR10Y-FR","10dey.b":"DE10Y-DE","10usy.b":"US10Y"};
 const YHIST={"10usy.b":"^TNX"};
 const num=v=>{if(v==null)return null;const x=parseFloat(String(v).replace(/[,%+\s]/g,"").replace("UNCH","0"));return isNaN(x)?null:x};
 async function cnbcDay(){
@@ -764,6 +770,7 @@ async function stooq(sym){
   const z=txt.trim().split("\n").slice(1).map(l=>{const a=l.split(",");return [Date.parse(a[0])/1e3,+a[4]]}).filter(x=>!isNaN(x[1]));
   return z.length?z.slice(-260):null;
 }
+const TVROW=[{proName:"FOREXCOM:FRA40",title:"CAC 40"},{proName:"FOREXCOM:EU50",title:"Euro Stoxx 50"},{proName:"FOREXCOM:SPXUSD",title:"S&P 500"},{proName:"FOREXCOM:NSXUSD",title:"Nasdaq 100"},{proName:"FOREXCOM:DJI",title:"Dow Jones"},{proName:"FX:EURUSD",title:"EUR/USD"},{proName:"TVC:UKOIL",title:"Brent"},{proName:"TVC:GOLD",title:"Or"}];
 const PERIODS=[["1J",1],["5J",5],["1M",21],["6M",126],["1A",252]];
 let svPer="1J", QUOTES={}, HIST={}, MOVERS={}, histAt=0;
 const nf=(v,d)=>v==null||isNaN(v)?"—":v.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -786,6 +793,10 @@ function renderQuotes(){
     const d=rate?3:(name==="EUR/USD"?4:2);
     return `<div class="qc"><b>${esc(name)}</b><span class="qv">${last==null?"—":nf(last,d)+(rate?" %":"")}</span><span class="qp ${cls}">${txt}</span></div>`;
   };
+  if(svPer==="1J"){
+    if(!el.dataset.tv){el.dataset.tv=1;el.classList.add("tvrow");el.innerHTML=`<div class="tvw" id="tvw"></div><div class="rates" id="rates"></div>`;tvEmbed($("#tvw"),"tickers",{symbols:TVROW,isTransparent:true,showSymbolLogo:false,colorTheme:document.documentElement.dataset.theme==="dark"?"dark":"light",locale:"fr"})}
+    $("#rates").innerHTML=RATES.map(([s,nm])=>cell(s,nm,true)).join("");return}
+  el.dataset.tv="";el.classList.remove("tvrow");
   el.innerHTML=IDX.map(([s,nm])=>cell(s,nm)).join("")+RATES.map(([s,nm])=>cell(s,nm,true)).join("");
 }
 function renderMovers(){
@@ -830,7 +841,7 @@ function showSuivi(){
   <div class="svbox svday"><h3>${today.length?"Aujourd'hui à l'agenda":"Prochains rendez-vous"} <a href="#calendrier" style="text-transform:none;letter-spacing:0;color:var(--accent)">Calendrier →</a></h3><div class="evlist">${next.map(evHTML).join("")}</div></div>
   <p class="svnote">Indices et actions : données Yahoo Finance, avec le décalage imposé par les Bourses (jusqu'à 15 min). Taux : Stooq. Dépêches : franceinfo, Le Monde, France 24, BBC, NPR, New York Times.</p></section>`;
   renderQuotes();renderMovers();
-  $("#svper").onclick=ev=>{const b=ev.target.closest("button");if(!b)return;svPer=b.dataset.p;document.querySelectorAll("#svper button").forEach(x=>x.classList.toggle("on",x===b));renderQuotes()};
+  $("#svper").onclick=ev=>{const b=ev.target.closest("button");if(!b)return;svPer=b.dataset.p;const q=$("#svq");if(q)q.dataset.tv="";document.querySelectorAll("#svper button").forEach(x=>x.classList.toggle("on",x===b));renderQuotes()};
   for(const z in FEEDS)renderZone(z);
   app.querySelector(".svn").onclick=ev=>{const b=ev.target.closest(".tabs button");if(b){const z=b.closest(".svbox").dataset.z;svTab[z]=b.dataset.t;renderZone(z);return}
     const h=ev.target.closest(".ni h4");if(h)h.parentNode.classList.toggle("open")};
