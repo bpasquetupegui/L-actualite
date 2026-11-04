@@ -99,6 +99,36 @@ nav.rub button.on{color:var(--accent)}
 .ev2.open .evx{display:block}
 .ev2.hasx .evt{cursor:default}
 .evgrid,.evlist{align-items:start}
+/* page Suivi */
+.suivibtn{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--accent)!important;border-color:var(--accent)!important}
+.suivibtn i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+.sv h2{font-family:var(--display);font-size:34px;margin:18px 0 2px}
+.svsub{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin-bottom:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.svsub button{border:1px solid var(--rule);background:var(--card);color:var(--ink);border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer}
+.svm{display:grid;grid-template-columns:2fr 3fr;gap:20px;align-items:stretch}
+.svbox{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;min-width:0}
+.svbox h3{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.svbox h3 .tabs{display:flex;gap:4px}
+.tabs button{border:1px solid var(--rule);background:none;color:var(--ink);border-radius:999px;padding:3px 10px;font:600 11.5px var(--sans);letter-spacing:0;text-transform:none;cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tvq{flex:1;min-height:520px}.tvh{flex:1;min-height:520px}
+.svday{margin:20px 0}
+.svday .evlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0 24px}
+.svn{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.svn .svbox{height:640px}
+.nlist{overflow-y:auto;flex:1;margin:0 -6px;padding:0 6px}
+.ni{border-bottom:1px solid var(--rule);padding:9px 0}
+.ni .meta{font-family:var(--sans);font-size:11px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.ni .meta b{color:var(--rc,var(--accent));font-weight:700}
+.ni .cat{border-radius:3px;padding:1px 6px;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#fff}
+.ni .cat.eco{background:#2f6fd6}.ni .cat.pol{background:#e0414f}.ni .cat.fd{background:#7a7a85}
+.ni h4{font-family:var(--display);font-size:16.5px;line-height:1.28;margin:3px 0 0;cursor:pointer}
+.ni h4:hover{color:var(--rc,var(--accent))}
+.ni .sum{display:none;font-size:14.5px;color:var(--ink2);line-height:1.5;margin-top:6px}
+.ni.open .sum{display:block}
+.ni .sum a{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--rc,var(--accent));display:inline-block;margin-top:4px}
+.nempty{font-family:var(--sans);font-size:13px;color:var(--muted);padding:18px 0}
+@media (max-width:860px){.svm,.svn{grid-template-columns:1fr}}
 /* ticker */
 .tkh{font-family:var(--sans);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:16px 0 6px}
 .ticker{display:flex;gap:0;overflow-x:auto;font-family:var(--sans);font-size:12.5px;border-bottom:1px solid var(--rule);scrollbar-width:none}
@@ -294,7 +324,7 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 <div class="wrap">
   <div class="topbar">
     <span id="today"></span>
-    <div class="right"><button class="themebtn" id="theme"></button><label class="search">🔎<input id="q" type="search" placeholder="Rechercher dans les archives…"></label></div>
+    <div class="right"><a class="themebtn suivibtn" href="#suivi"><i></i>Suivi en direct</a><button class="themebtn" id="theme"></button><label class="search">🔎<input id="q" type="search" placeholder="Rechercher dans les archives…"></label></div>
   </div>
   <header class="mast">
     <h1 id="home">L'Actualité<span class="dot">.</span></h1>
@@ -328,7 +358,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const app=$("#app");
 function setTheme(m){document.documentElement.dataset.theme=m;$("#theme").textContent=m==="dark"?"☀ Mode clair":"☾ Mode sombre";try{localStorage.setItem("theme",m)}catch(_){}}
 let _t="light";try{_t=localStorage.getItem("theme")||"light"}catch(_){}
-setTheme(_t);$("#theme").onclick=()=>{setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");liveTicker()};
+setTheme(_t);$("#theme").onclick=()=>{setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");liveTicker();if(location.hash==="#suivi")showSuivi()};
 let EDITIONS=[], CONTENT={}, PHOTOS=[], AUTO={}, CAL=[];
 const TV_SYMBOLS=[
   {proName:"FOREXCOM:FRA40",title:"CAC 40"},{proName:"FOREXCOM:EU50",title:"Euro Stoxx 50"},
@@ -440,6 +470,7 @@ function route(){
   if(h.startsWith("e-"))return showEdition(h.slice(2));
   if(h==="archives")return showArchives("");
   if(h==="calendrier")return showCalendar();
+  if(h==="suivi")return showSuivi();
   if(h.startsWith("r-"))return showRubrique(h.slice(2));
   return showEdition(EDITIONS[0].date);
 }
@@ -591,6 +622,89 @@ function showCalendar(){
     else if(calCats.size===al.length)calCats=new Set([c]);
     else{calCats.has(c)?calCats.delete(c):calCats.add(c);if(!calCats.size)calCats=new Set(al)}
     showCalendar()};
+}
+// ---------- Page « Suivi en direct »
+const FEEDS={
+ "France":{c:"#3b7ddd",f:[["franceinfo","https://www.francetvinfo.fr/titres.rss"],["franceinfo","https://www.francetvinfo.fr/politique.rss"],["franceinfo","https://www.francetvinfo.fr/economie.rss"],["franceinfo","https://www.francetvinfo.fr/faits-divers.rss"],["franceinfo","https://www.francetvinfo.fr/societe/justice.rss"],["Le Monde","https://www.lemonde.fr/politique/rss_full.xml"],["Le Monde","https://www.lemonde.fr/economie/rss_full.xml"]]},
+ "Europe (hors France)":{c:"#2fa6c9",f:[["Le Monde","https://www.lemonde.fr/europe/rss_full.xml"],["France 24","https://www.france24.com/fr/europe/rss"],["BBC","https://feeds.bbci.co.uk/news/world/europe/rss.xml"]]},
+ "États-Unis":{c:"#e0414f",f:[["BBC","https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"],["NPR","https://feeds.npr.org/1001/rss.xml"],["NPR","https://feeds.npr.org/1006/rss.xml"],["NYT","https://rss.nytimes.com/services/xml/rss/nyt/US.xml"],["NYT","https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"]]},
+ "Monde (hors États-Unis)":{c:"#a066ea",f:[["Le Monde","https://www.lemonde.fr/international/rss_full.xml"],["France 24","https://www.france24.com/fr/rss"],["BBC","https://feeds.bbci.co.uk/news/world/rss.xml"],["BBC","https://feeds.bbci.co.uk/news/business/rss.xml"]]}
+};
+const KW={
+ eco:/\b(écono|inflation|croissance|pib|bourse|cac ?40|action[s]? |march[ée]s? financ|entreprise|industri|usine|emploi|chômage|salaire|smic|taux|bce|fed\b|banque|banc|budget|dette|déficit|impôt|fiscal|taxe|prix|carburant|pétrole|gaz|énergie|commerce|droits de douane|tarif|exportation|rachat|fusion|acquisition|résultats|chiffre d'affaires|bénéfice|faillite|licenci|grève|retraite|immobilier|crédit|euro\b|dollar|economy|economic|inflation|growth|gdp|stock|shares|market|wall street|nasdaq|company|companies|firm|business|industry|jobs|unemployment|wage|interest rate|federal reserve|bank|budget|debt|deficit|tax|tariff|trade|prices|oil|energy|deal|merger|acquisition|earnings|profit|revenue|bankrupt|layoff)/i,
+ fd:/\b(meurtre|tué|tuée|tués|mort[se]? |décès|décédé|homicide|assassin|accident|collision|incendie|feu |noyade|disparu|disparition|enlèvement|agress|viol|violences?|braquage|vol |cambriol|police|gendarm|interpell|garde à vue|arrêté|mis en examen|condamné|procès|cour d'assises|tribunal|enquête|fusillade|coups de couteau|poignard|explosion|effondrement|séisme|tempête|inondation|killed|dead|death|dies|died|murder|homicide|shooting|shot|stabbing|stabbed|crash|accident|fire|blaze|flood|storm|earthquake|missing|kidnap|assault|arrested|police|charged|sentenced|trial|court|jury|robbery)/i
+};
+KW.pol=/\b(sénat|assemblée|député|élection|électoral|scrutin|vote|gouvernement|ministre|premier ministre|président|élysée|matignon|loi\b|projet de loi|réforme|parlement|parti|opposition|coalition|diplomat|sommet|guerre|armée|otan|nato|congress|senate|house|election|vote|president|minister|government|parliament|law|bill|party|campaign|white house|diplomat|summit|war|military)/gi;
+function catOf(t){const s=" "+t+" ";const n=r=>(s.match(new RegExp(r.source,"gi"))||[]).length;const f=n(KW.fd),e=n(KW.eco),p=n(KW.pol);
+  if(f>0&&f>=e&&f>=p)return"fd";if(e>p)return"eco";if(p>0)return"pol";return e?"eco":"pol"}
+const CATL={eco:"Éco",pol:"Politique",fd:"Faits divers"};
+function strip(h){const d=document.createElement("div");d.innerHTML=String(h||"");return (d.textContent||"").replace(/\s+/g," ").trim()}
+function parseFeed(xml,src){
+  const doc=new DOMParser().parseFromString(xml,"text/xml");
+  const its=[...doc.querySelectorAll("item,entry")].slice(0,25);
+  return its.map(it=>{const g=n=>{const e=it.getElementsByTagName(n)[0];return e?e.textContent:""};
+    let link=g("link");if(!link){const l=it.querySelector("link[href]");link=l?l.getAttribute("href"):""}
+    const d=new Date(g("pubDate")||g("published")||g("updated")||g("dc:date"));
+    return {t:strip(g("title")),s:strip(g("description")||g("summary")||g("content")).slice(0,420),l:link.trim(),d:isNaN(d)?0:+d,src}}).filter(x=>x.t&&x.l);
+}
+async function getFeed(src,url){
+  const key="feed:"+url;
+  try{const c=JSON.parse(localStorage.getItem(key)||"null");if(c&&Date.now()-c.at<5*60e3)return c.items}catch(_){}
+  const tries=[
+    async()=>{const r=await fetch("https://api.allorigins.win/raw?url="+encodeURIComponent(url));if(!r.ok)throw 0;return parseFeed(await r.text(),src)},
+    async()=>{const r=await fetch("https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(url));const j=await r.json();if(j.status!=="ok")throw 0;return j.items.map(i=>({t:strip(i.title),s:strip(i.description).slice(0,420),l:i.link,d:+new Date(i.pubDate.replace(" ","T")+"Z")||0,src}))},
+    async()=>{const r=await fetch("https://corsproxy.io/?url="+encodeURIComponent(url));if(!r.ok)throw 0;return parseFeed(await r.text(),src)}
+  ];
+  for(const f of tries){try{const items=await f();if(items.length){try{localStorage.setItem(key,JSON.stringify({at:Date.now(),items}))}catch(_){}return items}}catch(_){}}
+  return [];
+}
+function ago(ts){if(!ts)return"";const m=Math.round((Date.now()-ts)/60e3);if(m<1)return"à l'instant";if(m<60)return`il y a ${m} min`;const h=Math.floor(m/60);if(h<24)return`il y a ${h} h`;return new Date(ts).toLocaleDateString("fr-FR",{day:"numeric",month:"short"})}
+let NEWS={}, svTab={}, svTimer=null, svAt=0;
+function tvEmbed(el,name,cfg){el.innerHTML="";const c=document.createElement("div");c.className="tradingview-widget-container";c.style.height="100%";c.innerHTML='<div class="tradingview-widget-container__widget" style="height:100%"></div>';const sc=document.createElement("script");sc.async=true;sc.src="https://s3.tradingview.com/external-embedding/embed-widget-"+name+".js";sc.textContent=JSON.stringify(cfg);c.appendChild(sc);el.appendChild(c)}
+function renderZone(z){
+  const box=document.querySelector(`.svbox[data-z="${CSS.escape(z)}"]`);if(!box)return;
+  const tab=svTab[z]||"all", all=NEWS[z]||[];
+  const list=all.filter(x=>tab==="all"||x.c===tab);
+  box.querySelector(".tabs").innerHTML=[["all","Tout"],["eco","Éco"],["pol","Politique"],["fd","Faits divers"]].map(([k,l])=>`<button class="${k===tab?"on":""}" data-t="${k}">${l}${k!=="all"?` <span style="opacity:.6">${all.filter(x=>x.c===k).length}</span>`:""}</button>`).join("");
+  box.querySelector(".nlist").innerHTML=list.length?list.slice(0,60).map(x=>`<div class="ni"><div class="meta"><span class="cat ${x.c}">${CATL[x.c]}</span><b>${esc(x.src)}</b><span>${esc(ago(x.d))}</span></div><h4>${esc(x.t)}</h4><div class="sum">${esc(x.s||"")}${x.s?"<br>":""}<a href="${esc(x.l)}" target="_blank" rel="noopener">Lire sur ${esc(x.src)} ↗</a></div></div>`).join(""):`<div class="nempty">${all._loading?"Chargement des dépêches…":"Aucune dépêche pour l'instant dans cette catégorie."}</div>`;
+}
+async function loadNews(force){
+  if(force){for(const z in FEEDS)for(const [,u] of FEEDS[z].f){try{localStorage.removeItem("feed:"+u)}catch(_){}}}
+  await Promise.all(Object.entries(FEEDS).map(async([z,cfg])=>{
+    if(!NEWS[z]){NEWS[z]=[];NEWS[z]._loading=true;renderZone(z)}
+    const res=(await Promise.all(cfg.f.map(([src,u])=>getFeed(src,u)))).flat();
+    const seen=new Set(), out=[];
+    for(const x of res.sort((a,b)=>b.d-a.d)){const k=x.t.toLowerCase().slice(0,70);if(seen.has(k))continue;seen.add(k);x.c=catOf(x.t+" "+x.s);out.push(x)}
+    NEWS[z]=out;renderZone(z);
+  }));
+  svAt=Date.now();const u=$("#svupd");if(u)u.textContent="Dépêches mises à jour "+new Date(svAt).toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+}
+function showSuivi(){
+  setNav("");
+  const dark=document.documentElement.dataset.theme==="dark", th=dark?"dark":"light", t=todayStr();
+  const today=CAL.filter(e=>e.d===t).sort((a,b)=>String(a.h||"99").localeCompare(String(b.h||"99"),"fr",{numeric:true}));
+  app.innerHTML=`<section class="sv"><h2>Suivi en direct</h2>
+  <div class="svsub"><span>Marchés : cotations TradingView (indices avec environ 15 min de décalage). Dépêches : flux des rédactions (franceinfo, Le Monde, France 24, BBC, NPR, NYT), actualisés toutes les 5 minutes.</span><span id="svupd"></span><button id="svref">↻ Actualiser</button></div>
+  <div class="svm">
+    <div class="svbox"><h3>Marchés</h3><div class="tvq" id="tvq"></div></div>
+    <div class="svbox"><h3><span>Plus fortes hausses et baisses</span><span class="tabs" id="hmt"><button class="on" data-h="CAC40">CAC 40</button><button data-h="SX5E">Euro Stoxx 50</button></span></h3><div class="tvh" id="tvh"></div></div>
+  </div>
+  ${today.length?`<div class="svbox svday"><h3>Aujourd'hui à l'agenda <a href="#calendrier" style="text-transform:none;letter-spacing:0;color:var(--accent)">Calendrier →</a></h3><div class="evlist">${today.map(evHTML).join("")}</div></div>`:""}
+  <div class="svn">${Object.entries(FEEDS).map(([z,c])=>`<div class="svbox" data-z="${esc(z)}" style="--rc:${c.c}"><h3><span style="color:${c.c}">${esc(z)}</span><span class="tabs"></span></h3><div class="nlist"></div></div>`).join("")}</div></section>`;
+  const S=(n,d)=>({name:n,displayName:d});
+  tvEmbed($("#tvq"),"market-quotes",{width:"100%",height:"100%",isTransparent:true,showSymbolLogo:false,colorTheme:th,locale:"fr",symbolsGroups:[
+    {name:"Indices",symbols:[S("FOREXCOM:FRA40","CAC 40"),S("FOREXCOM:EU50","Euro Stoxx 50"),S("FOREXCOM:SPXUSD","S&P 500"),S("FOREXCOM:NSXUSD","Nasdaq 100"),S("FOREXCOM:DJI","Dow Jones")]},
+    {name:"Taux à 10 ans",symbols:[S("TVC:FR10Y","OAT France"),S("TVC:DE10Y","Bund Allemagne"),S("TVC:US10Y","Treasury US")]},
+    {name:"Change & matières",symbols:[S("FX:EURUSD","EUR/USD"),S("TVC:UKOIL","Brent"),S("TVC:GOLD","Or")]}]});
+  const hm=src=>tvEmbed($("#tvh"),"stock-heatmap",{exchanges:[],dataSource:src,grouping:"no_group",blockSize:"market_cap_basic",blockColor:"change",locale:"fr",symbolUrl:"",colorTheme:th,hasTopBar:false,isDataSetEnabled:false,isZoomEnabled:false,hasSymbolTooltip:true,isMonoSize:false,width:"100%",height:"100%"});
+  hm("CAC40");
+  $("#hmt").onclick=ev=>{const b=ev.target.closest("button");if(!b)return;document.querySelectorAll("#hmt button").forEach(x=>x.classList.toggle("on",x===b));hm(b.dataset.h)};
+  for(const z in FEEDS)renderZone(z);
+  app.querySelector(".svn").onclick=ev=>{const b=ev.target.closest(".tabs button");if(b){const z=b.closest(".svbox").dataset.z;svTab[z]=b.dataset.t;renderZone(z);return}
+    const h=ev.target.closest(".ni h4");if(h)h.parentNode.classList.toggle("open")};
+  $("#svref").onclick=()=>loadNews(true);
+  loadNews(false);
+  clearInterval(svTimer);svTimer=setInterval(()=>{if(location.hash==="#suivi")loadNews(false);else clearInterval(svTimer)},5*60e3);
 }
 function showRubrique(sl){
   const r=RUBS.find(x=>slug(x)===sl); if(!r)return showEdition(EDITIONS[0].date);
