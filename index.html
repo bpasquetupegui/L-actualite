@@ -379,6 +379,49 @@ a.it:hover h4{color:var(--rc,var(--accent))}
   .mmenu button{border:0;border-radius:6px;text-align:left;padding:10px 12px}
   .mmenu button.on{background:var(--hover)}
 }
+
+/* téléphone : bandeau, articles, calendrier */
+.wk,.calw-h .mo{display:none}
+@media (max-width:700px){
+  .livelbl,.stick.compact .minilogo{display:none}
+  .live{min-height:32px;overflow:hidden}
+  .tvbox{flex:none;width:130%;height:44px;transform:scale(.75);transform-origin:0 50%;margin-right:-30%}
+  .tk{padding:6px 10px;font-size:12.5px}
+  .edhead{font-size:10.5px;letter-spacing:.08em;margin:14px 0 8px}
+  .fill::before{display:none}
+  .fill>*{position:relative!important;height:auto}
+  .fill .photo img,.fill>figure img{height:auto;aspect-ratio:16/9!important}
+  .fill .fallback,.fill .fallback>*{height:auto;aspect-ratio:16/9!important}
+  .fill figcaption,.lead .photo figcaption{display:none}
+  .lead{gap:18px;padding-bottom:18px}
+  .lead .main h2{font-size:24px;line-height:1.15;margin:8px 0 6px}
+  .lead .main p{font-size:15.5px;line-height:1.45}
+  .lead .main .kicker{margin-top:10px!important}
+  .side h3{font-size:18.5px}
+  .side p{font-size:14.5px}
+  .side .s{padding-bottom:12px;margin-bottom:12px}
+  .region>h2{font-size:24px}
+  .it h4{font-size:17px}
+  .it p{font-size:14px}
+  .wide .row.one .it.big h4{font-size:21px}
+  .calw{padding:14px}
+  .calw-h h3{font-size:19px}
+  .calw-h .dk,.calw-b{display:none}
+  .calw-h .mo{display:inline}
+  .wk{display:grid;grid-template-columns:64px 1fr;gap:12px}
+  .wkd{display:flex;flex-direction:column;gap:4px}
+  .wkb{border:0;background:none;border-radius:6px;padding:5px 0 9px;position:relative;color:var(--muted);font-family:var(--sans);display:flex;flex-direction:column;align-items:center;line-height:1.1}
+  .wkb span{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em}
+  .wkb b{font-size:17px}
+  .wkb.has{color:var(--ink);background:var(--hover)}
+  .wkb.sel{background:var(--ink);color:var(--paper)}
+  .wkb em{display:flex;gap:2px;position:absolute;bottom:3px;left:0;right:0;justify-content:center}
+  .wkb em i{width:4px;height:4px;border-radius:50%;display:block}
+  .wke{min-width:0}
+  .wkh{font-family:var(--sans);font-size:13px;font-weight:700;text-transform:capitalize;margin-bottom:4px}
+  .wke .evd{display:none}
+  .wke .evt{font-size:14.5px}
+}
 </style>
 </head>
 <body>
@@ -433,7 +476,7 @@ function liveTicker(){
   c.innerHTML='<div class="tradingview-widget-container__widget"></div>';
   const sc=document.createElement("script");sc.async=true;
   sc.src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-  sc.textContent=JSON.stringify({symbols:TV_SYMBOLS,showSymbolLogo:false,isTransparent:true,displayMode:"adaptive",colorTheme:document.documentElement.dataset.theme==="dark"?"dark":"light",locale:"fr"});
+  sc.textContent=JSON.stringify({symbols:TV_SYMBOLS,showSymbolLogo:false,isTransparent:true,displayMode:matchMedia("(max-width:700px)").matches?"compact":"adaptive",colorTheme:document.documentElement.dataset.theme==="dark"?"dark":"light",locale:"fr"});
   c.appendChild(sc);box.appendChild(c);
   box.parentNode.classList.add("fallback"); clearInterval(liveTicker.t); let n=0;
   liveTicker.t=setInterval(()=>{if(box.querySelector("iframe")){setTimeout(()=>box.parentNode.classList.remove("fallback"),800);clearInterval(liveTicker.t)}else if(++n>40)clearInterval(liveTicker.t)},500);
@@ -641,8 +684,17 @@ function calWidget(){
   if(!up.length)return"";
   let g="";for(let i=0;i<35;i++){const d=addDays(t,i);const n=up.filter(e=>e.d===d);
     g+=`<button class="mc${n.length?" has":""}${i===0?" today":""}" data-d="${d}" title="${esc(n.map(e=>(e.h?e.h+" · ":"")+e.t).join("\n"))}"><span>${+d.slice(8)}</span><em>${n.slice(0,3).map(e=>`<i style="background:${CATC[e.c]||"#888"}"></i>`).join("")}</em></button>`}
-  return `<section class="calw"><div class="calw-h"><h3>Les 30 prochains jours</h3><a href="#calendrier">Calendrier complet →</a></div><div class="calw-b"><div class="mini" id="mini">${["L","M","M","J","V","S","D"].map(x=>`<div class="mh">${x}</div>`).join("")}${"<div></div>".repeat((new Date(t+"T12:00:00").getDay()+6)%7)}${g}</div><div id="calev">${wList(up,null)}</div></div></section>`;
+  return `<section class="calw"><div class="calw-h"><h3><span class="dk">Les 30 prochains jours</span><span class="mo">Cette semaine</span></h3><a href="#calendrier">Calendrier complet →</a></div><div class="calw-b"><div class="mini" id="mini">${["L","M","M","J","V","S","D"].map(x=>`<div class="mh">${x}</div>`).join("")}${"<div></div>".repeat((new Date(t+"T12:00:00").getDay()+6)%7)}${g}</div><div id="calev">${wList(up,null)}</div></div>${weekCol(t)}</section>`;
 }
+function weekCol(t){
+  const days=[...Array(7)].map((_,i)=>addDays(t,i));
+  const sel=days.find(d=>CAL.some(e=>e.d===d))||t;
+  return `<div class="wk"><div class="wkd">${days.map(d=>{const n=CAL.filter(e=>e.d===d);const dt=new Date(d+"T12:00:00");
+    return `<button class="wkb${d===sel?" sel":""}${n.length?" has":""}" data-d="${d}"><span>${dt.toLocaleDateString("fr-FR",{weekday:"short"}).replace(".","")}</span><b>${dt.getDate()}</b><em>${n.slice(0,3).map(e=>`<i style="background:${CATC[e.c]||"#888"}"></i>`).join("")}</em></button>`}).join("")}</div><div class="wke" id="wke">${wkList(sel)}</div></div>`;
+}
+function wkList(d){const n=CAL.filter(e=>e.d===d).sort((a,b)=>String(a.h||"99").localeCompare(String(b.h||"99"),"fr",{numeric:true}));
+  return `<div class="wkh">${esc(dayLabel(d))}</div>${n.length?n.map(evHTML).join(""):`<div class="empty sm">Aucun grand rendez-vous ce jour-là.</div>`}`}
+document.addEventListener("click",ev=>{const b=ev.target.closest(".wkb");if(!b)return;document.querySelectorAll(".wkb").forEach(x=>x.classList.toggle("sel",x===b));$("#wke").innerHTML=wkList(b.dataset.d)});
 function wList(up,d){
   if(d){const n=CAL.filter(e=>e.d===d).sort((a,b)=>String(a.h||"99").localeCompare(String(b.h||"99"),"fr",{numeric:true}));
     return `<div class="calday"><b>${esc(dayLabel(d))}</b><button class="reset">← Prochains rendez-vous</button></div><div class="evlist">${n.length?n.map(evHTML).join(""):`<div class="empty sm">Aucun grand rendez-vous ce jour-là.</div>`}</div>`}
