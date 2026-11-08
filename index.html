@@ -91,6 +91,8 @@ nav.rub button.on{color:var(--accent)}
 .xit{padding:0 0 10px;margin:0 0 10px}
 .xit .kicker{font-size:10px}
 .xit h4{font-size:16px!important;margin:3px 0 0!important}
+.rublead .xfill{margin-top:22px}
+.archg{margin-bottom:14px}.archg .card p{font-size:14px}
 @media (max-width:860px){.g6>*{width:100%}}
 .mc{border:0;background:none;font:inherit;cursor:pointer}
 .mc em,.cd em{display:flex;gap:2px;justify-content:center;position:absolute;left:0;right:0;bottom:2px}
@@ -363,6 +365,7 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 .rubh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid var(--rc,var(--ink));margin-bottom:22px}
 .rubh h2{font-family:var(--display);font-size:44px;margin:0;color:var(--rc,var(--ink))}
 .rubh span{font-family:var(--sans);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.rlimg{display:flex;flex-direction:column}.rublead>div>a{display:block}
 .rublead{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:stretch;margin-bottom:30px}
 .rublead h2{font-family:var(--display);font-size:clamp(26px,3.2vw,40px);line-height:1.12;margin:8px 0}
 .rublead p{font-size:18px;color:var(--ink2)}
@@ -657,30 +660,31 @@ function showEdition(date){
 }
 /* Ordinateur grand écran : comble les espaces vides avec les articles des jours précédents */
 let CUR_ED=null;
+const xit=(x,kick)=>`<a class="it xit" href="#a-${esc(x.id)}" style="${rc(x.r)}"><span class="kicker">${esc(kick||x.r)}</span><h4>${esc(x.t)}</h4>${dtl(x)}</a>`;
+const ytop=el=>el.getBoundingClientRect().top+scrollY, bot=el=>el.getBoundingClientRect().bottom+scrollY;
+const cbot=el=>Math.max(...[...el.children].map(bot));
+function fillBox(host,limit,pool,pick,kick){
+  if(limit-cbot(host)<70)return;
+  const box=document.createElement("div");box.className="xfill";box.innerHTML=`<h5>Précédemment</h5><div class="xl"></div>`;
+  host.appendChild(box);const xl=box.lastChild;let n=0;
+  while(true){const k=pool.findIndex(pick);if(k<0)break;const x=pool[k];
+    xl.insertAdjacentHTML("beforeend",xit(x,kick&&kick(x)));
+    if(cbot(host)>limit+2){xl.lastChild.remove();break}
+    pool.splice(k,1);n++;}
+  if(!n)box.remove();
+}
 function fillGaps(){
   const ed=CUR_ED; if(!ed||!document.querySelector(".lead"))return;
   document.querySelectorAll(".xfill").forEach(x=>x.remove());
   const shown=new Set([...document.querySelectorAll("#app a[href^='#a-']")].map(a=>a.getAttribute("href").slice(3)));
   const i=EDITIONS.indexOf(ed), pool=[];
   for(const e of EDITIONS.slice(i+1,i+15))for(const x of [...(e.items||[])].sort((a,b)=>(b.imp||1)-(a.imp||1)))if(!shown.has(x.id))pool.push(x);
-  const xit=x=>`<a class="it xit" href="#a-${esc(x.id)}" style="${rc(x.r)}"><span class="kicker">${esc(x.r)}</span><h4>${esc(x.t)}</h4>${dtl(x)}</a>`;
-  const top=el=>el.getBoundingClientRect().top+scrollY, bot=el=>el.getBoundingClientRect().bottom+scrollY;
-  const cbot=el=>Math.max(...[...el.children].map(bot));
-  function fill(host,limit,pick){
-    if(limit-cbot(host)<70)return;
-    const box=document.createElement("div");box.className="xfill";box.innerHTML=`<h5>Précédemment</h5><div class="xl"></div>`;
-    host.appendChild(box);const xl=box.lastChild;let n=0;
-    while(true){const k=pool.findIndex(pick);if(k<0)break;const x=pool[k];
-      xl.insertAdjacentHTML("beforeend",xit(x));
-      if(cbot(host)>limit+2){xl.lastChild.remove();break}
-      pool.splice(k,1);n++;}
-    if(!n)box.remove();
-  }
+  const fill=(h,l,pick)=>fillBox(h,l,pool,pick);
   const side=document.querySelector(".lead .side"), main=document.querySelector(".lead .main");
   if(side&&main&&getComputedStyle(side).display==="grid")fill(side,bot(main),()=>true);
   const regs=document.querySelector(".regs");
   if(regs&&getComputedStyle(regs).gridTemplateColumns.split(" ").length>1){
-    const rows={};[...regs.children].forEach(r=>{(rows[Math.round(top(r))]??=[]).push(r)});
+    const rows={};[...regs.children].forEach(r=>{(rows[Math.round(ytop(r))]??=[]).push(r)});
     for(const row of Object.values(rows)){if(row.length<2)continue;const m=Math.max(...row.map(cbot));
       for(const r of row){const rub=r.querySelector("h2 a")?.textContent;fill(r,m,x=>x.r===rub)}}
   }
@@ -1010,17 +1014,33 @@ function showRubrique(sl){
   // archives : 3 derniers jours, + les sujets majeurs jusqu'à 7 jours
   const arch=[];
   for(const e of EDITIONS.slice(1)){
-    const age=(new Date(ed.date)-new Date(e.date))/864e5; if(age>7)break;
+    const age=(new Date(ed.date)-new Date(e.date))/864e5; if(age>30)break;
     assignPhotos(e);
-    for(const x of (e.items||[]))if(x.r===r&&(age<=3||(x.imp||1)>=3))arch.push({...x,_age:age});
+    for(const x of (e.items||[]))if(x.r===r)arch.push({...x,_age:age});
   }
   arch.sort((a,b)=>a._age-b._age||(b.imp||1)-(a.imp||1));
   let h=`<section class="rubp" style="${rc(r)}"><div class="rubh"><h2>${esc(r)}</h2><span>${esc(wday(ed.date))} · ${today.length} article${today.length>1?"s":""}</span></div>`;
-  if(lead)h+=`<a class="rublead click" href="#a-${esc(lead.id)}">${fillCover(lead,false,"56.25%")}<div><div class="kicker">${esc(lead.s||"")} · L'essentiel du jour</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p>${dtl(lead)}</div></a>`;
+  if(lead)h+=`<div class="rublead"><a class="click rlimg" href="#a-${esc(lead.id)}">${fillCover(lead,false,"56.25%")}</a><div><a class="click" href="#a-${esc(lead.id)}"><div class="kicker">${esc(lead.s||"")} · L'essentiel du jour</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p>${dtl(lead)}</a></div></div>`;
   else h+=`<div class="empty">Pas d'actualité dans cette rubrique aujourd'hui.</div>`;
   if(rest.length){const sp=spans(rest.length,perRow());h+=`<div class="rubgrid g6">${rest.map((x,j)=>`<a class="card click" style="--sp:${sp[j]}" href="#a-${esc(x.id)}">${fillCover(x,true)}<div class="kicker">${esc(x.s||"")}</div><h4>${esc(x.t)}</h4><p>${esc(x.c)}</p>${dtl(x)}</a>`).join("")}</div>`;}
-  if(arch.length)h+=`<div class="rubarch"><h3>Ces derniers jours</h3><div class="strip">${arch.slice(0,12).map(x=>`<a class="card click" href="#a-${esc(x.id)}">${cover(x,true)}<div class="kicker">${esc(fmtDate(x.id.slice(0,10)))}${(x.imp||1)>=3?" · Majeur":""}</div><h4>${esc(x.t)}</h4></a>`).join("")}</div><a class="more" href="#archives">Toutes les archives →</a></div>`;
+  h+=`<div class="rubarch" id="rubarch"></div>`;
   app.innerHTML=h+`</section>`;
+  fillRub(arch);
+}
+function fillRub(arch){
+  const pool=[...arch], box=document.getElementById("rubarch"); if(!box)return;
+  const dk=x=>fmtDate(x.id.slice(0,10))+((x.imp||1)>=3?" · Majeur":"");
+  // 1) colonne texte à côté de la grande image : on la complète
+  const rl=document.querySelector(".rublead"), img=rl&&rl.querySelector(".fill"), txt=rl&&rl.lastElementChild;
+  if(img&&txt&&Math.abs(ytop(txt)-ytop(img))<20)fillBox(txt,bot(img),pool,()=>true,x=>(x.s||"")+((x.imp||1)>=3?" · Majeur":""));
+  if(!pool.length){box.remove();return}
+  // 2) « Ces derniers jours » : uniquement des rangées complètes
+  let h=`<h3>Ces derniers jours</h3>`;
+  const card=(x,st)=>`<a class="card click"${st?` style="--sp:${st}"`:""} href="#a-${esc(x.id)}">${st!==undefined?fillCover(x,true):cover(x,true)}<div class="kicker">${esc(dk(x))}</div><h4>${esc(x.t)}</h4>${st!==undefined&&x.c?`<p>${esc(x.c)}</p>`:""}</a>`;
+  if(window.innerWidth<=860)h+=`<div class="strip">${pool.slice(0,12).map(x=>card(x)).join("")}</div>`;
+  else{const k=perRow()+1, n=pool.length>=k?Math.min(Math.floor(pool.length/k),3)*k:pool.length, sp=spans(n,k);
+    h+=`<div class="g6 archg">${pool.slice(0,n).map((x,j)=>card(x,sp[j])).join("")}</div>`;}
+  box.innerHTML=h+`<a class="more" href="#archives">Toutes les archives →</a>`;
 }
 let archFilter="Tout";
 function showArchives(q){
