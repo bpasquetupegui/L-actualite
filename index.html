@@ -359,7 +359,8 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 @media (max-width:860px){.calw-b,.rublead{grid-template-columns:1fr}.evlist{grid-template-columns:1fr}}
 
 /* téléphone uniquement */
-.mbar,.archbtn{display:none}
+.mbar,.archbtn,.mlogo{display:none}
+.mlogo{text-align:center;font-family:var(--display);font-weight:800;font-size:18px;line-height:1;padding:7px 0 5px;color:var(--ink)}.mlogo .dot{color:var(--accent)}
 @media (max-width:700px){
   .topbar{flex-direction:column;align-items:stretch;gap:6px}
   .topbar #today{text-align:center}
@@ -385,8 +386,8 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 .wk,.calw-h .mo{display:none}
 @media (max-width:700px){
   .livelbl{display:none}
-  .minilogo{font-size:15px}
-  .stick.compact .minilogo{max-width:110px;margin-right:8px;padding-right:8px;border-right:1px solid var(--rule)}
+  .minilogo,.stick.compact .minilogo{display:none}
+  .stick.compact .mlogo{display:block}
   .wide .row.one>.fill{position:relative;min-height:150px}
   .wide .row.one>.fill>*{position:absolute!important;inset:0;height:100%!important}
   .wide .row.one>.fill .photo img,.wide .row.one>.fill .fallback,.wide .row.one>.fill .fallback>*{height:100%!important;aspect-ratio:auto!important;object-fit:cover}
@@ -441,6 +442,7 @@ a.it:hover h4{color:var(--rc,var(--accent))}
     <div class="sub">Économie · Monde · Marchés · Deals</div>
   </header>
   <div class="stick" id="stick">
+  <a class="mlogo" href="#une">L'Actualité<span class="dot">.</span></a>
   <div class="mbar" id="mbar"><button class="mrub" id="mrub"><span id="mrubl">À la une</span> <i>▾</i></button><div class="mr"><button data-k="r-deals-buy-side">Deals</button><button data-k="calendrier">Calendrier</button></div><div class="mmenu" id="mmenu"></div></div>
   <div class="live"><a class="minilogo" href="#une">L'Actualité<span class="dot">.</span></a><span class="livelbl"><i></i>En direct</span><div class="tvbox" id="tv"></div><div class="ticker static" id="tkstatic"></div></div>
   <nav class="rub" id="nav"></nav>
