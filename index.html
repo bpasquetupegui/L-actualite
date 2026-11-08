@@ -383,7 +383,12 @@ a.it:hover h4{color:var(--rc,var(--accent))}
 /* téléphone : bandeau, articles, calendrier */
 .wk,.calw-h .mo{display:none}
 @media (max-width:700px){
-  .livelbl,.stick.compact .minilogo{display:none}
+  .livelbl{display:none}
+  .minilogo{font-size:15px}
+  .stick.compact .minilogo{max-width:110px;margin-right:8px;padding-right:8px;border-right:1px solid var(--rule)}
+  .wide .row.one>.fill{position:relative;min-height:150px}
+  .wide .row.one>.fill>*{position:absolute!important;inset:0;height:100%!important}
+  .wide .row.one>.fill .photo img,.wide .row.one>.fill .fallback,.wide .row.one>.fill .fallback>*{height:100%!important;aspect-ratio:auto!important;object-fit:cover}
   .live{min-height:32px;overflow:hidden}
   .tvbox{flex:none;width:130%;height:44px;transform:scale(.75);transform-origin:0 50%;margin-right:-30%}
   .tk{padding:6px 10px;font-size:12.5px}
@@ -476,7 +481,7 @@ function liveTicker(){
   c.innerHTML='<div class="tradingview-widget-container__widget"></div>';
   const sc=document.createElement("script");sc.async=true;
   sc.src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-  sc.textContent=JSON.stringify({symbols:TV_SYMBOLS,showSymbolLogo:false,isTransparent:true,displayMode:matchMedia("(max-width:700px)").matches?"compact":"adaptive",colorTheme:document.documentElement.dataset.theme==="dark"?"dark":"light",locale:"fr"});
+  sc.textContent=JSON.stringify({symbols:TV_SYMBOLS,showSymbolLogo:false,isTransparent:true,displayMode:"adaptive",colorTheme:document.documentElement.dataset.theme==="dark"?"dark":"light",locale:"fr"});
   c.appendChild(sc);box.appendChild(c);
   box.parentNode.classList.add("fallback"); clearInterval(liveTicker.t); let n=0;
   liveTicker.t=setInterval(()=>{if(box.querySelector("iframe")){setTimeout(()=>box.parentNode.classList.remove("fallback"),800);clearInterval(liveTicker.t)}else if(++n>40)clearInterval(liveTicker.t)},500);
