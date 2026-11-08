@@ -1,0 +1,12 @@
+{
+  "_doc": "Registre des logos Wikimedia Commons déjà utilisés et vérifiés. Réutiliser le nom exact avant toute nouvelle recherche. Ajouter chaque nouveau logo trouvé, ne jamais en supprimer.",
+  "logos": {
+    "Alstom": "Alstom logo.svg",
+    "AMD": "AMD Logo.svg",
+    "Marvell": "Marvell Logo.svg",
+    "Lumentum": "Lumentum logo dark 2015.svg",
+    "Marathon Petroleum": "Marathon Petroleum logo 2022.svg",
+    "Apollo": "Apollo Global Management logo.svg",
+    "LGT": "LGT Logo.svg"
+  }
+}
