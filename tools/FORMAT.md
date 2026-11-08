@@ -42,6 +42,7 @@ Chaque news a un vrai article, quelle que soit la rubrique.
   - `etapes` : autorisations, calendrier, closing.
   - Pour une levée de fonds, mettre le gérant dans `cible`. `role_cible` et `role_acquereur` permettent de renommer les cartes (ex. « Gérant », « Investisseurs »).
 - `chrono` : `[{"d": "9 avr. 2025", "t": "…"}]` pour les sujets qui ont une histoire.
+- `plus` (uniquement la une et les articles imp=3) : 2 à 3 ressources pour approfondir, `[{"type": "Podcast|Article|Documentaire|Film|Livre", "t": "Titre", "a": "Auteur ou média", "u": "https://…"}]`. Liens vérifiés, accès gratuit de préférence, jamais inventés ; `u` peut être vide pour un livre. Affiché en « Pour aller plus loin ». Le bloc « Sur le même sujet » est calculé automatiquement à partir de `k`.
 - `sources` : `[{"n": "Média – titre", "u": "https://…"}]`, uniquement des sources consultées.
 - `note` (facultatif) : avertissement de fiabilité si un point n'a pas pu être recoupé.
 

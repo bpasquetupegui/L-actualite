@@ -45,6 +45,11 @@ for it in ed.get("items", []):
     a = arts[i]
     if not (a.get("corps") or a.get("deal")):
         fail(f"article {i} sans 'corps' ni 'deal'")
+    for x in a.get("plus", []):
+        if not x.get("t") or not x.get("type"):
+            fail(f"ressource 'plus' sans 'type' ou 't' dans {i}")
+        if x.get("u") and not str(x["u"]).startswith("http"):
+            fail(f"ressource 'plus' avec URL invalide dans {i}")
     for s in a.get("sources", []):
         if not str(s.get("u", "")).startswith("http"):
             fail(f"source sans URL valide dans {i}")

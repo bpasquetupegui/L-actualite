@@ -265,6 +265,7 @@ table.terms td:first-child{color:var(--muted);width:38%}
 .sources a{color:var(--accent2);text-decoration:underline;text-underline-offset:2px}
 .sources li{margin-bottom:5px}
 .note{font-family:var(--sans);font-size:13px;background:var(--notebg);border:1px solid var(--notebd);padding:10px 14px;border-radius:4px;margin:0 0 22px}
+.plus{margin-top:30px}.plus a{color:var(--accent2);text-decoration:underline;text-underline-offset:2px}
 .related{margin-top:34px}
 .related h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 10px}
 .related .it h4{font-size:17px}
@@ -656,6 +657,7 @@ async function showArticle(id){
   for(const s of (c.corps||[])) h+=`${s.h?`<h2>${esc(s.h)}</h2>`:""}${paras(s.p)}`;
   if((c.chrono||[]).length)h+=`<h2>Chronologie</h2><div class="chrono">${c.chrono.map(e=>`<div class="ev"><b>${esc(e.d)}</b><span>${esc(e.t)}</span></div>`).join("")}</div>`;
   if(!c.corps&&!c.deal)h+=`<p>${esc(it.c||"")}</p>`;
+  if((c.plus||[]).length){const ic={podcast:"🎧",article:"📰",documentaire:"🎬",film:"🎬",livre:"📚",vidéo:"▶️",video:"▶️"};h+=`<div class="box plus"><h3>Pour aller plus loin</h3><ul>${c.plus.map(x=>`<li>${ic[(x.type||"").toLowerCase()]||"🔗"} <b>${esc(x.type||"")}</b> : ${/^https?:\/\//.test(x.u||"")?`<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>`:esc(x.t)}${x.a?` (${esc(x.a)})`:""}</li>`).join("")}</ul></div>`}
   if((c.sources||[]).length)h+=`<div class="sources"><h3>Sources</h3><ul>${c.sources.map(s=>`<li><a href="${esc(/^https?:\/\//.test(s.u)?s.u:"#")}" target="_blank" rel="noopener">${esc(s.n)}</a></li>`).join("")}</ul></div>`;
   const rel=related(it);
   if(rel.length)h+=`<div class="related"><h3>Sur le même sujet</h3>${rel.map(r=>itemHTML({...r,c:fmtDate(r.id.slice(0,10))+" — "+(r.c||"")})).join("")}</div>`;
