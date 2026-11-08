@@ -7,12 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-/* Ordinateur : mise à l'échelle automatique selon la largeur de l'écran (base 1280px). Mobile/tablette non touchés. */
-(function(){var d=document.documentElement,fine=matchMedia('(pointer:fine)');
-function fit(){var w=window.innerWidth;if(fine.matches&&w>=1024){d.style.zoom=Math.max(.8,Math.min(2,w/1280)).toFixed(3)}else{d.style.zoom=''}}
-fit();addEventListener('resize',fit);})();
-</script>
 <style>
 :root{
   --ink:#16161a; --ink2:#3d3d45; --muted:#6b6b75; --rule:#d9d6cf; --paper:#fbfaf7; --card:#fff; --hover:#efece5; --soft:#ebe8e1; --notebg:#fff7e6; --notebd:#f0d9a8; --gold:#b07d1a;
@@ -75,10 +69,19 @@ nav.rub button.on{color:var(--accent)}
 .fill .photo img,.fill>figure img{height:100%;aspect-ratio:auto!important}
 .fill .fallback,.fill .fallback>*{height:100%;aspect-ratio:auto!important}
 .fill figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff!important;padding:18px 10px 6px!important}
-.g6{display:grid;grid-template-columns:repeat(6,1fr);gap:26px 28px}
-.g6>*{grid-column:span var(--sp,2);display:flex;flex-direction:column;--ratio:62.5%}
-.g6>[style*="--sp:3"]{--ratio:46%}.g6>[style*="--sp:6"]{--ratio:34%}
-@media (max-width:860px){.g6>*{grid-column:1/-1}}
+.g6{display:flex;flex-wrap:wrap;gap:26px 28px}
+.g6>*{width:calc((100% - (var(--sp,3) - 1)*28px)/var(--sp,3));display:flex;flex-direction:column;--ratio:62.5%}
+.g6>[style*="--sp:1;"],.g6>[style="--sp:1"]{--ratio:34%}
+/* ordinateur grand écran : la page s'élargit et affiche plus d'articles par rangée (police inchangée) */
+@media (min-width:1400px){.wrap{max-width:none;padding:0 clamp(20px,3vw,64px)}}
+@media (min-width:1650px){
+  .lead{grid-template-columns:1.15fr 1.4fr}
+  .lead .side{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-content:start}
+  .lead .side .s{flex:none}
+  .regs{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;align-items:start}
+}
+@media (min-width:2300px){.regs{grid-template-columns:1fr 1fr 1fr}.lead .side{grid-template-columns:1fr 1fr 1fr}}
+@media (max-width:860px){.g6>*{width:100%}}
 .mc{border:0;background:none;font:inherit;cursor:pointer}
 .mc em,.cd em{display:flex;gap:2px;justify-content:center;position:absolute;left:0;right:0;bottom:2px}
 .mc em i,.cd em i{position:static!important;margin:0!important;width:5px;height:5px;border-radius:50%;display:block}
@@ -521,13 +524,17 @@ function flag(c){return FLAGS[(c||"").toLowerCase()]}
 function fmtDate(d){const [y,m,j]=d.split("-").map(Number);return `${j} ${MOIS[m-1]} ${y}`}
 function wday(d){return new Date(d+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"})}
 
-function spans(n){ // grille de 6 : chaque rangée est toujours pleine
-  const a=Array(n).fill(2), r=n%3;
-  if(n===1)a[0]=6; else if(n===2)a.fill(3);
-  else if(r===2){a[n-1]=3;a[n-2]=3}
-  else if(r===1){for(let i=n-4;i<n;i++)a[i]=3}
+function perRow(){const w=window.innerWidth;return w>=2100?5:w>=1650?4:3}
+function spans(n,k){ // grille flexible : k articles par rangée (3 par défaut), chaque rangée toujours pleine
+  k=k||3; const a=[];
+  const st=m=>m+(m===2?";--ratio:46%":"");
+  let i=0;
+  while(i<n){const left=n-i;let m=left<=k?left:(left<2*k&&left-k<2&&k>2?k-1:k);
+    for(let j=0;j<m;j++)a.push(st(m));i+=m;}
   return a;
 }
+let _pr=perRow();
+window.addEventListener("resize",()=>{clearTimeout(window._rz);window._rz=setTimeout(()=>{const p=perRow();if(p===_pr)return;_pr=p;const h=location.hash.slice(1);if(!h.startsWith("r-"))return;const y=scrollY;route();scrollTo(0,y)},200)});
 function fillCover(item,small,ratio){return `<div class="fill"${ratio?` style="--ratio:${ratio}"`:""}>${cover(item,small)}</div>`}
 function cover(item,small,noimg){
   if(!noimg&&!(item.img&&item.img.u)&&AUTO[item.id])item={...item,img:AUTO[item.id]};
@@ -612,7 +619,7 @@ function showEdition(date){
   <section class="lead">
     <a class="main click" style="${rc(lead.r)}" href="#a-${esc(lead.id)}">${fillCover(lead)}<div class="kicker" style="margin-top:14px">${esc(lead.r)} · ${esc(lead.s||"")}</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></a>
     <div class="side">${tl.map(t=>`<a class="s click" href="#a-${esc(t.id)}" style="${rc(t.r)}">${fillCover(t,true)}<div class="kicker" style="margin-top:10px">${esc(t.r)}</div><h3>${esc(t.t)}</h3><p>${esc(t.c)}</p></a>`).join("")}</div>
-  </section>${calWidget()}`;
+  </section>${calWidget()}<div class="regs">`;
   for(const r of RUBS){
     const ri=items.filter(i=>i.r===r);
     if(!ri.length)continue;
@@ -624,11 +631,12 @@ function showEdition(date){
       const wide=s==="À la une"&&si[0];
       if(wide){
         const [f,...rest]=si;
-        html+=`<div class="sect wide" style="--sp:6"><h5>${esc(s)}</h5><div class="row${rest.length?"":" one"}"><a class="click fill" href="#a-${esc(f.id)}">${cover(f,true)}</a><div>${itemHTML(f,true)}${rest.map(x=>itemHTML(x)).join("")}</div></div></div>`;
+        html+=`<div class="sect wide" style="--sp:1;"><h5>${esc(s)}</h5><div class="row${rest.length?"":" one"}"><a class="click fill" href="#a-${esc(f.id)}">${cover(f,true)}</a><div>${itemHTML(f,true)}${rest.map(x=>itemHTML(x)).join("")}</div></div></div>`;
       } else html+=`<div class="sect" style="--sp:${sp[nw.indexOf(s)]}"><h5>${esc(s||"Actualité")}</h5><a class="click secimg fill" href="#a-${esc(si[0].id)}">${cover(si[0],true)}</a>${si.map((x,j)=>itemHTML(x,j===0||(x.imp||1)>=3)).join("")}</div>`;
     }
     html+=`</div></section>`;
   }
+  html+=`</div>`;
   if((ed.agenda||[]).length)html+=`<section class="region" id="r-agenda"><h2>Agenda</h2><div class="agenda">${ed.agenda.map(a=>`<div class="ag"><b>${esc(a.j)}</b>${esc(a.t)}</div>`).join("")}</div></section>`;
   const i=EDITIONS.indexOf(ed);
   html+=`<div class="edhead" style="margin-top:26px">${EDITIONS[i+1]?`<a href="#e-${EDITIONS[i+1].date}">← Édition du ${esc(fmtDate(EDITIONS[i+1].date))}</a>`:"<span></span>"}${i>0?`<a href="#e-${EDITIONS[i-1].date}">Édition du ${esc(fmtDate(EDITIONS[i-1].date))} →</a>`:""}</div>`;
@@ -967,7 +975,7 @@ function showRubrique(sl){
   let h=`<section class="rubp" style="${rc(r)}"><div class="rubh"><h2>${esc(r)}</h2><span>${esc(wday(ed.date))} · ${today.length} article${today.length>1?"s":""}</span></div>`;
   if(lead)h+=`<a class="rublead click" href="#a-${esc(lead.id)}">${fillCover(lead,false,"56.25%")}<div><div class="kicker">${esc(lead.s||"")} · L'essentiel du jour</div><h2>${esc(lead.t)}</h2><p>${esc(lead.c)}</p></div></a>`;
   else h+=`<div class="empty">Pas d'actualité dans cette rubrique aujourd'hui.</div>`;
-  if(rest.length){const sp=spans(rest.length);h+=`<div class="rubgrid g6">${rest.map((x,j)=>`<a class="card click" style="--sp:${sp[j]}" href="#a-${esc(x.id)}">${fillCover(x,true)}<div class="kicker">${esc(x.s||"")}</div><h4>${esc(x.t)}</h4><p>${esc(x.c)}</p></a>`).join("")}</div>`;}
+  if(rest.length){const sp=spans(rest.length,perRow());h+=`<div class="rubgrid g6">${rest.map((x,j)=>`<a class="card click" style="--sp:${sp[j]}" href="#a-${esc(x.id)}">${fillCover(x,true)}<div class="kicker">${esc(x.s||"")}</div><h4>${esc(x.t)}</h4><p>${esc(x.c)}</p></a>`).join("")}</div>`;}
   if(arch.length)h+=`<div class="rubarch"><h3>Ces derniers jours</h3><div class="strip">${arch.slice(0,12).map(x=>`<a class="card click" href="#a-${esc(x.id)}">${cover(x,true)}<div class="kicker">${esc(fmtDate(x.id.slice(0,10)))}${(x.imp||1)>=3?" · Majeur":""}</div><h4>${esc(x.t)}</h4></a>`).join("")}</div><a class="more" href="#archives">Toutes les archives →</a></div>`;
   app.innerHTML=h+`</section>`;
 }
