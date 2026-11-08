@@ -27,13 +27,13 @@ Pour publier, écrire un fichier JSON `{"edition": {...}, "articles": {...}}`, p
 ## articles["<id>"]
 Chaque news a un vrai article, quelle que soit la rubrique.
 - `cles` : 3 à 5 points « L'essentiel ».
-- `corps` : `[{"h": "Intertitre", "p": "Paragraphes séparés par une ligne vide"}]`. Chaque article, même pour une news mineure, est un vrai article de journal qui répond au quoi, au pourquoi et au comment, avec au minimum ces 5 sections :
-  1. « Ce qui s'est passé » : les faits précis (qui, quoi, quand, où, combien).
-  2. « Comment on en est arrivé là » : l'historique et la genèse du sujet, avec dates clés.
-  3. « Les acteurs » : qui sont les personnes, partis, entreprises ou institutions, d'où ils viennent, leurs positions et intérêts. Ne jamais supposer que le lecteur les connaît.
-  4. « Pourquoi c'est important » : enjeux politiques, économiques et pour les marchés, en France et à l'international.
-  5. « Et maintenant ? » : prochaines étapes, dates, scénarios possibles.
-  Longueur : environ 450 mots minimum pour imp=1, 700 pour imp=2, 1 000 et plus pour imp=3. Ajouter `chrono` dès que le sujet a une histoire.
+- `corps` : `[{"h": "Intertitre", "p": "Paragraphes séparés par une ligne vide"}]`. Chaque article, même pour une news mineure, est un vrai article de journal qui répond au quoi, au pourquoi et au comment. Il suit cinq étapes dans cet ordre : les faits (qui, quoi, quand, où, combien), la genèse (historique et dates clés), les acteurs (parcours, positions, intérêts), les enjeux (politiques, économiques, pour les marchés, la France et l'Europe) et la suite (prochaines étapes, dates, scénarios). Ces étapes guident la rédaction mais ne sont JAMAIS des intertitres.
+  - Chapô (`c`) : 2 phrases qui donnent l'essentiel et l'angle de l'article.
+  - Intertitres (`h`) : propres à chaque article, informatifs et accrocheurs, comme dans Le Monde ou Les Échos. Ils annoncent une idée ou un fait, pas une rubrique, et se comprennent sans avoir lu le reste (ex. « Le retour des négociations de paix à Abou Dhabi », pas « Abou Dhabi, troisième essai »). Interdits : « Ce qui s'est passé », « Comment on en est arrivé là », « Les acteurs », « Pourquoi c'est important », « Et maintenant ? » et toute formule générique.
+  - Aucun fait non sourcé : un intertitre ou une phrase ne contient jamais un chiffre, une date ou une affirmation non établie par les sources de l'article. Pas de déduction présentée comme un fait.
+  - Contexte : ne rien supposer connu. Chaque lieu, sigle, personne ou processus (ex. « les pourparlers d'Abou Dhabi ») est expliqué en une phrase à sa première mention : ce que c'est, depuis quand, qui y participe.
+  - Style : ton de journaliste économique, précis et sobre. Chaque phrase apporte un fait, un chiffre, un nom, une date ou une analyse. Interdits : phrases creuses (« c'est un enjeu majeur », « l'enjeu est double », « les marchés suivent ces développements »), ton scolaire, répétitions d'une partie à l'autre, conclusions morales, « en résumé ». Les enjeux s'appuient sur des chiffres, des analystes ou des précédents, jamais sur des généralités. Notions techniques expliquées en une incise, sans condescendance.
+  Longueur : environ 450 mots minimum pour imp=1, 700 pour imp=2, 1 000 et plus pour imp=3, sans remplissage : la longueur vient du contexte et de l'analyse. Ajouter `chrono` dès que le sujet a une histoire.
 - `deal` (pour toute opération M&A, levée ou rachat) :
   - `cible` et `acquereur` : `{"nom", "activite", "origine", "chiffres"}`. `origine` couvre la fondation, le pays, l'historique et les dirigeants.
   - `termes` : `[["Prix", "…"], ["Structure", "…"], ["Multiple", "…"]]`.
