@@ -61,3 +61,20 @@ Le site attribue automatiquement une photo de la bibliothèque à chaque article
 ## Calendrier (data/calendar.json)
 `{"events": [{"d": "AAAA-MM-JJ", "t": "Intitulé court", "c": "Banque centrale|Macro|Résultats|Politique|Élection|Sommet|Diplomatie", "p": "code pays", "imp": 1-3, "h": "heure de Paris ou vide"}]}`.
 Chaque matin, le calendrier doit couvrir les 3 prochains mois (affichés sur la page Calendrier), de façon dense : vise 15 à 25 rendez-vous par mois, avec l’heure de Paris (champ h) dès qu’elle est connue, mais uniquement des événements majeurs et datés de façon fiable : décisions de taux des grandes banques centrales (Fed, BCE, BoE, BoJ, BNS, RBA, Banque du Canada, Brésil, Inde, Chine…), élections nationales et référendums des grands pays, sommets (G7, G20, UE, OTAN, APEC, COP, OPEP+), résultats des très grandes entreprises (Big Tech, Nvidia, grandes banques, CAC 40 majeures), publications macro clés (emploi et inflation américains, inflation zone euro, PIB), grands discours (Jackson Hole, état de l'Union…), échéances politiques ou judiciaires suivies dans le journal. Chaque événement a aussi un champ `x` : 3 à 4 phrases qui expliquent ce que c'est (institution ou sommet, qui y participe, ce que mesure l'indice ou ce que décide la réunion) et pourquoi c'est important pour les marchés ou la politique ; il s'affiche quand on clique sur « En savoir plus ». Ajoute les nouveaux, corrige ceux qui changent, et garde les événements passés (le site les grise). Ne mets un événement que si sa date est confirmée par une source fiable (site officiel, agence) ; sinon n'en mets pas.
+
+
+## Économie de tokens (sans perte de qualité)
+Ces règles réduisent les recherches répétées. La profondeur des articles, le recoupement des sources et le volume de lecture ne changent pas.
+
+### Calendrier : mise à jour incrémentale
+Ne pas réécrire `data/calendar.json` chaque jour : le lire, puis ne chercher que :
+1. les événements qui entrent dans la fenêtre des 3 mois (autour de J+90) ;
+2. les dates qui ont changé (réunion décalée, scrutin fixé) ;
+3. les échéances nées de l'actualité du jour.
+Les rendez-vous récurrents à calendrier annuel publié (Fed, BCE, BoE, BoJ, publications macro, résultats des grandes entreprises) sont saisis une fois avec leur texte `x`, puis laissés tels quels. Contrôle complet de la fenêtre le dimanche. Ne jamais supprimer d'événement passé.
+
+### Images : réutiliser avant de chercher
+- Logos : consulter d'abord `data/logos.json`. Si la société y figure, reprendre le nom de fichier exact sans recherche. Sinon chercher sur Commons, puis l'ajouter au registre (jamais de nom inventé).
+- Photos : consulter d'abord `data/photos.json` (tags pays et mots-clés). Une photo déjà vérifiée peut être réutilisée pour un article mineur ou un sujet récurrent. Pour la une et les sujets nouveaux (lieu, société ou institution jamais traités), chercher une photo spécifique.
+- Regrouper les recherches : un seul « File: <lieu> » pour plusieurs articles sur le même lieu.
+- Les photos n'ont toujours aucune personne et un rapport direct avec l'article.
