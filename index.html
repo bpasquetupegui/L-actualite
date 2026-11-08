@@ -683,6 +683,9 @@ function fillGaps(){
   const side=document.querySelector(".lead .side"), main=document.querySelector(".lead .main");
   if(side&&main&&getComputedStyle(side).display==="grid")fill(side,bot(main),()=>true);
   const regs=document.querySelector(".regs");
+  if(regs){[...regs.children].forEach(r=>r.style.gridColumn="");
+    const nc=getComputedStyle(regs).gridTemplateColumns.split(" ").length, rem=regs.children.length%nc;
+    if(nc>1&&rem)regs.lastElementChild.style.gridColumn=`span ${nc-rem+1}`;} // dernière rubrique seule : elle prend toute la largeur restante
   if(regs&&getComputedStyle(regs).gridTemplateColumns.split(" ").length>1){
     const rows={};[...regs.children].forEach(r=>{(rows[Math.round(ytop(r))]??=[]).push(r)});
     for(const row of Object.values(rows)){if(row.length<2)continue;const m=Math.max(...row.map(cbot));
